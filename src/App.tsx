@@ -4,15 +4,21 @@
  */
 
 import { Header, Hero } from "./components/Hero";
-import { About, Services } from "./components/Sections";
-import { Testimonials } from "./components/Portfolio";
-import { Blog } from "./components/Blog";
+import { About, Services, Websites } from "./components/Sections";
+import { Fit } from "./components/Portfolio";
 import { Pricing } from "./components/Pricing";
 import { Contact, CTA } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { motion, useScroll, useSpring } from "motion/react";
+import { useEffect } from "react";
+import { motion, useScroll, useSpring, MotionConfig } from "motion/react";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { initAnalytics } from "./lib/analytics";
 
 export default function App() {
+  useEffect(() => {
+    initAnalytics();
+  }, []);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -21,7 +27,9 @@ export default function App() {
   });
 
   return (
+    <MotionConfig reducedMotion="user">
     <div className="relative">
+      <a href="#main" className="skip-link">Skip to content</a>
       {/* Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-noble-gold z-[60] origin-left"
@@ -29,17 +37,20 @@ export default function App() {
       />
 
       <Header />
-      <main>
+      <main id="main">
         <Hero />
         <About />
         <Services />
+        <Fit />
+        <Websites />
         <Pricing />
-        <Testimonials />
-        <Blog />
         <Contact />
         <CTA />
       </main>
       <Footer />
+      <Analytics />
+      <SpeedInsights />
     </div>
+    </MotionConfig>
   );
 }

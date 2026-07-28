@@ -1,35 +1,8 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { Menu, X, ChevronRight } from "lucide-react";
-import { useState, useEffect, Suspense, useRef } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Sphere, MeshDistortMaterial, Float, Stars } from "@react-three/drei";
+import { useState, useEffect, Suspense, lazy } from "react";
 
-const Globe3D = () => {
-  return (
-    <div className="absolute inset-0 z-0 opacity-60 pointer-events-none">
-      <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
-        <Suspense fallback={null}>
-          <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-          <Float speed={2} rotationIntensity={1} floatIntensity={1}>
-            <Sphere args={[1, 100, 200]} scale={2.4}>
-              <MeshDistortMaterial
-                color="#D4AF37"
-                attach="material"
-                distort={0.4}
-                speed={1.5}
-                roughness={0.2}
-                metalness={0.8}
-              />
-            </Sphere>
-          </Float>
-        </Suspense>
-        <OrbitControls enableZoom={false} enablePan={false} autoRotate autoRotateSpeed={0.5} />
-      </Canvas>
-    </div>
-  );
-};
+const Globe3D = lazy(() => import("./Globe3D"));
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,9 +17,9 @@ export const Header = () => {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
+    { name: "How It Works", href: "#services" },
+    { name: "Websites", href: "#websites" },
     { name: "Pricing", href: "#pricing" },
-    { name: "Blog", href: "#blog" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -103,12 +76,12 @@ export const Header = () => {
             <span className="text-2xl font-serif font-black tracking-tighter text-white">
               NOBLE<span className="text-noble-gold">WAVE</span>
             </span>
-            <span className="text-[9px] uppercase tracking-[0.4em] text-noble-gold font-black mt-1">Marketing Studio</span>
+            <span className="text-[9px] uppercase tracking-[0.4em] text-noble-gold font-black mt-1">Lead Generation</span>
           </div>
         </motion.div>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -122,9 +95,10 @@ export const Header = () => {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            data-track="cta"
             className="bg-noble-gold text-noble-black px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-white transition-all"
           >
-            Get in Touch
+            Claim a Spot
           </motion.a>
         </nav>
 
@@ -132,6 +106,9 @@ export const Header = () => {
         <button
           className="lg:hidden text-noble-gold"
           onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls="mobile-nav"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -139,7 +116,9 @@ export const Header = () => {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <motion.div
+        <motion.nav
+          id="mobile-nav"
+          aria-label="Mobile navigation"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="lg:hidden absolute top-full left-0 w-full bg-noble-black p-6 flex flex-col gap-4 shadow-2xl border-b border-white/10"
@@ -154,16 +133,25 @@ export const Header = () => {
               {link.name}
             </a>
           ))}
-          <a href="#contact" onClick={() => setIsOpen(false)} className="bg-noble-gold text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center">
-            Get in Touch
+          <a href="#contact" data-track="cta" onClick={() => setIsOpen(false)} className="bg-noble-gold text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center">
+            Claim a Spot
           </a>
-        </motion.div>
+        </motion.nav>
       )}
     </header>
   );
 };
 
 export const Hero = () => {
+  const [showGlobe, setShowGlobe] = useState(false);
+  useEffect(() => {
+    const start = () => setShowGlobe(true);
+    if ("requestIdleCallback" in window) {
+      (window as any).requestIdleCallback(start, { timeout: 2000 });
+    } else {
+      setTimeout(start, 300);
+    }
+  }, []);
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
@@ -171,8 +159,8 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-noble-black">
-      {/* 3D Globe Background */}
-      <Globe3D />
+      {/* 3D Globe Background — mounted after idle so hero text paints first */}
+      {showGlobe && <Suspense fallback={null}><Globe3D /></Suspense>}
 
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">
@@ -188,23 +176,32 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
-            Influence • Design • Growth
+            Lead Generation • Renovation & HVAC • GTA
           </span>
           <h1 className="text-6xl md:text-8xl lg:text-9xl text-white font-serif leading-[0.9] mb-8">
-            Dominate Your <br />
-            <span className="italic text-noble-gold">Local Market.</span>
+            Booked Jobs. <br />
+            <span className="italic text-noble-gold">Not Clicks.</span>
           </h1>
           <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-            Elite web design and local influencer networks that drive real-world traffic. Scalable growth, immersive presence.
+            Qualified, exclusive homeowner leads sent straight to your phone — for established home renovation and HVAC companies across the GTA. One flat rate. No contracts. No shared leads.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              data-track="cta"
               className="bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)]"
             >
-              Get in Touch
+              Claim Your Spot
+            </motion.a>
+            <motion.a
+              href="#pricing"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="border border-white/30 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
+            >
+              See the Flat Rate
             </motion.a>
           </div>
         </motion.div>
@@ -215,6 +212,7 @@ export const Hero = () => {
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-noble-gold opacity-50"
+        aria-hidden="true"
       >
         <ChevronRight className="rotate-90" size={32} />
       </motion.div>

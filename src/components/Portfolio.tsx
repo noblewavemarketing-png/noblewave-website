@@ -1,41 +1,65 @@
 import { motion } from "motion/react";
+import { Check, X } from "lucide-react";
 
-export const Testimonials = () => {
-  const reviews = [
-    {
-      name: "Sophia Laurent",
-      role: "CEO, Aura Skincare",
-      content: "We tried the Essential Content package and it was exactly what we needed. The ready-to-launch influencer videos helped our business boost up from the first day because our brand was everywhere.",
-    },
-    {
-      name: "Marcus Thorne",
-      role: "Founder, Thorne Estates",
-      content: "The Empire Scale package is a complete game-changer. The system is so efficient that we saw immediate results. Having 15 influencers talking about us simultaneously created an overnight authority.",
-    },
-  ];
+const fits = [
+  "Established renovation or HVAC companies in the GTA",
+  "A crew with capacity to take on more jobs",
+  "Someone who answers the phone the same day a lead comes in",
+  "Owners who want a predictable pipeline, not marketing promises",
+];
 
+const notFits = [
+  "Brand-new businesses still finding their footing",
+  "Companies that let leads sit for days before calling",
+  "Anyone shopping for the cheapest shared-lead list",
+  "Owners who want to \"try it for a week\"",
+];
+
+export const Fit = () => {
   return (
     <section className="py-24 bg-noble-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-5xl font-serif text-white">Client Success</h2>
+          <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Who This Is For</span>
+          <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white">
+            We're Selective. <span className="italic text-noble-gold">On Purpose.</span>
+          </h2>
+          <p className="text-gray-400 text-xl max-w-2xl mx-auto mt-8 font-light leading-relaxed">
+            Lead generation only works when the company behind it can actually handle the jobs. So we don't take everyone.
+          </p>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          {reviews.map((review, index) => (
-            <motion.div
-              key={review.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="p-12 bg-noble-dark border border-white/5 rounded-[2.5rem] relative"
-            >
-              <div className="text-noble-gold text-8xl font-serif absolute top-6 right-10 opacity-10">“</div>
-              <p className="text-gray-400 text-xl italic mb-10 leading-relaxed font-light">"{review.content}"</p>
-              <div>
-                <h4 className="font-serif text-2xl text-white">{review.name}</h4>
-                <p className="text-sm text-noble-gold font-bold uppercase tracking-widest mt-1">{review.role}</p>
-              </div>
-            </motion.div>
-          ))}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="p-12 bg-noble-dark border border-noble-gold/40 rounded-[2.5rem]"
+          >
+            <h3 className="font-serif text-3xl text-noble-gold mb-8">A Fit</h3>
+            <ul className="space-y-5">
+              {fits.map((item) => (
+                <li key={item} className="flex items-start gap-4 text-gray-300">
+                  <Check className="text-noble-gold shrink-0 mt-1" size={20} />
+                  <span className="text-lg font-light">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.15 }}
+            className="p-12 bg-noble-dark border border-white/5 rounded-[2.5rem]"
+          >
+            <h3 className="font-serif text-3xl text-gray-400 mb-8">Not a Fit</h3>
+            <ul className="space-y-5">
+              {notFits.map((item) => (
+                <li key={item} className="flex items-start gap-4 text-gray-500">
+                  <X className="text-gray-600 shrink-0 mt-1" size={20} />
+                  <span className="text-lg font-light">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </div>
     </section>

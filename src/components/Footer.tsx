@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Instagram, Linkedin, Twitter, Send } from "lucide-react";
+import { Instagram, Linkedin, Twitter } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -16,59 +16,55 @@ export const Footer = () => {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-8">
-              Canada's premium local influencer marketing setup and elite web design. We drive real-world traffic.
+              Qualified, exclusive lead generation and conversion-focused websites for home renovation and HVAC companies across the Greater Toronto Area.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-noble-gold hover:text-noble-black transition-all">
-                <Instagram size={18} />
+              <a href="#" aria-label="NobleWave on Instagram" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-noble-gold hover:text-noble-black transition-all">
+                <Instagram size={18} aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-noble-gold hover:text-noble-black transition-all">
-                <Linkedin size={18} />
+              <a href="#" aria-label="NobleWave on LinkedIn" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-noble-gold hover:text-noble-black transition-all">
+                <Linkedin size={18} aria-hidden="true" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-noble-gold hover:text-noble-black transition-all">
-                <Twitter size={18} />
+              <a href="#" aria-label="NobleWave on X (Twitter)" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-noble-gold hover:text-noble-black transition-all">
+                <Twitter size={18} aria-hidden="true" />
               </a>
             </div>
           </div>
 
           <div>
-            <h4 className="font-serif text-lg mb-6 text-noble-gold">Quick Links</h4>
+            <h3 className="font-serif text-lg mb-6 text-noble-gold">Quick Links</h3>
             <ul className="space-y-4 text-gray-400 text-sm">
               <li><a href="#home" className="hover:text-noble-gold transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-noble-gold transition-colors">About Us</a></li>
-              <li><a href="#services" className="hover:text-noble-gold transition-colors">Services</a></li>
+              <li><a href="#about" className="hover:text-noble-gold transition-colors">About</a></li>
+              <li><a href="#services" className="hover:text-noble-gold transition-colors">How It Works</a></li>
+              <li><a href="#websites" className="hover:text-noble-gold transition-colors">Websites</a></li>
               <li><a href="#pricing" className="hover:text-noble-gold transition-colors">Pricing</a></li>
-              <li><a href="#portfolio" className="hover:text-noble-gold transition-colors">Work</a></li>
+              <li><a href="#contact" className="hover:text-noble-gold transition-colors">Claim a Spot</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-serif text-lg mb-6 text-noble-gold">Contact</h4>
+            <h3 className="font-serif text-lg mb-6 text-noble-gold">Contact</h3>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li>Canada</li>
-              <li>647-673-5748</li>
-              <li>NOBLEWAVEMARKETING@GMAIL.COM</li>
+              <li>Mississauga, Ontario</li>
+              <li><a href="tel:6476735748" className="hover:text-noble-gold transition-colors">647-673-5748</a></li>
+              <li><a href="mailto:noblewavemarketing@gmail.com" className="hover:text-noble-gold transition-colors">noblewavemarketing@gmail.com</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-serif text-lg mb-6 text-noble-gold">Newsletter</h4>
-            <p className="text-gray-400 text-sm mb-4">Receive elite marketing insights directly in your inbox.</p>
-            <form className="relative">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="w-full bg-white/5 border border-white/10 rounded-full py-3 px-6 text-sm focus:outline-none focus:border-noble-gold text-white"
-              />
-              <button className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-noble-gold rounded-full flex items-center justify-center text-noble-black">
-                <Send size={14} />
-              </button>
-            </form>
+            <h3 className="font-serif text-lg mb-6 text-noble-gold">Service Area</h3>
+            <ul className="space-y-4 text-gray-400 text-sm">
+              <li>Mississauga · Brampton</li>
+              <li>Toronto · Etobicoke</li>
+              <li>Oakville · Milton</li>
+              <li>Vaughan & the GTA</li>
+            </ul>
           </div>
         </div>
         
         <div className="pt-12 border-t border-white/10 text-center text-gray-600 text-xs">
-          <p>&copy; {new Date().getFullYear()} NobleWave Agency. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NobleWave Marketing. Lead generation for home renovation &amp; HVAC companies. All rights reserved.</p>
         </div>
       </div>
     </footer>

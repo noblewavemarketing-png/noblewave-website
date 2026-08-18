@@ -32,19 +32,27 @@ confirming before assuming either direction.**
   industries — with renovation, HVAC, contractors, and home-service companies
   as the initial/flagship vertical (that's where the proof and the existing
   lead-gen product live).
-- **Eight services** (see `/services` for the full breakdown): AI SEO (managed,
-  powered by NobleWave's internal "Uplift AI" system — present that as
-  NobleWave's own technology, not a separate vendor/company), AI content
-  creation & auto-publishing, local SEO & Google Business Profile management,
-  AI search optimization (GEO/AEO — visibility in ChatGPT/Gemini/Perplexity/
-  Google AI, distinct from traditional SEO), website creation, AI video
-  generation, social media automation, and lead generation.
-- **Real, current prices** — don't invent others: Website Creation **$999
-  one-time**; Lead Generation **$400/month flat**, one partner per trade per
-  city (not a fixed national/regional cap — exclusivity is local). Every other
-  service is quoted after an assessment ("custom monthly plan" / "request a
-  custom quote") — no fabricated deliverable counts, posting quantities, or
-  numbers for anything else.
+- **Nine services** (see `/services` for the full breakdown): AI SEO, AI
+  content creation & auto-publishing, local SEO & Google Business Profile
+  management, AI search optimization (GEO/AEO — visibility in ChatGPT/Gemini/
+  Perplexity/Google AI, distinct from traditional SEO), website creation,
+  **technical infrastructure & integrations** (forms wired to CRM, tracking
+  setup, domain/email config — added Aug 2026, don't drop it, and don't let
+  "AI SEO" dominate the homepage/meta copy at the expense of content
+  creation, website design, and infrastructure being equally visible), AI
+  video generation, social media automation, and lead generation.
+- **No public pricing, anywhere, as of Aug 2026** — this was explicitly
+  removed by the owner. Every service (including Website Creation and Lead
+  Generation, which briefly had real published prices — $999 one-time and
+  $400/month — do NOT bring those back) is "request a custom quote" /
+  "flat monthly rate" with no dollar figure shown. This applies to visible
+  copy, `<title>`/meta descriptions, and structured-data `Offer.price`
+  fields alike — check all three when touching pricing-adjacent copy.
+- **Never name the underlying tooling/tech stack to customers.** The owner
+  was explicit: no "Uplift AI" or any other internal/vendor tool name in
+  customer-facing copy (site copy, meta, schema). Describe capability and
+  outcome only — "NobleWave manages your SEO strategy end to end," not
+  "powered by X." This applies to anything added later too, not just SEO.
 - Contact: noblewavemarketing@gmail.com · 647-673-5748 · Mississauga, ON.
 - **No fake testimonials, client logos, reviews, or case-study stats** — the
   brief this was built from explicitly forbids it. If the owner wants social

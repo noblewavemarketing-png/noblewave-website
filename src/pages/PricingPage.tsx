@@ -6,8 +6,7 @@ import { PageHeader } from "../components/PageHeader";
 const plans = [
   {
     name: "AI SEO Growth",
-    price: "Custom monthly plan",
-    tagline: "Starting price available after a free assessment.",
+    tagline: "Ongoing, managed search growth.",
     popular: false,
     features: [
       "SEO and GEO website audit",
@@ -22,11 +21,9 @@ const plans = [
   },
   {
     name: "Website & Total Setup",
-    price: "$999",
-    unit: "one-time",
     tagline: "Delivered fast. Yours to keep.",
     popular: true,
-    badge: "Most Booked",
+    badge: "Most Requested",
     features: [
       "Complete website strategy and build",
       "Conversion-focused, mobile-first design",
@@ -40,16 +37,15 @@ const plans = [
   },
   {
     name: "Complete AI Growth System",
-    price: "Request a Custom Quote",
-    tagline: "Every service, connected — priced after we understand your business.",
+    tagline: "Every service, connected, managed as one system.",
     popular: false,
     features: [
       "Everything in AI SEO Growth",
       "Website build and ongoing optimization",
       "AI content creation and auto-publishing",
+      "Technical infrastructure and integrations",
       "AI video and social media automation",
       "Lead generation",
-      "One team managing all of it, reported monthly",
     ],
     cta: "Get a Free Strategy Call",
     href: "/contact",
@@ -61,8 +57,9 @@ export default function PricingPage() {
     <PageShell>
       <PageHeader
         eyebrow="Pricing"
-        title={<>Real Numbers. <span className="italic text-noble-gold">No Surprises.</span></>}
-        subtitle="Two of these prices are fixed, because the work behind them is fixed. Everything else depends on your business, so we quote it after a real look — not a guess."
+        title={<>One System. <span className="italic text-noble-gold">Quoted For You.</span></>}
+        subtitle="Every business is different — your competition, your market, your goals. So we don't publish a price list; we quote each plan after a real look at your business, on a free strategy call."
+        primaryCta={{ label: "Get a Free Strategy Call", href: "/contact" }}
       />
 
       <section className="py-8 bg-noble-black relative overflow-hidden">
@@ -86,11 +83,7 @@ export default function PricingPage() {
                     {plan.badge}
                   </span>
                 )}
-                <h3 className="text-2xl font-serif text-white mb-4">{plan.name}</h3>
-                <div className="flex items-end gap-3 mb-3">
-                  <span className={`font-serif font-black text-white leading-none ${plan.unit ? "text-5xl" : "text-3xl"}`}>{plan.price}</span>
-                  {plan.unit && <span className="text-noble-gold text-lg font-serif italic mb-1">{plan.unit}</span>}
-                </div>
+                <h3 className="text-2xl font-serif text-white mb-3">{plan.name}</h3>
                 <p className="text-gray-400 mb-8 font-light">{plan.tagline}</p>
                 <ul className="space-y-3 mb-8 flex-grow">
                   {plan.features.map((feature) => (
@@ -118,15 +111,15 @@ export default function PricingPage() {
           <div className="max-w-3xl mx-auto mt-16 p-8 bg-noble-dark border border-white/5 rounded-[2rem] text-center">
             <h3 className="text-2xl font-serif text-white mb-3">Only need Lead Generation?</h3>
             <p className="text-gray-400 font-light mb-6">
-              Our original service, still $400/month flat — exclusive leads, no contracts.
+              Our original service, still a flat monthly rate — exclusive leads, no contracts.
             </p>
             <a href="/lead-generation" className="text-noble-gold font-bold uppercase text-sm tracking-[0.15em] hover:underline">
-              See Lead Generation Pricing →
+              See Lead Generation →
             </a>
           </div>
 
           <p className="text-gray-600 text-sm font-light text-center max-w-2xl mx-auto mt-12">
-            Custom-quoted plans are priced after we assess your website, market, and goals — no fabricated deliverable counts or posting quantities, no fine-print contract terms sprung on you later.
+            Every plan is quoted after we assess your website, market, and goals — no fabricated deliverable counts or posting quantities, no fine-print contract terms sprung on you later.
           </p>
         </div>
       </section>

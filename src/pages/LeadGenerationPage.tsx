@@ -29,11 +29,8 @@ export default function LeadGenerationPage() {
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-8 inline-block bg-noble-gold text-noble-black">
               One Partner Per Trade, Per City
             </span>
-            <div className="flex items-end justify-center gap-3 mb-3">
-              <span className="text-6xl font-serif font-black text-white leading-none">$400</span>
-              <span className="text-noble-gold text-xl font-serif italic mb-1">/month</span>
-            </div>
-            <p className="text-gray-400 text-lg mb-10 font-light">Flat. Month to month. Cancel anytime.</p>
+            <h2 className="text-4xl font-serif text-white mb-3">Flat Monthly Rate.</h2>
+            <p className="text-gray-400 text-lg mb-10 font-light">No long-term contracts. Cancel anytime.</p>
             <ul className="space-y-4 mb-10 text-left max-w-md mx-auto">
               {[
                 "Exclusive qualified leads — never shared with another company",
@@ -49,7 +46,7 @@ export default function LeadGenerationPage() {
               ))}
             </ul>
             <a href="/contact" data-track="cta" className="inline-block bg-noble-gold text-noble-black px-10 py-4 rounded-full font-bold hover:bg-white transition-all">
-              Claim Your Spot
+              Request Your Quote
             </a>
             <p className="text-gray-500 text-sm mt-6">Lead volume isn't guaranteed — it depends on your trade, area, and market demand. We'll be direct with you about what to expect on your strategy call.</p>
           </motion.div>

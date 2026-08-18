@@ -4,9 +4,7 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Lead Generation",
-    price: "$400",
-    unit: "/month",
-    tagline: "Flat. Month to month. Cancel anytime.",
+    tagline: "Flat monthly rate. No long-term contracts.",
     badge: "One Spot Per Trade, Per City — GTA",
     popular: true,
     features: [
@@ -17,13 +15,11 @@ const plans = [
       "Your service area, your trade, your leads",
       "Direct line to us — no account managers, no ticket queues"
     ],
-    cta: "Claim Your Spot",
-    note: "Compare that to agency retainers of $1,500–$3,000/month — before ad spend."
+    cta: "Request Your Quote",
+    note: "Quoted for your trade and service area on a strategy call — no discovery-call runaround."
   },
   {
     name: "Website Creation",
-    price: "$999",
-    unit: "one-time",
     tagline: "Delivered fast. Yours to keep.",
     badge: "Built for Renovation & HVAC Companies",
     popular: false,
@@ -35,7 +31,7 @@ const plans = [
       "Your domain, your hosting, your site — no lock-in",
       "Pairs seamlessly with our lead generation service"
     ],
-    cta: "Get Your Website Built",
+    cta: "Request Your Quote",
     note: "Add lead generation and your ads, landing experience, and site all work as one system."
   }
 ];
@@ -57,15 +53,15 @@ export const Pricing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-7xl font-serif mt-8 text-white leading-tight"
           >
-            Real Numbers. <br />
-            <span className="italic text-noble-gold">No Surprises.</span>
+            No Guesswork. <br />
+            <span className="italic text-noble-gold">A Number Built For You.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-gray-400 text-xl max-w-2xl mx-auto mt-10 font-light leading-relaxed"
           >
-            Agencies bury pricing behind discovery calls because the number is scary. Ours isn't, so here it is.
+            Every business is different, so the number should be too. Tell us about yours on a free strategy call and we'll quote it straight.
           </motion.p>
         </div>
 
@@ -88,11 +84,7 @@ export const Pricing = () => {
               }`}>
                 {plan.badge}
               </span>
-              <h3 className="text-3xl font-serif text-white mb-6">{plan.name}</h3>
-              <div className="flex items-end gap-3 mb-3">
-                <span className="text-6xl md:text-7xl font-serif font-black text-white leading-none">{plan.price}</span>
-                <span className="text-noble-gold text-xl font-serif italic mb-1">{plan.unit}</span>
-              </div>
+              <h3 className="text-3xl font-serif text-white mb-3">{plan.name}</h3>
               <p className="text-gray-400 text-lg mb-10 font-light">{plan.tagline}</p>
               <ul className="space-y-4 mb-10 flex-grow">
                 {plan.features.map((feature) => (
@@ -103,7 +95,7 @@ export const Pricing = () => {
                 ))}
               </ul>
               <a
-                href="#contact"
+                href="/contact"
                 data-track="cta"
                 className={`w-full py-5 rounded-2xl font-bold text-lg text-center transition-all ${
                   plan.popular

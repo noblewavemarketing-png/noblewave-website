@@ -183,7 +183,7 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
-            AI SEO • Websites • Content • Lead Generation • GTA
+            AI SEO • Content • Websites • Infrastructure • Leads • GTA
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl text-white font-serif leading-[0.95] mb-8">
             Your Complete <br />

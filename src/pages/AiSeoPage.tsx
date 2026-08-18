@@ -45,7 +45,7 @@ export default function AiSeoPage() {
       <PageHeader
         eyebrow="AI SEO"
         title={<>Search Engines. <span className="italic text-noble-gold">And AI Engines.</span></>}
-        subtitle="NobleWave manages your SEO strategy end to end, using our Uplift AI system to research, create, optimize, publish, and measure the work continuously — so your search presence is never sitting idle between check-ins."
+        subtitle="NobleWave manages your SEO strategy end to end — researching, creating, optimizing, publishing, and measuring the work continuously, so your search presence is never sitting idle between check-ins."
         primaryCta={{ label: "Get a Free Strategy Call", href: "/contact" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />

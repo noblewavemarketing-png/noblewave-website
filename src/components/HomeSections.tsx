@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import {
-  Search, Globe, PenTool, MapPin, Video, TrendingUp,
+  Search, Globe, PenTool, MapPin, Video, TrendingUp, Cable,
   Compass, Hammer, Cog, LineChart,
   EyeOff, MousePointerClick, CalendarX, Bot, Unplug, PhoneMissed,
   ArrowRight, Check,
@@ -54,8 +54,9 @@ export const Problems = () => (
 const overviewServices = [
   { icon: <Search size={32} />, title: "AI SEO", description: "Managed search optimization — technical fixes, content strategy, and reporting, without you needing to learn SEO.", href: "/ai-seo" },
   { icon: <Globe size={32} />, title: "Websites", description: "Conversion-focused sites built to turn visitors into calls, with local SEO built in from the start.", href: "/websites" },
-  { icon: <PenTool size={32} />, title: "Automated Content", description: "Blog posts, service pages, and city pages — researched, written, and published on a schedule.", href: "/services#ai-content" },
+  { icon: <PenTool size={32} />, title: "AI Content Creation", description: "Blog posts, service pages, and city pages — researched, written, and published on a schedule.", href: "/services#ai-content" },
   { icon: <MapPin size={32} />, title: "Local SEO", description: "Google Business Profile management, review replies, and the local signals that get you found nearby.", href: "/services#local-seo" },
+  { icon: <Cable size={32} />, title: "Technical Infrastructure", description: "Forms wired to your CRM, tracking set up correctly, tools connected — so nothing quietly falls through the cracks.", href: "/services#tech-infrastructure" },
   { icon: <Video size={32} />, title: "AI Video & Social Media", description: "Promotional and short-form video with AI voiceovers, plus a content calendar kept full automatically.", href: "/services#ai-video" },
   { icon: <TrendingUp size={32} />, title: "Lead Generation", description: "Managed paid campaigns delivering qualified, exclusive leads straight to your phone.", href: "/lead-generation" },
 ];
@@ -66,13 +67,13 @@ export const ServicesOverview = () => (
       <div className="text-center mb-20">
         <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What We Do</span>
         <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
-          One System. <span className="italic text-noble-gold">Six Working Parts.</span>
+          One System. <span className="italic text-noble-gold">Seven Working Parts.</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed">
           Everything your business needs to get found, build trust, and generate leads — powered by AI and managed for you.
         </p>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {overviewServices.map((s, i) => (
           <motion.a
             key={s.title}
@@ -191,7 +192,7 @@ export const AiSeoSpotlight = () => (
   <Spotlight
     eyebrow="AI SEO"
     title={<>The Strategy Is <span className="italic text-noble-gold">Ours.</span> The Heavy Lifting Is AI's.</>}
-    description="NobleWave manages your SEO strategy end to end. Our technology — built on our Uplift AI system — helps research keywords, draft content, apply technical fixes, and track results, so the work happens continuously instead of once a quarter."
+    description="NobleWave manages your SEO strategy end to end — research, content, technical fixes, and tracking, handled continuously by our team instead of once a quarter."
     points={[
       "Full SEO and GEO website audit",
       "Monthly content strategy, written and published",

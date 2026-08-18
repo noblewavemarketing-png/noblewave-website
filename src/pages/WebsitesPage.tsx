@@ -8,8 +8,8 @@ export default function WebsitesPage() {
       <PageHeader
         eyebrow="Websites"
         title={<>A Website That <span className="italic text-noble-gold">Works While You Do.</span></>}
-        subtitle="Fully built, SEO-optimized, and connected to everything else NobleWave manages for you — one flat price, delivered fast."
-        primaryCta={{ label: "Get Your Website Built — $999", href: "/pricing" }}
+        subtitle="Fully built, SEO-optimized, and connected to everything else NobleWave manages for you — delivered fast."
+        primaryCta={{ label: "Get Your Website Built", href: "/contact" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
       <Websites />

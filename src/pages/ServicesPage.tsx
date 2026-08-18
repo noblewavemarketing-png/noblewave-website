@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Check, ArrowRight, Search, PenTool, MapPin, Sparkles, Globe, Video, Share2, TrendingUp } from "lucide-react";
+import { Check, ArrowRight, Search, PenTool, MapPin, Sparkles, Globe, Cable, Video, Share2, TrendingUp } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { PageHeader } from "../components/PageHeader";
 
@@ -21,7 +21,7 @@ const services: Service[] = [
     icon: <Search size={32} />,
     title: "Fully Managed AI SEO",
     problem: "You know you need SEO, but you don't have time to research keywords, write content, and fix technical issues every month — and hiring that out is usually a black box you pay for and never understand.",
-    provides: "NobleWave manages your SEO strategy end to end. You're onboarded into our managed AI SEO system, powered by our Uplift AI technology — the tool our team uses to research, draft, optimize, and track your SEO work, not a separate product you manage yourself.",
+    provides: "NobleWave manages your SEO strategy end to end. You're onboarded into our managed AI SEO system — we handle the research, drafting, optimization, and tracking, so it's never a separate product you have to manage yourself.",
     included: [
       "SEO and GEO website audits",
       "Keyword and competitor research",
@@ -124,6 +124,24 @@ const services: Service[] = [
     benefit: "A site that does the job a website is supposed to do: turn visitors into customers.",
     ctaLabel: "See the Full Websites Page",
     ctaHref: "/websites",
+  },
+  {
+    id: "tech-infrastructure",
+    icon: <Cable size={32} />,
+    title: "Technical Infrastructure & Integrations",
+    problem: "A lead fills out a form and it sits in an inbox nobody checks. A booking gets made and nothing tracks it. Your website, your CRM, and your ads don't talk to each other, so nothing adds up to a system.",
+    provides: "We wire the parts together — forms connected to your CRM or inbox, tracking set up correctly, domain and email configured properly — so a lead or a booking actually goes somewhere instead of disappearing.",
+    included: [
+      "Forms connected to your CRM or inbox",
+      "Analytics and conversion tracking, set up correctly",
+      "Domain, email, and hosting configuration",
+      "Booking and lead-capture wired end to end",
+      "Tools connected instead of running in isolation",
+      "Ongoing monitoring, so a broken form gets caught before you lose leads to it",
+    ],
+    benefit: "Every lead and every booking lands somewhere real — nothing quietly falls through the cracks.",
+    ctaLabel: "Ask About Your Setup",
+    ctaHref: "/contact",
   },
   {
     id: "ai-video",

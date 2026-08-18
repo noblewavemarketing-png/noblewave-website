@@ -10,14 +10,20 @@ business owner before pushing, same as any other outward-facing change.
 Not a broad "do everything" marketing agency. The live positioning is narrow
 and deliberate:
 
-- **Lead Generation — $400/mo flat**, exclusive leads (never shared), capped
-  at 20 partner spots total, no contracts. Ads run by NobleWave, leads
+- **Lead Generation — $400/mo flat**, exclusive leads (never shared), one
+  partner per trade per city (not a fixed national cap — the exclusivity is
+  local, the reach is national), no contracts. Ads run by NobleWave, leads
   qualified before delivery, sent by text/email in real time.
 - **Website Creation — $999 one-time**, conversion-focused, local SEO built
   in, pairs with lead gen.
-- Niche: established **home renovation and HVAC companies in the GTA** only.
-- Trust angle: "Built by a Contractor, Not an Agency" — the owner runs a home
-  services company themselves.
+- Niche: established **home renovation and HVAC companies, anywhere in
+  Canada** — not GTA-restricted. (It briefly was GTA-only; corrected Aug
+  2026. Don't reintroduce a GTA/city-list scope claim without checking with
+  the owner first — this has already flipped once.)
+- The business itself is **based in Mississauga, Ontario** — that's a true
+  fact about the company's location and the owner's personal home-services
+  backstory ("Built by a Contractor, Not an Agency"), kept as-is. It is not
+  a claim about who they'll serve.
 - Contact: noblewavemarketing@gmail.com · 647-673-5748 · Mississauga, ON.
 
 See `src/components/Pricing.tsx`, `Hero.tsx`, `Sections.tsx` for the current
@@ -64,5 +70,10 @@ with the owner before assuming it belongs here.
   creative, digital receptionist) are *not* live products yet — don't add
   them to the site copy without the owner explicitly signing off on scope
   and pricing first.
+- City landing pages (`/mississauga`, pattern in `src/components/CityIntro.tsx`
+  + `src/pages/`) are a real product now — one page per Canadian city as
+  partners sign up there, not limited to a fixed GTA list. Give each city its
+  own genuinely distinct paragraph; don't find-replace the same copy across
+  cities (duplicate-content/doorway-page risk).
 - `git pull --ff-only` before starting each session — this repo may be
   edited from more than one place.

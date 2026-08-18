@@ -141,8 +141,8 @@ export const About = () => {
               <p className="text-lg text-gray-500 font-light">One lead, one partner. We never sell the same homeowner to two companies.</p>
             </div>
             <div>
-              <h4 className="font-serif text-3xl text-white mb-4">Capped at 20</h4>
-              <p className="text-lg text-gray-500 font-light">Twenty partner companies, maximum — so every partner gets real volume in their trade and area.</p>
+              <h4 className="font-serif text-3xl text-white mb-4">One Per City</h4>
+              <p className="text-lg text-gray-500 font-light">One company per trade, per city — so every partner gets real volume, no matter how many cities we're in.</p>
             </div>
           </div>
         </motion.div>

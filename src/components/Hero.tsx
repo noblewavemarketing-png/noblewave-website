@@ -176,14 +176,14 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
-            Lead Generation • Renovation & HVAC • GTA
+            Lead Generation • Renovation & HVAC • Canada-Wide
           </span>
           <h1 className="text-6xl md:text-8xl lg:text-9xl text-white font-serif leading-[0.9] mb-8">
             Booked Jobs. <br />
             <span className="italic text-noble-gold">Not Clicks.</span>
           </h1>
           <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-            Qualified, exclusive homeowner leads sent straight to your phone — for established home renovation and HVAC companies across the GTA. One flat rate. No contracts. No shared leads.
+            Qualified, exclusive homeowner leads sent straight to your phone — for established home renovation and HVAC companies across Canada. One flat rate. No contracts. No shared leads.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.a

@@ -16,7 +16,7 @@ export const Footer = () => {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-8">
-              Qualified, exclusive lead generation and conversion-focused websites for home renovation and HVAC companies across the Greater Toronto Area.
+              Qualified, exclusive lead generation and conversion-focused websites for home renovation and HVAC companies across Canada. Based in Mississauga, Ontario.
             </p>
             <div className="flex gap-4">
               <a href="#" aria-label="NobleWave on Instagram" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-noble-gold hover:text-noble-black transition-all">
@@ -55,10 +55,9 @@ export const Footer = () => {
           <div>
             <h3 className="font-serif text-lg mb-6 text-noble-gold">Service Area</h3>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li>Mississauga · Brampton</li>
-              <li>Toronto · Etobicoke</li>
-              <li>Oakville · Milton</li>
-              <li>Vaughan & the GTA</li>
+              <li>Canada-wide</li>
+              <li>One partner per trade, per city</li>
+              <li>Based in Mississauga, ON</li>
             </ul>
           </div>
         </div>

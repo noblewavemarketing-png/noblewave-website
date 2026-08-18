@@ -512,7 +512,7 @@ export const Contact = () => {
                   </h4>
 
                   <p className="text-gray-500 text-lg">
-                    Mississauga, Ontario — Serving the GTA
+                    Mississauga, Ontario — Serving All of Canada
                   </p>
                 </div>
               </div>

@@ -6,19 +6,19 @@ const services = [
     title: "We Run the Ads",
     description: "We build and manage paid campaigns targeting homeowners in your service area who are actively looking for renovation or HVAC work. You never touch Ads Manager.",
     icon: <Megaphone className="w-10 h-10" />,
-    link: "#contact"
+    link: "/contact"
   },
   {
     title: "We Qualify Every Lead",
     description: "Every homeowner answers qualifying questions before they reach you — project type, timeline, ownership, and readiness. Tire-kickers get filtered out, not forwarded.",
     icon: <Filter className="w-10 h-10" />,
-    link: "#contact"
+    link: "/contact"
   },
   {
     title: "You Get It Instantly. Exclusively.",
     description: "Qualified leads land on your phone by text and email in real time — name, number, project, area. Yours alone. We never sell the same homeowner twice.",
     icon: <Zap className="w-10 h-10" />,
-    link: "#contact"
+    link: "/contact"
   },
 ];
 
@@ -198,7 +198,7 @@ export const Websites = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-gray-400 text-xl max-w-3xl mx-auto mt-10 font-light leading-relaxed"
           >
-            Leads check you out before they call back. If your website looks dated — or doesn't exist — you lose jobs you never knew you were up for. We build professional, conversion-focused websites for renovation and HVAC companies, delivered fast.
+            Leads check you out before they call back. If your website looks dated — or doesn't exist — you lose customers you never knew you were up for. We build professional, conversion-focused websites for local businesses, delivered fast.
           </motion.p>
         </div>
 
@@ -219,7 +219,7 @@ export const Websites = () => {
 
         <div className="text-center mt-16">
           <motion.a
-            href="#contact"
+            href="/contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             data-track="cta"

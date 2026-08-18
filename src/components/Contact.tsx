@@ -14,9 +14,15 @@ import { trackEvent } from "../lib/analytics";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojrlvga";
 
 const SERVICES = [
-  "Lead Generation ($400/mo)",
-  "Website Creation ($999 one-time)",
-  "Both — Leads + Website",
+  "AI SEO",
+  "SEO-Optimized Website",
+  "Local SEO and Google Business",
+  "AI Content and Auto-Publishing",
+  "AI Video Generation",
+  "Social Media Automation",
+  "Lead Generation",
+  "Complete AI Growth System",
+  "Not Sure — Recommend a Plan",
 ];
 
 type FormData = {
@@ -512,7 +518,7 @@ export const Contact = () => {
                   </h4>
 
                   <p className="text-gray-500 text-lg">
-                    Mississauga, Ontario — Serving All of Canada
+                    Mississauga, Ontario — Serving the Greater Toronto Area
                   </p>
                 </div>
               </div>
@@ -543,13 +549,13 @@ export const CTA = () => {
         <h2 className="text-4xl md:text-6xl font-serif text-white mb-8 leading-tight">
           Ready for a pipeline that actually shows up? <br />
           <span className="italic text-noble-gold">
-            20 spots. First come, first served.
+            One partner per trade, per city.
           </span>
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a
-            href="#contact"
+            href="/contact"
             data-track="cta"
             className="bg-noble-gold text-noble-black px-10 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-white transition-all"
           >
@@ -557,7 +563,7 @@ export const CTA = () => {
           </a>
 
           <a
-            href="#pricing"
+            href="/pricing"
             className="border border-white/30 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
           >
             See the Flat Rate

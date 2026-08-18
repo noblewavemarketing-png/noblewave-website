@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense, lazy } from "react";
 
 const Globe3D = lazy(() => import("./Globe3D"));
 
-export const Header = () => {
+export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -15,12 +15,14 @@ export const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "How It Works", href: "#services" },
-    { name: "Websites", href: "#websites" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: "AI SEO", href: "/ai-seo" },
+    { name: "Websites", href: "/websites" },
+    { name: "Lead Generation", href: "/lead-generation" },
+    { name: "About", href: "/about" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -29,6 +31,11 @@ export const Header = () => {
         scrolled ? "bg-noble-black/90 backdrop-blur-md py-4 border-b border-white/10 shadow-2xl" : "bg-transparent py-6"
       }`}
     >
+      {withAnnouncement && (
+        <div className="bg-noble-gold text-noble-black text-center text-[11px] md:text-sm font-bold tracking-wide py-2 px-6 -mt-4 md:-mt-6 mb-4 md:mb-6">
+          AI-powered marketing for local businesses across the GTA.
+        </div>
+      )}
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -76,7 +83,7 @@ export const Header = () => {
             <span className="text-2xl font-serif font-black tracking-tighter text-white">
               NOBLE<span className="text-noble-gold">WAVE</span>
             </span>
-            <span className="text-[9px] uppercase tracking-[0.4em] text-noble-gold font-black mt-1">Lead Generation</span>
+            <span className="text-[9px] uppercase tracking-[0.4em] text-noble-gold font-black mt-1">AI Growth System</span>
           </div>
         </motion.div>
 
@@ -92,13 +99,13 @@ export const Header = () => {
             </a>
           ))}
           <motion.a
-            href="#contact"
+            href="/contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             data-track="cta"
             className="bg-noble-gold text-noble-black px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-white transition-all"
           >
-            Claim a Spot
+            Get a Free Strategy Call
           </motion.a>
         </nav>
 
@@ -133,8 +140,8 @@ export const Header = () => {
               {link.name}
             </a>
           ))}
-          <a href="#contact" data-track="cta" onClick={() => setIsOpen(false)} className="bg-noble-gold text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center">
-            Claim a Spot
+          <a href="/contact" data-track="cta" onClick={() => setIsOpen(false)} className="bg-noble-gold text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center">
+            Get a Free Strategy Call
           </a>
         </motion.nav>
       )}
@@ -158,7 +165,7 @@ export const Hero = () => {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-noble-black">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-noble-black pt-48 pb-20 md:pt-36">
       {/* 3D Globe Background — mounted after idle so hero text paints first */}
       {showGlobe && <Suspense fallback={null}><Globe3D /></Suspense>}
 
@@ -176,32 +183,35 @@ export const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
-            Lead Generation • Renovation & HVAC • Canada-Wide
+            AI SEO • Websites • Content • Lead Generation • GTA
           </span>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl text-white font-serif leading-[0.9] mb-8">
-            Booked Jobs. <br />
-            <span className="italic text-noble-gold">Not Clicks.</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl text-white font-serif leading-[0.95] mb-8">
+            Your Complete <br />
+            <span className="italic text-noble-gold">AI-Powered Growth System.</span>
           </h1>
-          <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-            Qualified, exclusive homeowner leads sent straight to your phone — for established home renovation and HVAC companies across Canada. One flat rate. No contracts. No shared leads.
+          <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-6 font-light leading-relaxed">
+            NobleWave combines intelligent SEO, conversion-focused websites, automated content, AI video, and lead generation to help local businesses get found and win more customers.
+          </p>
+          <p className="text-noble-gold text-sm md:text-base mb-12 font-bold uppercase tracking-wide">
+            Strategy, setup, automation, and ongoing management — all handled for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.a
-              href="#contact"
+              href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               data-track="cta"
               className="bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)]"
             >
-              Claim Your Spot
+              Get a Free Strategy Call
             </motion.a>
             <motion.a
-              href="#pricing"
+              href="#services-overview"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="border border-white/30 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
             >
-              See the Flat Rate
+              Explore Our Services
             </motion.a>
           </div>
         </motion.div>

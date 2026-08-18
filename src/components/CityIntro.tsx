@@ -39,7 +39,7 @@ export const CityIntro = ({ city, eyebrow, paragraph }: CityIntroProps) => {
             <span className="italic text-noble-gold">Not Clicks.</span>
           </h1>
           <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-8 font-light leading-relaxed">
-            NobleWave is based in Mississauga, Ontario, serving renovation and HVAC companies across Canada — qualified, exclusive homeowner leads sent straight to your phone for companies serving {city}. One flat rate. No contracts. No shared leads.
+            NobleWave is based in Mississauga, Ontario, serving local businesses across the GTA — qualified, exclusive homeowner leads sent straight to your phone for companies serving {city}. One flat rate. No contracts. No shared leads.
           </p>
           <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto mb-12 font-light leading-relaxed">
             {paragraph}

@@ -4,10 +4,17 @@
  */
 
 import { Header, Hero } from "./components/Hero";
-import { About, Services, Websites } from "./components/Sections";
-import { Fit } from "./components/Portfolio";
-import { Pricing } from "./components/Pricing";
-import { Contact, CTA } from "./components/Contact";
+import {
+  Problems,
+  ServicesOverview,
+  HowItWorks,
+  AiSeoSpotlight,
+  WebsiteSpotlight,
+  ContentVideoSpotlight,
+  LeadGenSpotlight,
+  WhyNobleWave,
+  FinalCTA,
+} from "./components/HomeSections";
 import { Footer } from "./components/Footer";
 import { useEffect } from "react";
 import { motion, useScroll, useSpring, MotionConfig } from "motion/react";
@@ -36,16 +43,18 @@ export default function App() {
         style={{ scaleX }}
       />
 
-      <Header />
+      <Header withAnnouncement />
       <main id="main">
         <Hero />
-        <About />
-        <Services />
-        <Fit />
-        <Websites />
-        <Pricing />
-        <Contact />
-        <CTA />
+        <Problems />
+        <ServicesOverview />
+        <HowItWorks />
+        <AiSeoSpotlight />
+        <WebsiteSpotlight />
+        <ContentVideoSpotlight />
+        <LeadGenSpotlight />
+        <WhyNobleWave />
+        <FinalCTA />
       </main>
       <Footer />
       <Analytics />

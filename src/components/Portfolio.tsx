@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Check, X } from "lucide-react";
 
 const fits = [
-  "Established renovation or HVAC companies anywhere in Canada",
+  "Established renovation, HVAC, or home-service companies in the GTA",
   "A crew with capacity to take on more jobs",
   "Someone who answers the phone the same day a lead comes in",
   "Owners who want a predictable pipeline, not marketing promises",

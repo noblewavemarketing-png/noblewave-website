@@ -16,7 +16,7 @@ export const Footer = () => {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-8">
-              Qualified, exclusive lead generation and conversion-focused websites for home renovation and HVAC companies across Canada. Based in Mississauga, Ontario.
+              AI-powered SEO, websites, content, and lead generation for local businesses across the Greater Toronto Area — managed for you, not handed to you as a dashboard. Based in Mississauga, Ontario.
             </p>
             <div className="flex gap-4">
               <a href="#" aria-label="NobleWave on Instagram" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-noble-gold hover:text-noble-black transition-all">
@@ -32,38 +32,42 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-serif text-lg mb-6 text-noble-gold">Quick Links</h3>
+            <h3 className="font-serif text-lg mb-6 text-noble-gold">Services</h3>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><a href="#home" className="hover:text-noble-gold transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-noble-gold transition-colors">About</a></li>
-              <li><a href="#services" className="hover:text-noble-gold transition-colors">How It Works</a></li>
-              <li><a href="#websites" className="hover:text-noble-gold transition-colors">Websites</a></li>
-              <li><a href="#pricing" className="hover:text-noble-gold transition-colors">Pricing</a></li>
-              <li><a href="#contact" className="hover:text-noble-gold transition-colors">Claim a Spot</a></li>
+              <li><a href="/ai-seo" className="hover:text-noble-gold transition-colors">AI SEO</a></li>
+              <li><a href="/websites" className="hover:text-noble-gold transition-colors">Websites</a></li>
+              <li><a href="/services#local-seo" className="hover:text-noble-gold transition-colors">Local SEO &amp; Google Business</a></li>
+              <li><a href="/services#ai-content" className="hover:text-noble-gold transition-colors">AI Content &amp; Auto-Publishing</a></li>
+              <li><a href="/services#ai-video" className="hover:text-noble-gold transition-colors">AI Video &amp; Social</a></li>
+              <li><a href="/lead-generation" className="hover:text-noble-gold transition-colors">Lead Generation</a></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-serif text-lg mb-6 text-noble-gold">Contact</h3>
+            <h3 className="font-serif text-lg mb-6 text-noble-gold">Company</h3>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li>Mississauga, Ontario</li>
+              <li><a href="/about" className="hover:text-noble-gold transition-colors">About</a></li>
+              <li><a href="/pricing" className="hover:text-noble-gold transition-colors">Pricing</a></li>
+              <li><a href="/contact" className="hover:text-noble-gold transition-colors">Get a Free Strategy Call</a></li>
               <li><a href="tel:6476735748" className="hover:text-noble-gold transition-colors">647-673-5748</a></li>
               <li><a href="mailto:noblewavemarketing@gmail.com" className="hover:text-noble-gold transition-colors">noblewavemarketing@gmail.com</a></li>
+              <li><a href="/privacy" className="hover:text-noble-gold transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-serif text-lg mb-6 text-noble-gold">Service Area</h3>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li>Canada-wide</li>
-              <li>One partner per trade, per city</li>
-              <li>Based in Mississauga, ON</li>
+              <li>Mississauga · Brampton</li>
+              <li>Toronto · Etobicoke</li>
+              <li>Oakville · Milton</li>
+              <li>Vaughan &amp; the GTA</li>
             </ul>
           </div>
         </div>
-        
+
         <div className="pt-12 border-t border-white/10 text-center text-gray-600 text-xs">
-          <p>&copy; {new Date().getFullYear()} NobleWave Marketing. Lead generation for home renovation &amp; HVAC companies. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NobleWave Marketing. AI-powered SEO, websites &amp; lead generation for local businesses across the GTA. All rights reserved.</p>
         </div>
       </div>
     </footer>

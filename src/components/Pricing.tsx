@@ -7,7 +7,7 @@ const plans = [
     price: "$400",
     unit: "/month",
     tagline: "Flat. Month to month. Cancel anytime.",
-    badge: "One Spot Per Trade, Per City — Canada-Wide",
+    badge: "One Spot Per Trade, Per City — GTA",
     popular: true,
     features: [
       "Exclusive qualified leads — never shared with another company",

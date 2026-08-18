@@ -13,6 +13,10 @@ export default defineConfig(() => {
     },
     build: {
       rollupOptions: {
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          mississauga: path.resolve(__dirname, 'mississauga.html'),
+        },
         output: {
           manualChunks: {
             'vendor-react': ['react', 'react-dom', 'motion'],

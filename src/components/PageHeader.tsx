@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import type { ReactNode } from "react";
 
 interface PageHeaderProps {
@@ -21,36 +20,17 @@ export const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta 
         <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-noble-gold/10 blur-[150px]" />
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block"
-        >
+        <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
           {eyebrow}
-        </motion.span>
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-5xl md:text-7xl font-serif leading-[1.05] mb-8 text-white"
-        >
+        </span>
+        <h1 className="text-5xl md:text-7xl font-serif leading-[1.05] mb-8 text-white">
           {title}
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed"
-        >
+        </h1>
+        <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
           {subtitle}
-        </motion.p>
+        </p>
         {(primaryCta || secondaryCta) && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center mt-12"
-          >
+          <div className="flex flex-col sm:flex-row gap-6 justify-center mt-12">
             {primaryCta && (
               <a
                 href={primaryCta.href}
@@ -68,7 +48,7 @@ export const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta 
                 {secondaryCta.label}
               </a>
             )}
-          </motion.div>
+          </div>
         )}
       </div>
     </section>

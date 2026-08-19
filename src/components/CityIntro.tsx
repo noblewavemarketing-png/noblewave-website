@@ -25,12 +25,7 @@ export const CityIntro = ({ city, eyebrow, paragraph }: CityIntroProps) => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        <motion.div
-          style={{ y: y2, opacity }}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        <motion.div style={{ y: y2, opacity }}>
           <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
             {eyebrow}
           </span>

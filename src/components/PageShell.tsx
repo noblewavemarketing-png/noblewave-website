@@ -9,8 +9,8 @@ import { initAnalytics } from "../lib/analytics";
 /**
  * Shared chrome for every non-homepage page: skip link, scroll-progress bar,
  * Header, Footer, analytics. The homepage (App.tsx) still assembles its own
- * chrome directly since its Hero section needs the 3D globe + scroll effects
- * the Header alone doesn't need — this is for every page after that.
+ * chrome directly since its Hero section needs its own scroll-linked parallax
+ * effects the Header alone doesn't need — this is for every page after that.
  */
 export const PageShell = ({ children }: { children: ReactNode }) => {
   useEffect(() => {

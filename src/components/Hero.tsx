@@ -36,44 +36,34 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
         </div>
       )}
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="flex items-center gap-4 group cursor-pointer"
-        >
+        <div className="flex items-center gap-4 group cursor-pointer">
           <div className="relative w-14 h-14">
-            {/* Creative Abstract Wave Logo */}
+            {/* Creative Abstract Wave Logo — renders fully drawn immediately;
+                this used to draw itself in over 1.5s+, which replayed in
+                full on every page navigation (this is a multi-page site,
+                not an SPA — every nav is a fresh mount). */}
             <svg viewBox="0 0 100 100" className="w-full h-full">
-              <motion.path
+              <path
                 d="M20 50 Q35 20 50 50 T80 50"
                 fill="none"
                 stroke="#D4AF37"
                 strokeWidth="8"
                 strokeLinecap="round"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
               />
-              <motion.path
+              <path
                 d="M20 65 Q35 35 50 65 T80 65"
                 fill="none"
                 stroke="#D4AF37"
                 strokeWidth="4"
                 strokeLinecap="round"
                 opacity="0.4"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 1.5, delay: 0.2, ease: "easeInOut" }}
               />
-              <motion.path
+              <path
                 d="M35 35 L50 65 L65 35"
                 fill="none"
                 stroke="white"
                 strokeWidth="3"
                 strokeLinecap="round"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
               />
               <circle cx="50" cy="50" r="45" fill="none" stroke="#D4AF37" strokeWidth="1" strokeDasharray="4 4" opacity="0.2" />
             </svg>
@@ -84,7 +74,7 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
             </span>
             <span className="text-[9px] uppercase tracking-[0.4em] text-noble-gold font-black mt-1">AI Growth System</span>
           </div>
-        </motion.div>
+        </div>
 
         {/* Desktop Nav */}
         <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-8">
@@ -165,12 +155,7 @@ export const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        <motion.div
-          style={{ y: y2, opacity }}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+        <motion.div style={{ y: y2, opacity }}>
           <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
             AI SEO • Content • Websites • Infrastructure • Leads • GTA
           </span>

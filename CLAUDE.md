@@ -145,3 +145,18 @@ Confirm with the owner before adding it.
   breaks the whole build, not just that page.
 - Every `.html` entry needs its own unique `<title>`/meta description — don't
   copy one page's `<head>` into another without rewriting these.
+- **This is a true multi-page site (Vite MPA), not an SPA.** Every nav-link
+  click is a full hard page reload — no client router, no persisted React
+  state across pages. That makes above-the-fold entrance animations far
+  more costly here than on a typical SPA: `initial={{opacity:0}}` (or an
+  SVG `pathLength` draw-in) on anything visible without scrolling — the
+  Header logo, `Hero`, `PageHeader`, `CityIntro` — replays in full on
+  *every single navigation*, not just once. This was a real, reported bug
+  (Aug 2026: "moving from page to page is slow") — it wasn't network speed,
+  it was the UI hiding already-loaded content behind a fade/draw for the
+  first 0.5–1.5s of every page. Fixed by removing mount-time entrance
+  animation from all above-the-fold content; only `whileInView`
+  (scroll-triggered, below-the-fold) animation remains. **Don't add
+  `initial`/`animate` entrance fades back to anything in the first
+  viewport** — scroll-linked (`useScroll`/`useTransform` via the `style`
+  prop) is fine, mount-time fade-in on first-viewport content is not.

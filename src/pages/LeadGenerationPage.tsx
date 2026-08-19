@@ -18,7 +18,7 @@ export default function LeadGenerationPage() {
       <Services />
       <Fit />
 
-      <section className="py-24 bg-noble-dark">
+      <section className="py-24 md:py-28 bg-noble-dark">
         <div className="max-w-3xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -439,7 +439,7 @@ const ContactForm = () => {
 
 export const Contact = () => {
   return (
-    <section id="contact" className="py-24 bg-noble-black">
+    <section id="contact" className="py-24 md:py-28 bg-noble-black">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20">
           <motion.div
@@ -540,7 +540,7 @@ export const Contact = () => {
 
 export const CTA = () => {
   return (
-    <section className="py-24 noble-gradient relative overflow-hidden">
+    <section className="py-24 md:py-28 noble-gradient relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-noble-gold)_0%,_transparent_70%)]" />
       </div>

@@ -9,7 +9,7 @@ export default function PrivacyPage() {
         title="Privacy Policy"
         subtitle="Last updated August 2026. This page explains what information NobleWave Marketing collects and how it's used."
       />
-      <section className="py-20 bg-noble-black">
+      <section className="py-24 md:py-28 bg-noble-black">
         <div className="max-w-3xl mx-auto px-6 text-gray-400 font-light leading-relaxed space-y-10">
           <div>
             <h2 className="text-2xl font-serif text-white mb-4">Information we collect</h2>

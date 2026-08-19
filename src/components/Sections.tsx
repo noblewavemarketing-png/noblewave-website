@@ -24,7 +24,7 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="services" className="py-32 bg-noble-dark relative overflow-hidden">
+    <section id="services" className="py-24 md:py-28 bg-noble-dark relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-noble-gold/10 blur-[120px] rounded-full" />
@@ -95,7 +95,7 @@ export const Services = () => {
 
 export const About = () => {
   return (
-    <section id="about" className="py-32 relative overflow-hidden bg-noble-black">
+    <section id="about" className="py-24 md:py-28 relative overflow-hidden bg-noble-black">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-24 items-center">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -172,7 +172,7 @@ const webFeatures = [
 
 export const Websites = () => {
   return (
-    <section id="websites" className="py-32 bg-noble-black relative overflow-hidden">
+    <section id="websites" className="py-24 md:py-28 bg-noble-black relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
         <div className="absolute top-1/3 -right-20 w-96 h-96 bg-noble-gold/10 blur-[120px] rounded-full" />
       </div>

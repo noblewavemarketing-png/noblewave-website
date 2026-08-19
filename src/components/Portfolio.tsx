@@ -17,7 +17,7 @@ const notFits = [
 
 export const Fit = () => {
   return (
-    <section className="py-24 bg-noble-black overflow-hidden">
+    <section className="py-24 md:py-28 bg-noble-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
           <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Who This Is For</span>

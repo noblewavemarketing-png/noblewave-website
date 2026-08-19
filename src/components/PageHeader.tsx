@@ -15,7 +15,7 @@ interface PageHeaderProps {
  */
 export const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta }: PageHeaderProps) => {
   return (
-    <section className="relative pt-44 pb-20 md:pt-52 md:pb-28 bg-noble-black overflow-hidden">
+    <section className="relative pt-44 pb-4 md:pt-52 md:pb-8 bg-noble-black overflow-hidden">
       <div className="absolute inset-0 opacity-30" aria-hidden="true">
         <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-noble-gold/10 blur-[150px]" />
       </div>

@@ -38,7 +38,7 @@ const plans = [
 
 export const Pricing = () => {
   return (
-    <section id="pricing" className="py-32 bg-noble-black relative overflow-hidden">
+    <section id="pricing" className="py-24 md:py-28 bg-noble-black relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-24">
           <motion.span

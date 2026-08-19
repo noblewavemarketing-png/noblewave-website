@@ -50,7 +50,7 @@ export default function AiSeoPage() {
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
 
-      <section className="py-24 bg-noble-black">
+      <section className="py-24 md:py-28 bg-noble-black">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
@@ -76,7 +76,7 @@ export default function AiSeoPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-noble-dark">
+      <section className="py-24 md:py-28 bg-noble-dark">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-10 md:p-14 bg-noble-black border border-white/5 rounded-[2.5rem]">
             <h2 className="text-3xl font-serif text-white mb-8">Also Included</h2>
@@ -97,7 +97,7 @@ export default function AiSeoPage() {
         </div>
       </section>
 
-      <section className="py-24 noble-gradient">
+      <section className="py-24 md:py-28 noble-gradient">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
             Ready to See Where You <span className="italic text-noble-gold">Actually Stand?</span>

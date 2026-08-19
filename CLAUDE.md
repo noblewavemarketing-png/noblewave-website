@@ -160,3 +160,15 @@ Confirm with the owner before adding it.
   `initial`/`animate` entrance fades back to anything in the first
   viewport** — scroll-linked (`useScroll`/`useTransform` via the `style`
   prop) is fine, mount-time fade-in on first-viewport content is not.
+- **Standard section vertical rhythm is `py-24 md:py-28`.** Before Aug 2026
+  this was an inconsistent mix (`py-8`, `py-20`, `py-24`, `py-32` all used
+  for what should've been the same visual gap) — reported as "spacing is
+  inconsistent between pages." Use `py-24 md:py-28` for any new top-level
+  `<section>`, and keep `PageHeader`'s own bottom padding small (`pb-4
+  md:pb-8`) since it's always immediately followed by a section that
+  supplies its own top padding — don't let both sides pad the same gap.
+  (Homepage-only sections in `HomeSections.tsx` — `Problems`,
+  `ServicesOverview`, `HowItWorks`, spotlights, `WhyNobleWave`, `FinalCTA`
+  — are the one exception, left at their own `py-24`–`py-32` mix; the
+  homepage's rhythm wasn't part of the reported problem, don't change it
+  without a reason.)

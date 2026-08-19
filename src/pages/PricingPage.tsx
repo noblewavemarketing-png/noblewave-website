@@ -62,7 +62,7 @@ export default function PricingPage() {
         primaryCta={{ label: "Get a Free Strategy Call", href: "/contact" }}
       />
 
-      <section className="py-8 bg-noble-black relative overflow-hidden">
+      <section className="py-24 md:py-28 bg-noble-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-3 gap-8 items-stretch">
             {plans.map((plan, index) => (

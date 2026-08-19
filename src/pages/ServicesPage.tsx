@@ -206,7 +206,7 @@ const services: Service[] = [
 ];
 
 const ServiceBlock = ({ service, index }: { service: Service; index: number }) => (
-  <section id={service.id} className={`py-20 scroll-mt-24 ${index % 2 === 1 ? "bg-noble-dark" : "bg-noble-black"}`}>
+  <section id={service.id} className={`py-24 md:py-28 scroll-mt-24 ${index % 2 === 1 ? "bg-noble-dark" : "bg-noble-black"}`}>
     <div className="max-w-5xl mx-auto px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}

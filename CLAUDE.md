@@ -241,3 +241,21 @@ implicitly authorizes it.
   items that were wrapping to two lines at `gap-8`. If more/longer nav items
   get added later, re-check nav fit at 1440px and above before assuming it's
   fine.
+- **Google Fonts link uses the legacy `/css?family=...` API, not `/css2?`.**
+  This is deliberate and non-obvious: for variable-capable families (Inter,
+  Playfair Display), `/css2` serves ONE bundled file covering every script
+  (~230KB for Inter alone) to any modern browser, regardless of whether the
+  URL requests a weight range or a discrete list — the list-vs-range
+  formatting has **zero** effect on bytes served for `/css2`, despite
+  looking like it should. `/css` (legacy v1 API) instead splits by
+  `unicode-range` per script, so a browser only fetches the "latin" subset
+  it actually needs — same weights, ~123KB total instead of ~369KB (verified
+  Aug 2026: 48KB Inter + 39KB + 38KB Playfair, vs. 230KB + 73KB + 74KB
+  before). If you ever "simplify" this back to `/css2` because it looks more
+  modern, you will silently 3x the font payload — don't, unless you've
+  re-verified actual byte counts per family, not just eyeballed the URL.
+  The weight list (`Inter:300,400,500,700,900`) and italic set
+  (`Playfair+Display:...,400italic,500italic,700italic,900italic`) reflect
+  every `font-*` Tailwind class actually used in `src/` — re-grep
+  `font-(thin|extralight|light|normal|medium|semibold|bold|extrabold|black)`
+  before trimming or adding a weight to this list.

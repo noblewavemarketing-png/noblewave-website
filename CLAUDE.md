@@ -93,9 +93,14 @@ Give each city its own distinct paragraph — no find-replace duplicate content.
 
 ## Stack
 
-- Vite + React 19 + TypeScript + Tailwind 4, `three`/`@react-three/fiber` for
-  the homepage hero's 3D globe/orb visual (lazy-loaded, only pulled into the
-  homepage bundle — other pages don't pay for it).
+- Vite + React 19 + TypeScript + Tailwind 4. The hero's background glow is
+  pure CSS (`AmbientGlow.tsx` + `.ambient-orb`/`.ambient-stars` in
+  `index.css`) — it used to be a `three`/`@react-three/fiber` WebGL globe,
+  which was the #1 cause of a slow first load (~900KB/~245KB gzipped, on top
+  of everything else). Removed Aug 2026. **Do not reintroduce three.js or
+  any other heavy animation library for decorative/background visuals** —
+  if a future ask wants something fancier here, push back and reach for
+  CSS/SVG first; this is a marketing site where load speed is the product.
 - **Contact form submits via Formspree** (`FORMSPREE_ENDPOINT` in
   `Contact.tsx`), not the `api/contact.js` Resend route — that route exists
   in the repo but the form was switched to Formspree upstream at some point.

@@ -1,8 +1,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { Menu, X, ChevronRight } from "lucide-react";
-import { useState, useEffect, Suspense, lazy } from "react";
-
-const Globe3D = lazy(() => import("./Globe3D"));
+import { useState, useEffect } from "react";
+import { AmbientGlow } from "./AmbientGlow";
 
 export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -150,15 +149,6 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
 };
 
 export const Hero = () => {
-  const [showGlobe, setShowGlobe] = useState(false);
-  useEffect(() => {
-    const start = () => setShowGlobe(true);
-    if ("requestIdleCallback" in window) {
-      (window as any).requestIdleCallback(start, { timeout: 2000 });
-    } else {
-      setTimeout(start, 300);
-    }
-  }, []);
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
@@ -166,8 +156,7 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-noble-black pt-48 pb-20 md:pt-36">
-      {/* 3D Globe Background — mounted after idle so hero text paints first */}
-      {showGlobe && <Suspense fallback={null}><Globe3D /></Suspense>}
+      <AmbientGlow />
 
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-30">

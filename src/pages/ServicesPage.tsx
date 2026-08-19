@@ -264,7 +264,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title={<>Everything Your Business Needs to <span className="italic text-noble-gold">Get Found and Grow.</span></>}
-        subtitle="Eight connected services, each managed for you. Explore what's included in every one, and where to go for the full picture."
+        subtitle="Nine connected services, each managed for you. Explore what's included in every one, and where to go for the full picture."
         primaryCta={{ label: "Get a Free Strategy Call", href: "/contact" }}
       />
       {services.map((service, i) => (

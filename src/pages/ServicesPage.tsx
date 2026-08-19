@@ -264,12 +264,51 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title={<>Everything Your Business Needs to <span className="italic text-noble-gold">Get Found and Grow.</span></>}
-        subtitle="Nine connected services, each managed for you. Explore what's included in every one, and where to go for the full picture."
+        subtitle="Nine connected, fully managed services — plus a standalone AI Strategy Session if what you need is one clear decision, not an ongoing engagement."
         primaryCta={{ label: "Get a Free Strategy Call", href: "/contact" }}
       />
       {services.map((service, i) => (
         <ServiceBlock key={service.id} service={service} index={i} />
       ))}
+
+      {/* AI Strategy Session — a different kind of product (one paid session,
+          not an ongoing managed service), so it gets its own distinct
+          treatment here rather than folding into the ServiceBlock loop
+          above. Full detail lives at /ai-strategy-session. */}
+      <section className="py-24 md:py-28 bg-noble-black">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="p-10 md:p-16 bg-noble-dark border border-noble-gold/30 rounded-[3rem] shadow-[0_0_80px_rgba(212,175,55,0.1)]">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-8 inline-block bg-noble-gold text-noble-black">
+              One-Time Session — Not a Subscription
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
+              Need One Decision, Not a Retainer? <br />
+              <span className="italic text-noble-gold">Book an AI Strategy Session.</span>
+            </h2>
+            <p className="text-gray-400 text-lg font-light leading-relaxed mb-10 max-w-2xl">
+              Bring one business problem or AI idea to a private, one-on-one consulting session.
+              Leave with clarity, a structured decision, and a written action plan — 45, 60, or
+              90 minutes, sized to the decision.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <a
+                href="/ai-strategy-session"
+                data-track="cta"
+                className="inline-flex items-center justify-center gap-2 bg-noble-gold text-noble-black px-8 py-4 rounded-full font-bold hover:bg-white transition-all"
+              >
+                See Session Details &amp; Book
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
+              <a
+                href="/ai-strategy-session#faq"
+                className="inline-flex items-center justify-center gap-2 border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/5 transition-all"
+              >
+                Read the FAQ
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </PageShell>
   );
 }

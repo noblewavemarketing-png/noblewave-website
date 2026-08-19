@@ -40,6 +40,7 @@ export const Footer = () => {
               <li><a href="/services#ai-content" className="hover:text-noble-gold transition-colors">AI Content &amp; Auto-Publishing</a></li>
               <li><a href="/services#ai-video" className="hover:text-noble-gold transition-colors">AI Video &amp; Social</a></li>
               <li><a href="/lead-generation" className="hover:text-noble-gold transition-colors">Lead Generation</a></li>
+              <li><a href="/ai-strategy-session" className="hover:text-noble-gold transition-colors">AI Strategy Session</a></li>
             </ul>
           </div>
 

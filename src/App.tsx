@@ -12,6 +12,7 @@ import {
   WebsiteSpotlight,
   ContentVideoSpotlight,
   LeadGenSpotlight,
+  AiStrategySessionSpotlight,
   WhyNobleWave,
   FinalCTA,
 } from "./components/HomeSections";
@@ -53,6 +54,7 @@ export default function App() {
         <WebsiteSpotlight />
         <ContentVideoSpotlight />
         <LeadGenSpotlight />
+        <AiStrategySessionSpotlight />
         <WhyNobleWave />
         <FinalCTA />
       </main>

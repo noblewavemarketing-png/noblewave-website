@@ -66,7 +66,8 @@ Vercel → Project → Settings → Domains → add `noblewavemarketing.ca` and 
 ## 6. Events fired (no duplicates — single delegated listener)
 | Event | Trigger |
 |---|---|
-| `contact_form_submit` | Successful form submission (also Meta standard `Lead`) |
+| `contact_form_submit` | Successful general-contact form submission (also Meta standard `Lead`) |
+| `ai_strategy_intake_submit` | Successful AI Strategy Session booking request |
 | `phone_click` | Any tel: link |
 | `email_click` | Any mailto: link |
 | `cta_click` | Any "Claim Your Spot" / booking CTA (`data-track="cta"`) |

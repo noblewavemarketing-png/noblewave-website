@@ -11,10 +11,12 @@
  *   VITE_CLARITY_ID     e.g. abcdefghij    (Microsoft Clarity)
  *
  * Events tracked (fired to GTM dataLayer, GA4 gtag, and Meta Pixel when present):
- *   contact_form_submit — successful form submission (fired from Contact.tsx)
- *   phone_click         — any tel: link
- *   email_click         — any mailto: link
- *   cta_click           — elements with data-track="cta" (Claim Your Spot / booking CTAs)
+ *   contact_form_submit      — successful general-contact form submission (Contact.tsx)
+ *   ai_strategy_intake_submit — successful AI Strategy Session booking request
+ *                               (AiStrategyIntakeForm.tsx), includes which session length
+ *   phone_click              — any tel: link
+ *   email_click              — any mailto: link
+ *   cta_click                — elements with data-track="cta" (booking/session CTAs)
  */
 
 declare global {

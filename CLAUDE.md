@@ -5,12 +5,15 @@ here, commit, push to `main` on GitHub — Vercel auto-deploys from that push.
 Treat pushes to `main` as publishing to a live public site: confirm with the
 business owner before pushing, same as any other outward-facing change.
 
-**Push access note (Aug 2026):** the machine's `gh`/git credentials were
-authenticated as a different GitHub account (`SOHVAC`) with no write access to
-`noblewavemarketing-png/noblewave-website`. If a push fails with 403, that's
-why — the owner needs to fix the local git auth (`gh auth login` /
-`gh auth switch` to the right account, or add the other account as a
-collaborator). Don't try to work around it by asking for tokens.
+**Push access note (Aug 2026, resolved):** this machine also has a `SOHVAC`
+GitHub account (used for an unrelated client repo). Both accounts are now
+logged in via `gh`, and this repo's `origin` remote has the username pinned
+directly in the URL (`https://noblewavemarketing-png@github.com/...`), so
+pushes always authenticate as the right account regardless of which one is
+"active" in `gh auth switch` — verified by switching the active account to
+`SOHVAC` and confirming this repo still authenticated correctly. If a push
+ever 403s again, check `git remote get-url origin` still has the username
+pinned before assuming it's an auth problem.
 
 ## What the business actually is (as of Aug 2026, v2 — full-service pivot)
 
@@ -124,6 +127,37 @@ in the Vercel dashboard.
 the Vercel dashboard, Claude has no access there): whether the Formspree
 endpoint and the analytics IDs in `DEPLOY.md` are actually receiving/live on
 the production project.
+
+## AI Strategy Session (added Aug 2026)
+
+A standalone, separately-purchasable product — a paid one-on-one AI
+consulting session, not part of the managed-service stack. Deliberately
+**not** folded into the `services` array in `ServicesPage.tsx` (that array
+is fully-managed monthly services; this is a one-time session) — it has its
+own distinct panel there instead, plus its own page, its own homepage
+spotlight, and its own footer link. If you're tempted to merge it into the
+services loop for "consistency," don't — that would misrepresent it exactly
+the way the brief this was built from explicitly said not to.
+
+- **Page**: `/ai-strategy-session` (`src/pages/AiStrategySessionPage.tsx`).
+  Session data (name/duration/tagline/`price: null`) lives at the top of
+  that file — `price` is intentionally unset; see the pricing note below.
+- **Intake form**: `src/components/AiStrategyIntakeForm.tsx` — deliberately
+  a separate component from `Contact.tsx`'s `ContactForm`, not a reuse,
+  because the fields are genuinely different (challenge/outcome/AI
+  experience/consent vs. general lead fields). Same Formspree endpoint as
+  the general contact form (only one configured) — distinguished in the
+  inbox by `_subject` and a `product` field.
+- **No calendar/booking or payment integration** — none exists anywhere on
+  this site. "Book a Session" submits the intake form; the owner follows up
+  by email to confirm scheduling and payment, same as every other product
+  here. Don't add a fake Calendly link or checkout without the owner
+  providing a real one.
+- **No public pricing shown** — consistent with the site-wide no-pricing
+  rule above. Each session card shows "Request a quote" instead of a
+  number. The moment real pricing is approved, fill in `SESSION_OPTIONS[].price`
+  in `AiStrategySessionPage.tsx` and add a rendering branch for when it's
+  set (currently the JSX only handles the null case).
 
 ## Known loose thread
 

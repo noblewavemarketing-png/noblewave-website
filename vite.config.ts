@@ -19,6 +19,7 @@ export default defineConfig(() => {
           aiSeo: path.resolve(__dirname, 'ai-seo.html'),
           websites: path.resolve(__dirname, 'websites.html'),
           leadGeneration: path.resolve(__dirname, 'lead-generation.html'),
+          aiStrategySession: path.resolve(__dirname, 'ai-strategy-session.html'),
           about: path.resolve(__dirname, 'about.html'),
           pricing: path.resolve(__dirname, 'pricing.html'),
           contact: path.resolve(__dirname, 'contact.html'),

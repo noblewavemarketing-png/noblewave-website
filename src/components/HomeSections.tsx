@@ -259,6 +259,25 @@ export const LeadGenSpotlight = () => (
   />
 );
 
+/* 9b. AI Strategy Session spotlight — a standalone paid consulting session,
+   not part of the managed-service stack above, so it's called out
+   separately with its own clear framing. */
+export const AiStrategySessionSpotlight = () => (
+  <Spotlight
+    eyebrow="AI Strategy Session"
+    title={<>One Problem. <span className="italic text-noble-gold">One Clear Plan.</span></>}
+    description="Not a managed service — a single, private consulting session where you bring one business problem or AI idea and leave with a structured decision and a written action plan."
+    points={[
+      "One private, one-on-one video consultation",
+      "Realistic AI opportunities weighed against real tradeoffs",
+      "Prioritized next steps, not just observations",
+      "A written action plan delivered after the call",
+    ]}
+    href="/ai-strategy-session"
+    cta="See Session Options & Book"
+  />
+);
+
 /* 10. Why NobleWave */
 const reasons = [
   "Managed for you — not another login to maintain",

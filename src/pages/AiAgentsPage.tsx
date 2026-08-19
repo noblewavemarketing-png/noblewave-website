@@ -5,48 +5,48 @@ import { PageHeader } from "../components/PageHeader";
 
 const pillars = [
   {
-    title: "Traditional SEO",
-    description: "The fundamentals: keyword research, on-page optimization, and content built around what your customers actually search for.",
+    title: "AI Customer-Service Agents",
+    description: "Answers common questions accurately, using your actual business information — available any time, not just business hours.",
   },
   {
-    title: "Local SEO",
-    description: "Google Business Profile management, local keyword targeting, and the signals that determine whether you show up in \"near me\" searches and the Maps pack.",
+    title: "AI Sales Agents",
+    description: "Engages inbound interest, answers product questions, and moves a real conversation forward before it reaches your sales team.",
   },
   {
-    title: "Technical SEO",
-    description: "Site speed, mobile-friendliness, crawlability, metadata, and schema markup — the behind-the-scenes work that lets search engines read your site correctly.",
+    title: "AI Lead Qualification",
+    description: "Filters and scores incoming leads against your actual criteria, so your team spends time on the ones worth calling.",
   },
   {
-    title: "Content SEO",
-    description: "Blog posts, service pages, city pages, and FAQs, researched and written around real search intent, then kept current instead of going stale.",
+    title: "AI Appointment & Booking Agents",
+    description: "Handles scheduling, confirmations, and rescheduling without back-and-forth emails or missed calls.",
   },
   {
-    title: "GEO — Generative Engine Optimization",
-    description: "Structuring your content so AI tools like ChatGPT and Gemini can find, understand, and cite it when someone asks them a question instead of searching.",
+    title: "Internal AI Assistants",
+    description: "Support for your own team — answering internal questions, pulling information, handling routine internal requests.",
   },
   {
-    title: "AEO — Answer Engine Optimization",
-    description: "Writing content in a clear question-and-answer structure, so it's positioned to be pulled directly into AI Overviews and answer boxes.",
+    title: "Custom AI Agents",
+    description: "Built around a process specific to your business that doesn't fit a template.",
   },
 ];
 
 const included = [
-  "Automated content publishing on a set schedule",
-  "Google Business Profile management",
-  "Internal linking between related pages",
-  "Backlink strategy",
-  "Monthly performance reporting",
-  "AI visibility tracking across ChatGPT, Gemini, Claude, Perplexity, and Google AI",
+  "Agents trained on your actual business information",
+  "Clear handoff to a real person when a conversation needs one",
+  "Conversation logs and reporting",
+  "Ongoing tuning as real conversations reveal gaps",
+  "Integration with your existing CRM or inbox",
+  "Testing before anything goes live with real customers",
 ];
 
-export default function AiSeoPage() {
+export default function AiAgentsPage() {
   return (
     <PageShell>
       <PageHeader
-        eyebrow="AI SEO"
-        title={<>Search Engines. <span className="italic text-noble-gold">And AI Engines.</span></>}
-        subtitle="NobleWave manages your SEO strategy end to end — researching, creating, optimizing, publishing, and measuring the work continuously, so your search presence is never sitting idle between check-ins."
-        primaryCta={{ label: "Book an AI Consultation", href: "/contact" }}
+        eyebrow="AI Agents"
+        title={<>An AI That <span className="italic text-noble-gold">Handles the Work.</span></>}
+        subtitle="Custom AI agents built around your actual processes — answering, qualifying, booking, and supporting your team, consistently and around the clock."
+        primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
 
@@ -55,7 +55,7 @@ export default function AiSeoPage() {
           <div className="text-center mb-16">
             <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
             <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
-              Six Parts of Search. <span className="italic text-noble-gold">One Managed System.</span>
+              Six Kinds of <span className="italic text-noble-gold">AI Agents.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -90,7 +90,9 @@ export default function AiSeoPage() {
             </ul>
             <div className="pt-8 border-t border-white/10">
               <p className="text-gray-500 text-sm font-light leading-relaxed">
-                SEO is a long-term growth strategy, not an overnight switch. Results vary based on your competition, your website's existing authority, your market, your budget, and how the strategy is implemented — we report on real movement every month rather than promising a specific ranking or timeline.
+                AI agents handle defined, repeatable interactions well, and are built with clear
+                handoff points to a real person for anything outside their scope. Performance
+                depends on the quality and clarity of the information they're given.
               </p>
             </div>
           </div>
@@ -100,13 +102,13 @@ export default function AiSeoPage() {
       <section className="py-24 md:py-28 noble-gradient">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
-            Ready to See Where You <span className="italic text-noble-gold">Actually Stand?</span>
+            Ready to See What an <span className="italic text-noble-gold">AI Agent Could Handle?</span>
           </h2>
           <p className="text-gray-300 text-lg mb-10 font-light leading-relaxed">
-            A strategy call starts with a real look at your site, your competitors, and where the opportunity actually is.
+            A consultation starts with a real look at the conversations and tasks eating your team's time.
           </p>
           <a
-            href="/contact"
+            href="/ai-strategy-session"
             data-track="cta"
             className="inline-flex items-center gap-2 bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg hover:bg-white transition-all"
           >

@@ -16,9 +16,9 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
-    { name: "AI SEO", href: "/ai-seo" },
-    { name: "Websites", href: "/websites" },
-    { name: "Lead Generation", href: "/lead-generation" },
+    { name: "AI Consultancy", href: "/ai-consultancy" },
+    { name: "AI Automation", href: "/ai-automation" },
+    { name: "AI Agents", href: "/ai-agents" },
     { name: "About", href: "/about" },
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
@@ -32,7 +32,7 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
     >
       {withAnnouncement && (
         <div className="bg-noble-gold text-noble-black text-center text-[11px] md:text-sm font-bold tracking-wide py-2 px-6 -mt-4 md:-mt-6 mb-4 md:mb-6">
-          AI-powered marketing for local businesses across the GTA.
+          AI solutions, automation &amp; consultancy for modern businesses.
         </div>
       )}
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -72,12 +72,12 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
             <span className="text-2xl font-serif font-black tracking-tighter text-white">
               NOBLE<span className="text-noble-gold">WAVE</span>
             </span>
-            <span className="text-[9px] uppercase tracking-[0.4em] text-noble-gold font-black mt-1">AI Growth System</span>
+            <span className="text-[9px] uppercase tracking-[0.4em] text-noble-gold font-black mt-1">AI Solutions &amp; Consultancy</span>
           </div>
         </div>
 
         {/* Desktop Nav */}
-        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-8">
+        <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-5 xl:gap-7 whitespace-nowrap">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -88,13 +88,13 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
             </a>
           ))}
           <motion.a
-            href="/contact"
+            href="/ai-strategy-session"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             data-track="cta"
             className="bg-noble-gold text-noble-black px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-white transition-all"
           >
-            Get a Free Strategy Call
+            Book an AI Consultation
           </motion.a>
         </nav>
 
@@ -129,8 +129,8 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
               {link.name}
             </a>
           ))}
-          <a href="/contact" data-track="cta" onClick={() => setIsOpen(false)} className="bg-noble-gold text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center">
-            Get a Free Strategy Call
+          <a href="/ai-strategy-session" data-track="cta" onClick={() => setIsOpen(false)} className="bg-noble-gold text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center">
+            Book an AI Consultation
           </a>
         </motion.nav>
       )}
@@ -157,27 +157,27 @@ export const Hero = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <motion.div style={{ y: y2, opacity }}>
           <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
-            AI SEO • Content • Websites • Infrastructure • Leads • GTA
+            AI Consultancy • Automation • Agents • Implementation
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl text-white font-serif leading-[0.95] mb-8">
-            Your Complete <br />
-            <span className="italic text-noble-gold">AI-Powered Growth System.</span>
+            AI Solutions <br />
+            <span className="italic text-noble-gold">&amp; Consultancy.</span>
           </h1>
           <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-6 font-light leading-relaxed">
-            NobleWave combines intelligent SEO, conversion-focused websites, automated content, AI video, and lead generation to help local businesses get found and win more customers.
+            We help businesses discover where AI can make the biggest impact — then build and implement the systems to make it happen.
           </p>
           <p className="text-noble-gold text-sm md:text-base mb-12 font-bold uppercase tracking-wide">
-            Strategy, setup, automation, and ongoing management — all handled for you.
+            Strategy, automation, and intelligent business systems — implemented for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.a
-              href="/contact"
+              href="/ai-strategy-session"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               data-track="cta"
               className="bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)]"
             >
-              Get a Free Strategy Call
+              Book an AI Consultation
             </motion.a>
             <motion.a
               href="#services-overview"
@@ -185,7 +185,7 @@ export const Hero = () => {
               whileTap={{ scale: 0.95 }}
               className="border border-white/30 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
             >
-              Explore Our Services
+              Explore AI Solutions
             </motion.a>
           </div>
         </motion.div>

@@ -1,22 +1,22 @@
 import { motion } from "motion/react";
 import {
-  Search, Globe, PenTool, MapPin, Video, TrendingUp, Cable,
-  Compass, Hammer, Cog, LineChart,
-  EyeOff, MousePointerClick, CalendarX, Bot, Unplug, PhoneMissed,
+  Search, Compass, Hammer, LineChart, Cog, Bot, Cable,
+  HelpCircle, ListFilter, Workflow, Unplug, Gauge, Clock,
+  Target, Megaphone,
   ArrowRight, Check,
 } from "lucide-react";
 
 /* 1. Announcement bar — rendered inside Header (withAnnouncement) so it moves
    with the fixed nav instead of sitting behind it. See Hero.tsx. */
 
-/* 3. Business problems */
+/* 3. Business problems — why businesses struggle to actually get value from AI */
 const problems = [
-  { icon: <EyeOff size={28} />, title: "You're hard to find on Google", description: "Homeowners are searching for what you do right now — if your site isn't structured for it, they find a competitor instead." },
-  { icon: <MousePointerClick size={28} />, title: "Your website isn't generating inquiries", description: "Traffic without a clear path to \"call now\" or \"book now\" is just visitors leaving." },
-  { icon: <CalendarX size={28} />, title: "Content gets posted inconsistently", description: "A blog post here, a social update there, then nothing for two months — search engines and AI models both notice." },
-  { icon: <Bot size={28} />, title: "Competitors are showing up in AI search results", description: "ChatGPT, Gemini, and Google AI Overviews are already recommending businesses. If yours isn't structured to be cited, you're invisible there too." },
-  { icon: <Unplug size={28} />, title: "Your marketing tools don't talk to each other", description: "A website here, ads there, social somewhere else — nothing feeding the others, nothing adding up to a system." },
-  { icon: <PhoneMissed size={28} />, title: "Leads show up with no strong presence behind them", description: "A lead who Googles you before calling back needs to find something that builds confidence, not a dead-end page." },
+  { icon: <HelpCircle size={28} />, title: "You know AI matters, but not where to start", description: "It's everywhere in the news and nowhere in a plan you can actually follow — so it's easier to do nothing." },
+  { icon: <ListFilter size={28} />, title: "You can't tell which tools actually matter", description: "A new AI tool launches every week. Most are noise. Very few are actually right for your business." },
+  { icon: <Workflow size={28} />, title: "You're not sure what should be automated", description: "Some of what your team does by hand could run itself — but automating the wrong thing wastes time and trust." },
+  { icon: <Unplug size={28} />, title: "AI doesn't connect to how you actually work", description: "A tool that doesn't plug into your existing systems and workflows just becomes one more thing to manage." },
+  { icon: <Gauge size={28} />, title: "There's no way to measure if it's working", description: "Without a clear before-and-after, \"we're using AI now\" is a claim, not a result." },
+  { icon: <Clock size={28} />, title: "Competitors are already moving", description: "The businesses that work this out first get the efficiency gain and the head start — waiting has a real cost." },
 ];
 
 export const Problems = () => (
@@ -25,8 +25,11 @@ export const Problems = () => (
       <div className="text-center mb-20">
         <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Sound Familiar?</span>
         <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
-          The Same Six Problems, <span className="italic text-noble-gold">Every Time.</span>
+          AI Curiosity Alone <span className="italic text-noble-gold">Doesn't Move a Business.</span>
         </h2>
+        <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed">
+          We help businesses move from AI curiosity to AI strategy to AI implementation to measurable results.
+        </p>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {problems.map((p, i) => (
@@ -50,15 +53,14 @@ export const Problems = () => (
   </section>
 );
 
-/* 4. Services overview */
+/* 4. Services overview — the six core service categories */
 const overviewServices = [
-  { icon: <Search size={32} />, title: "AI SEO", description: "Managed search optimization — technical fixes, content strategy, and reporting, without you needing to learn SEO.", href: "/ai-seo" },
-  { icon: <Globe size={32} />, title: "Websites", description: "Conversion-focused sites built to turn visitors into calls, with local SEO built in from the start.", href: "/websites" },
-  { icon: <PenTool size={32} />, title: "AI Content Creation", description: "Blog posts, service pages, and city pages — researched, written, and published on a schedule.", href: "/services#ai-content" },
-  { icon: <MapPin size={32} />, title: "Local SEO", description: "Google Business Profile management, review replies, and the local signals that get you found nearby.", href: "/services#local-seo" },
-  { icon: <Cable size={32} />, title: "Technical Infrastructure", description: "Forms wired to your CRM, tracking set up correctly, tools connected — so nothing quietly falls through the cracks.", href: "/services#tech-infrastructure" },
-  { icon: <Video size={32} />, title: "AI Video & Social Media", description: "Promotional and short-form video with AI voiceovers, plus a content calendar kept full automatically.", href: "/services#ai-video" },
-  { icon: <TrendingUp size={32} />, title: "Lead Generation", description: "Managed paid campaigns delivering qualified, exclusive leads straight to your phone.", href: "/lead-generation" },
+  { icon: <Compass size={32} />, title: "AI Consultancy", description: "Understand where AI realistically fits your business — readiness, opportunities, and a roadmap, not hype.", href: "/ai-consultancy" },
+  { icon: <Target size={32} />, title: "AI Strategy", description: "A practical, prioritized plan for AI adoption, built around your goals, budget, and constraints.", href: "/ai-strategy-session" },
+  { icon: <Cog size={32} />, title: "AI Automation", description: "Workflow and process automation that removes repetitive work, connected to the tools you already use.", href: "/ai-automation" },
+  { icon: <Bot size={32} />, title: "AI Agents", description: "Custom AI agents for customer service, sales, lead qualification, booking, and internal support.", href: "/ai-agents" },
+  { icon: <Megaphone size={32} />, title: "AI-Powered Marketing", description: "Content systems, marketing automation, and lead generation — AI applied to marketing, not the other way around.", href: "/services#ai-marketing" },
+  { icon: <Cable size={32} />, title: "Custom AI Solutions", description: "Custom workflows, integrations, and internal tools built around exactly what your business needs.", href: "/services#custom-ai-solutions" },
 ];
 
 export const ServicesOverview = () => (
@@ -67,13 +69,13 @@ export const ServicesOverview = () => (
       <div className="text-center mb-20">
         <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What We Do</span>
         <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
-          One System. <span className="italic text-noble-gold">Seven Working Parts.</span>
+          Six Ways We Put <span className="italic text-noble-gold">AI to Work.</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed">
-          Everything your business needs to get found, build trust, and generate leads — powered by AI and managed for you.
+          From first assessment to a fully built system — strategy, automation, agents, and implementation, managed for you.
         </p>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {overviewServices.map((s, i) => (
           <motion.a
             key={s.title}
@@ -100,12 +102,12 @@ export const ServicesOverview = () => (
   </section>
 );
 
-/* 5. How the NobleWave system works */
+/* 5. How it works — Discover, Strategize, Build, Optimize */
 const steps = [
-  { icon: <Compass size={28} />, title: "Discover", description: "We audit your business, website, competitors, and market to find where the real opportunity is." },
-  { icon: <Hammer size={28} />, title: "Build", description: "We create the website, strategy, tracking, and content system your business is missing." },
-  { icon: <Cog size={28} />, title: "Automate", description: "SEO, publishing, social content, and lead workflows get connected so nothing depends on you remembering." },
-  { icon: <LineChart size={28} />, title: "Grow", description: "We monitor performance and keep improving the system — reported to you in plain language, monthly." },
+  { icon: <Search size={28} />, title: "Discover", description: "We get to know your business and identify where AI can realistically make a difference." },
+  { icon: <Compass size={28} />, title: "Strategize", description: "We develop a practical AI roadmap based on your goals, priorities, and constraints." },
+  { icon: <Hammer size={28} />, title: "Build", description: "We implement the automations, AI agents, integrations, and systems the roadmap calls for." },
+  { icon: <LineChart size={28} />, title: "Optimize", description: "We measure results and continuously improve the systems — reported to you in plain language." },
 ];
 
 export const HowItWorks = () => (
@@ -187,86 +189,86 @@ const Spotlight = ({ eyebrow, title, description, points, href, cta, reverse, da
   </section>
 );
 
-/* 6. AI SEO spotlight */
-export const AiSeoSpotlight = () => (
+/* 6. AI Consultancy spotlight */
+export const AiConsultancySpotlight = () => (
   <Spotlight
-    eyebrow="AI SEO"
-    title={<>The Strategy Is <span className="italic text-noble-gold">Ours.</span> The Heavy Lifting Is AI's.</>}
-    description="NobleWave manages your SEO strategy end to end — research, content, technical fixes, and tracking, handled continuously by our team instead of once a quarter."
+    eyebrow="AI Consultancy"
+    title={<>The Strategy Is Ours. <span className="italic text-noble-gold">The Roadmap Is Yours to Act On.</span></>}
+    description="We help you understand where AI actually fits your business — realistic opportunities weighed against real tradeoffs — then hand you a practical roadmap for adopting it."
     points={[
-      "Full SEO and GEO website audit",
-      "Monthly content strategy, written and published",
-      "Technical SEO, metadata, and schema markup",
-      "Search performance tracked and reported monthly",
+      "AI readiness assessment",
+      "Opportunity identification, specific to your business",
+      "A practical implementation roadmap",
+      "Plain-language guidance on adoption, not jargon",
     ]}
-    href="/ai-seo"
-    cta="See How AI SEO Works"
+    href="/ai-consultancy"
+    cta="See How AI Consultancy Works"
   />
 );
 
-/* 7. Website spotlight */
-export const WebsiteSpotlight = () => (
+/* 7. AI Automation spotlight */
+export const AiAutomationSpotlight = () => (
   <Spotlight
-    eyebrow="Websites"
-    title={<>Built to Convert. <span className="italic text-noble-gold">Built to Rank.</span></>}
-    description="A NobleWave website isn't a digital brochure — it's engineered to turn visitors into phone calls, and structured from day one to support everything SEO needs to work."
+    eyebrow="AI Automation"
+    title={<>Less Repetitive Work. <span className="italic text-noble-gold">More Time on What Matters.</span></>}
+    description="We identify the repetitive, manual work already happening in your business and build automated systems that handle it — connected to the tools you already use, not replacing them."
     points={[
-      "Mobile-first, fast-loading, conversion-focused design",
-      "Lead forms and click-to-call on every page",
-      "Service and location pages built in",
-      "Analytics, Search Console, and Google Business connected",
+      "Workflow and business process automation",
+      "Repetitive task automation",
+      "CRM and lead automation",
+      "Internal workflow optimization",
     ]}
-    href="/websites"
-    cta="See What's Included"
+    href="/ai-automation"
+    cta="See What We Automate"
     reverse
     dark
   />
 );
 
-/* 8. AI content and video spotlight */
-export const ContentVideoSpotlight = () => (
+/* 8. AI Agents spotlight */
+export const AiAgentsSpotlight = () => (
   <Spotlight
-    eyebrow="AI Content & Video"
-    title={<>One Idea. <span className="italic text-noble-gold">Six Pieces of Content.</span></>}
-    description="A single business update — a new service, a finished job, a seasonal promotion — gets turned into everything your presence needs, without you writing or filming any of it yourself."
+    eyebrow="AI Agents"
+    title={<>An AI That <span className="italic text-noble-gold">Actually Handles the Work.</span></>}
+    description="Custom AI agents that answer questions, qualify leads, book appointments, and support your team — built around how your business actually operates, not a generic chatbot."
     points={[
-      "A blog post and a website FAQ",
-      "A Google Business post",
-      "Social media posts, captioned and scheduled",
-      "A short-form video with an AI voiceover",
+      "AI customer-service agents",
+      "AI sales and lead-qualification agents",
+      "AI appointment and booking agents",
+      "Internal AI assistants",
     ]}
-    href="/services#ai-content"
-    cta="See How Content Automation Works"
+    href="/ai-agents"
+    cta="See What AI Agents Can Do"
   />
 );
 
-/* 9. Lead-generation spotlight */
-export const LeadGenSpotlight = () => (
+/* 9. AI-Powered Marketing spotlight */
+export const AiMarketingSpotlight = () => (
   <Spotlight
-    eyebrow="Lead Generation"
-    title={<>Qualified Leads. <span className="italic text-noble-gold">Never Shared.</span></>}
-    description="Our original service, still one of the strongest: managed paid campaigns that put you in front of homeowners actively looking for what you do, with qualification built in before a lead ever reaches your phone."
+    eyebrow="AI-Powered Marketing"
+    title={<>Marketing Is an <span className="italic text-noble-gold">Application of AI</span> — Not the Whole Company.</>}
+    description="Content systems, automation, and lead generation, built and managed with AI doing the heavy lifting — one connected system instead of six disconnected tools."
     points={[
-      "Paid campaigns built and managed for you",
-      "Homeowner qualification before delivery",
-      "Real-time delivery — exclusive, never resold",
-      "Targeted to your trade and service area",
+      "AI content systems",
+      "Marketing automation",
+      "Lead-generation systems",
+      "AI-assisted campaign optimization",
     ]}
-    href="/lead-generation"
-    cta="See How Lead Generation Works"
+    href="/services#ai-marketing"
+    cta="See AI-Powered Marketing"
     reverse
     dark
   />
 );
 
-/* 9b. AI Strategy Session spotlight — a standalone paid consulting session,
-   not part of the managed-service stack above, so it's called out
-   separately with its own clear framing. */
+/* 9b. AI Strategy Session spotlight — the flagship bookable product of the
+   AI Consultancy pillar: a standalone paid session, not part of the
+   managed-service stack above, so it's called out with its own framing. */
 export const AiStrategySessionSpotlight = () => (
   <Spotlight
     eyebrow="AI Strategy Session"
     title={<>One Problem. <span className="italic text-noble-gold">One Clear Plan.</span></>}
-    description="Not a managed service — a single, private consulting session where you bring one business problem or AI idea and leave with a structured decision and a written action plan."
+    description="The fastest way to start: a single, private consulting session where you bring one business problem or AI idea and leave with a structured decision and a written action plan."
     points={[
       "One private, one-on-one video consultation",
       "Realistic AI opportunities weighed against real tradeoffs",
@@ -280,11 +282,11 @@ export const AiStrategySessionSpotlight = () => (
 
 /* 10. Why NobleWave */
 const reasons = [
-  "Managed for you — not another login to maintain",
-  "One connected growth system, not disconnected tools",
-  "Built for local businesses, not enterprise budgets",
-  "Clear, plain-language reporting every month",
-  "Practical AI implementation, not buzzwords",
+  "Practical AI implementation, not hype or buzzwords",
+  "A clear roadmap before any building starts",
+  "Systems connected to how you already work, not more logins",
+  "Honest about where AI fits — and where it doesn't",
+  "Clear, plain-language reporting on what's actually working",
   "Local GTA support from a real person",
 ];
 
@@ -293,7 +295,7 @@ export const WhyNobleWave = () => (
     <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
       <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Why NobleWave</span>
       <h2 className="text-5xl md:text-6xl font-serif mt-6 mb-16 text-white leading-tight">
-        No Confusing <span className="italic text-noble-gold">Agency Jargon.</span>
+        No Confusing <span className="italic text-noble-gold">AI Hype.</span>
       </h2>
       <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8 text-left max-w-3xl mx-auto">
         {reasons.map((r) => (
@@ -312,19 +314,19 @@ export const FinalCTA = () => (
   <section className="py-28 noble-gradient relative overflow-hidden">
     <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
       <h2 className="text-5xl md:text-6xl font-serif mb-8 text-white leading-tight">
-        Ready to Build a <span className="italic text-noble-gold">Smarter Growth System?</span>
+        Ready to Put AI to Work <span className="italic text-noble-gold">in Your Business?</span>
       </h2>
       <p className="text-gray-300 text-xl mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-        Tell us where your business is today. We'll identify the best opportunities across your website, SEO, content, and lead generation.
+        Tell us where your business is today. We'll identify where AI can make the biggest difference — and build the systems to make it happen.
       </p>
       <motion.a
-        href="/contact"
+        href="/ai-strategy-session"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         data-track="cta"
         className="inline-block bg-noble-gold text-noble-black px-12 py-6 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:bg-white transition-all"
       >
-        Book Your Free Strategy Call
+        Book an AI Consultation
       </motion.a>
     </div>
   </section>

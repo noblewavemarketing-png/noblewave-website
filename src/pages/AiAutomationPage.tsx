@@ -5,48 +5,48 @@ import { PageHeader } from "../components/PageHeader";
 
 const pillars = [
   {
-    title: "Traditional SEO",
-    description: "The fundamentals: keyword research, on-page optimization, and content built around what your customers actually search for.",
+    title: "Workflow Automation",
+    description: "Multi-step processes — approvals, handoffs, follow-ups — connected and running automatically instead of depending on someone remembering the next step.",
   },
   {
-    title: "Local SEO",
-    description: "Google Business Profile management, local keyword targeting, and the signals that determine whether you show up in \"near me\" searches and the Maps pack.",
+    title: "Repetitive Task Automation",
+    description: "The manual, repeatable tasks eating your team's time: data entry, status updates, routine communications.",
   },
   {
-    title: "Technical SEO",
-    description: "Site speed, mobile-friendliness, crawlability, metadata, and schema markup — the behind-the-scenes work that lets search engines read your site correctly.",
+    title: "Business Process Automation",
+    description: "End-to-end processes across departments, automated and monitored, not just individual tasks in isolation.",
   },
   {
-    title: "Content SEO",
-    description: "Blog posts, service pages, city pages, and FAQs, researched and written around real search intent, then kept current instead of going stale.",
+    title: "CRM & Lead Automation",
+    description: "Leads routed, tagged, and followed up on the moment they come in — nothing sitting unseen in an inbox.",
   },
   {
-    title: "GEO — Generative Engine Optimization",
-    description: "Structuring your content so AI tools like ChatGPT and Gemini can find, understand, and cite it when someone asks them a question instead of searching.",
+    title: "Internal Workflow Optimization",
+    description: "We look at how your team actually works and remove the friction — not just add another tool on top of the existing mess.",
   },
   {
-    title: "AEO — Answer Engine Optimization",
-    description: "Writing content in a clear question-and-answer structure, so it's positioned to be pulled directly into AI Overviews and answer boxes.",
+    title: "Automation Audits",
+    description: "A review of your current tools and processes to find where automation would save the most time first.",
   },
 ];
 
 const included = [
-  "Automated content publishing on a set schedule",
-  "Google Business Profile management",
-  "Internal linking between related pages",
-  "Backlink strategy",
-  "Monthly performance reporting",
-  "AI visibility tracking across ChatGPT, Gemini, Claude, Perplexity, and Google AI",
+  "Automation built on tools you already use, not a rip-and-replace",
+  "Clear documentation of what's automated and how",
+  "Monitoring, so a broken automation gets caught early",
+  "Human checkpoints built in wherever judgment is still needed",
+  "Training for your team on the new workflow",
+  "Ongoing optimization as your business changes",
 ];
 
-export default function AiSeoPage() {
+export default function AiAutomationPage() {
   return (
     <PageShell>
       <PageHeader
-        eyebrow="AI SEO"
-        title={<>Search Engines. <span className="italic text-noble-gold">And AI Engines.</span></>}
-        subtitle="NobleWave manages your SEO strategy end to end — researching, creating, optimizing, publishing, and measuring the work continuously, so your search presence is never sitting idle between check-ins."
-        primaryCta={{ label: "Book an AI Consultation", href: "/contact" }}
+        eyebrow="AI Automation"
+        title={<>Work That <span className="italic text-noble-gold">Runs Itself.</span></>}
+        subtitle="We find the repetitive, manual work already happening in your business and build automated systems to handle it — connected to what you already use, not replacing it."
+        primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
       />
 
@@ -55,7 +55,7 @@ export default function AiSeoPage() {
           <div className="text-center mb-16">
             <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
             <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
-              Six Parts of Search. <span className="italic text-noble-gold">One Managed System.</span>
+              Six Kinds of <span className="italic text-noble-gold">Manual Work.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -90,7 +90,9 @@ export default function AiSeoPage() {
             </ul>
             <div className="pt-8 border-t border-white/10">
               <p className="text-gray-500 text-sm font-light leading-relaxed">
-                SEO is a long-term growth strategy, not an overnight switch. Results vary based on your competition, your website's existing authority, your market, your budget, and how the strategy is implemented — we report on real movement every month rather than promising a specific ranking or timeline.
+                Automation removes repetitive work — it doesn't replace judgment where judgment is
+                still needed. We design every workflow with appropriate human checkpoints, and
+                results depend on your existing systems, tools, and data quality.
               </p>
             </div>
           </div>
@@ -100,13 +102,13 @@ export default function AiSeoPage() {
       <section className="py-24 md:py-28 noble-gradient">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
-            Ready to See Where You <span className="italic text-noble-gold">Actually Stand?</span>
+            Ready to See What Should <span className="italic text-noble-gold">Run Itself?</span>
           </h2>
           <p className="text-gray-300 text-lg mb-10 font-light leading-relaxed">
-            A strategy call starts with a real look at your site, your competitors, and where the opportunity actually is.
+            A consultation starts with a real look at your workflows and where the time is actually going.
           </p>
           <a
-            href="/contact"
+            href="/ai-strategy-session"
             data-track="cta"
             className="inline-flex items-center gap-2 bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg hover:bg-white transition-all"
           >

@@ -14,14 +14,12 @@ import { trackEvent } from "../lib/analytics";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojrlvga";
 
 const SERVICES = [
-  "AI SEO",
-  "SEO-Optimized Website",
-  "Local SEO and Google Business",
-  "AI Content and Auto-Publishing",
-  "AI Video Generation",
-  "Social Media Automation",
-  "Lead Generation",
-  "Complete AI Growth System",
+  "AI Consultancy & Strategy",
+  "AI Automation",
+  "AI Agents",
+  "AI-Powered Marketing",
+  "Custom AI Solutions",
+  "AI Strategy Session (book a consultation)",
   "Not Sure — Recommend a Plan",
 ];
 
@@ -423,7 +421,7 @@ const ContactForm = () => {
           </>
         ) : (
           <>
-            Request My Spot
+            Send My Request
             <Send size={20} aria-hidden="true" />
           </>
         )}
@@ -447,21 +445,21 @@ export const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
           >
             <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">
-              Claim a Spot
+              Get in Touch
             </span>
 
             <h2 className="text-5xl md:text-6xl font-serif mt-6 mb-10 text-white">
               Tell Us About <br />
               <span className="italic text-noble-gold">
-                Your Company.
+                Your Business.
               </span>
             </h2>
 
             <p className="text-gray-400 text-xl mb-12 leading-relaxed font-light">
               Fill this out and we&apos;ll get back to you within one
-              business day. If you&apos;re a fit, we&apos;ll walk you
-              through exactly how leads will reach you — and lock in
-              your spot. One spot per trade per area.
+              business day. Tell us about the problem you&apos;re trying
+              to solve or the AI opportunity you want to explore — we&apos;ll
+              point you to the right starting point.
             </p>
 
             <div className="space-y-10">
@@ -547,26 +545,26 @@ export const CTA = () => {
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <h2 className="text-4xl md:text-6xl font-serif text-white mb-8 leading-tight">
-          Ready for a pipeline that actually shows up? <br />
+          Ready to put AI to work <br />
           <span className="italic text-noble-gold">
-            One partner per trade, per city.
+            in your business?
           </span>
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a
-            href="/contact"
+            href="/ai-strategy-session"
             data-track="cta"
             className="bg-noble-gold text-noble-black px-10 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-white transition-all"
           >
-            Claim Your Spot
+            Book an AI Consultation
           </a>
 
           <a
             href="/pricing"
             className="border border-white/30 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
           >
-            See the Flat Rate
+            See Pricing
           </a>
         </div>
       </div>

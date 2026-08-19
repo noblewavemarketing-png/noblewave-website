@@ -5,50 +5,46 @@ import { PageHeader } from "../components/PageHeader";
 
 const plans = [
   {
-    name: "AI SEO Growth",
-    tagline: "Ongoing, managed search growth.",
+    name: "AI Strategy Session",
+    tagline: "Start here — one session, one clear plan.",
     popular: false,
     features: [
-      "SEO and GEO website audit",
-      "Keyword and competitor research",
-      "Monthly SEO content strategy",
-      "Technical SEO, metadata, and schema",
-      "Local SEO and Google Business Profile management",
-      "Monthly reporting",
+      "45, 60, or 90-minute private consulting session",
+      "AI readiness and opportunity assessment",
+      "A written action plan after the call",
+      "No ongoing commitment",
+    ],
+    cta: "See Session Options",
+    href: "/ai-strategy-session",
+  },
+  {
+    name: "AI Automation & Agents",
+    tagline: "Ongoing implementation — automation and agents, built and managed.",
+    popular: true,
+    badge: "Most Requested",
+    features: [
+      "Workflow and business process automation",
+      "CRM and lead automation",
+      "Custom AI agents (service, sales, booking)",
+      "Integration with your existing tools",
+      "Ongoing monitoring and tuning",
     ],
     cta: "Request a Custom Quote",
     href: "/contact",
   },
   {
-    name: "Website & Total Setup",
-    tagline: "Delivered fast. Yours to keep.",
-    popular: true,
-    badge: "Most Requested",
-    features: [
-      "Complete website strategy and build",
-      "Conversion-focused, mobile-first design",
-      "Lead forms and click-to-call throughout",
-      "Metadata, schema, and SEO-friendly structure",
-      "Search Console, analytics, and Google Business connection",
-      "Pairs with AI SEO Growth or the Complete System",
-    ],
-    cta: "Get Your Website Built",
-    href: "/websites",
-  },
-  {
-    name: "Complete AI Growth System",
+    name: "Complete AI Partner",
     tagline: "Every service, connected, managed as one system.",
     popular: false,
     features: [
-      "Everything in AI SEO Growth",
-      "Website build and ongoing optimization",
-      "AI content creation and auto-publishing",
-      "Technical infrastructure and integrations",
-      "AI video and social media automation",
-      "Lead generation",
+      "Everything in AI Automation & Agents",
+      "Ongoing AI consultancy and strategy",
+      "AI-powered marketing",
+      "Custom AI solutions and integrations",
+      "One team managing all of it",
     ],
-    cta: "Get a Free Strategy Call",
-    href: "/contact",
+    cta: "Book an AI Consultation",
+    href: "/ai-strategy-session",
   },
 ];
 
@@ -58,8 +54,8 @@ export default function PricingPage() {
       <PageHeader
         eyebrow="Pricing"
         title={<>One System. <span className="italic text-noble-gold">Quoted For You.</span></>}
-        subtitle="Every business is different — your competition, your market, your goals. So we don't publish a price list; we quote each plan after a real look at your business, on a free strategy call."
-        primaryCta={{ label: "Get a Free Strategy Call", href: "/contact" }}
+        subtitle="Every business is different — your systems, your goals, your starting point. So we don't publish a price list; we quote each engagement after a real conversation, usually starting with an AI Strategy Session."
+        primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
       />
 
       <section className="py-24 md:py-28 bg-noble-black relative overflow-hidden">
@@ -109,17 +105,17 @@ export default function PricingPage() {
           </div>
 
           <div className="max-w-3xl mx-auto mt-16 p-8 bg-noble-dark border border-white/5 rounded-[2rem] text-center">
-            <h3 className="text-2xl font-serif text-white mb-3">Only need Lead Generation?</h3>
+            <h3 className="text-2xl font-serif text-white mb-3">Not Sure Which Fits?</h3>
             <p className="text-gray-400 font-light mb-6">
-              Our original service, still a flat monthly rate — exclusive leads, no contracts.
+              Explore all five service areas — AI consultancy, automation, agents, marketing, and custom builds.
             </p>
-            <a href="/lead-generation" className="text-noble-gold font-bold uppercase text-sm tracking-[0.15em] hover:underline">
-              See Lead Generation →
+            <a href="/services" className="text-noble-gold font-bold uppercase text-sm tracking-[0.15em] hover:underline">
+              See All Services →
             </a>
           </div>
 
           <p className="text-gray-600 text-sm font-light text-center max-w-2xl mx-auto mt-12">
-            Every plan is quoted after we assess your website, market, and goals — no fabricated deliverable counts or posting quantities, no fine-print contract terms sprung on you later.
+            Every plan is quoted after we assess your business, systems, and goals — no fabricated deliverable counts, no fine-print contract terms sprung on you later.
           </p>
         </div>
       </section>

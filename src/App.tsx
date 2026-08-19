@@ -8,10 +8,10 @@ import {
   Problems,
   ServicesOverview,
   HowItWorks,
-  AiSeoSpotlight,
-  WebsiteSpotlight,
-  ContentVideoSpotlight,
-  LeadGenSpotlight,
+  AiConsultancySpotlight,
+  AiAutomationSpotlight,
+  AiAgentsSpotlight,
+  AiMarketingSpotlight,
   AiStrategySessionSpotlight,
   WhyNobleWave,
   FinalCTA,
@@ -50,10 +50,10 @@ export default function App() {
         <Problems />
         <ServicesOverview />
         <HowItWorks />
-        <AiSeoSpotlight />
-        <WebsiteSpotlight />
-        <ContentVideoSpotlight />
-        <LeadGenSpotlight />
+        <AiConsultancySpotlight />
+        <AiAutomationSpotlight />
+        <AiAgentsSpotlight />
+        <AiMarketingSpotlight />
         <AiStrategySessionSpotlight />
         <WhyNobleWave />
         <FinalCTA />

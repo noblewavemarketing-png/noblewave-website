@@ -8,8 +8,8 @@ export default function AboutPage() {
     <PageShell>
       <PageHeader
         eyebrow="About NobleWave"
-        title={<>Built by a Contractor, <span className="italic text-noble-gold">Not an Agency.</span></>}
-        subtitle="We started in lead generation because we needed it ourselves. Today NobleWave runs the full system — SEO, websites, content, and leads — managed the way we always wished someone would manage it for us."
+        title={<>An AI Consultancy <span className="italic text-noble-gold">and Implementation Partner.</span></>}
+        subtitle="NobleWave helps businesses understand, adopt, and implement AI — to automate work, improve operations, strengthen marketing, and grow more efficiently. We work through the whole path: strategy, then the systems that put it into practice."
       />
       <About />
       <WhyNobleWave />

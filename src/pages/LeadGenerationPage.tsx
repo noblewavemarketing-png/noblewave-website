@@ -13,7 +13,7 @@ export default function LeadGenerationPage() {
         eyebrow="Lead Generation"
         title={<>Booked Jobs. <span className="italic text-noble-gold">Not Clicks.</span></>}
         subtitle="Qualified, exclusive homeowner leads sent straight to your phone. Managed paid campaigns, homeowner qualification, and real-time delivery — targeted to your trade and service area."
-        primaryCta={{ label: "Claim Your Spot", href: "/contact" }}
+        primaryCta={{ label: "Get in Touch", href: "/contact" }}
       />
       <Services />
       <Fit />

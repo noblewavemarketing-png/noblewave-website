@@ -1,4 +1,4 @@
-# NobleWave Marketing — website
+# NobleWave — website
 
 This is the real source for **noblewavemarketing.ca**, live in production. Edit
 here, commit, push to `main` on GitHub — Vercel auto-deploys from that push.
@@ -15,67 +15,94 @@ pushes always authenticate as the right account regardless of which one is
 ever 403s again, check `git remote get-url origin` still has the username
 pinned before assuming it's an auth problem.
 
-## What the business actually is (as of Aug 2026, v2 — full-service pivot)
+## What the business actually is (as of Aug 2026, v3 — AI-first rebrand)
 
-**This has changed twice.** Originally a narrow HVAC/Reno lead-gen shop,
-GTA-only. Then briefly corrected to "Canada-wide, any industry." Then, same
-day, expanded into a full-service AI marketing company and reverted service
-area back to GTA. **The GTA/full-service version below is current — don't
-re-narrow to lead-gen-only or re-expand to Canada-wide without the owner
-explicitly saying so again; this has flip-flopped enough that it's worth
-confirming before assuming either direction.**
+**This has changed three times.** Originally a narrow HVAC/Reno lead-gen
+shop, GTA-only → briefly "Canada-wide, any industry" → a full-service
+AI-*marketing* company, GTA-only → now (current) an **AI consultancy and
+implementation partner**, marketing demoted to one of several applications
+of AI rather than the core identity. **Don't re-narrow back to marketing-
+agency framing, and don't reintroduce "NobleWave Marketing" as the brand
+name, without the owner explicitly saying so again** — this has flip-flopped
+enough times that it's worth confirming before assuming any direction.
 
-- **Positioning**: "Everything your business needs to get found, build trust,
-  and generate leads — powered by AI and managed for you." NobleWave is a
-  full-service AI-powered digital marketing company, not just a lead-gen shop.
-- **Service area**: Greater Toronto Area (Mississauga, Brampton, Toronto,
-  Oakville, Vaughan, Milton). The business itself is based in Mississauga,
-  Ontario.
-- **Audience**: local businesses generally — not limited to one or two
-  industries — with renovation, HVAC, contractors, and home-service companies
-  as the initial/flagship vertical (that's where the proof and the existing
-  lead-gen product live).
-- **Nine services** (see `/services` for the full breakdown): AI SEO, AI
-  content creation & auto-publishing, local SEO & Google Business Profile
-  management, AI search optimization (GEO/AEO — visibility in ChatGPT/Gemini/
-  Perplexity/Google AI, distinct from traditional SEO), website creation,
-  **technical infrastructure & integrations** (forms wired to CRM, tracking
-  setup, domain/email config — added Aug 2026, don't drop it, and don't let
-  "AI SEO" dominate the homepage/meta copy at the expense of content
-  creation, website design, and infrastructure being equally visible), AI
-  video generation, social media automation, and lead generation.
-- **No public pricing, anywhere, as of Aug 2026** — this was explicitly
-  removed by the owner. Every service (including Website Creation and Lead
-  Generation, which briefly had real published prices — $999 one-time and
-  $400/month — do NOT bring those back) is "request a custom quote" /
-  "flat monthly rate" with no dollar figure shown. This applies to visible
-  copy, `<title>`/meta descriptions, and structured-data `Offer.price`
-  fields alike — check all three when touching pricing-adjacent copy.
-- **Never name the underlying tooling/tech stack to customers.** The owner
-  was explicit: no "Uplift AI" or any other internal/vendor tool name in
-  customer-facing copy (site copy, meta, schema). Describe capability and
-  outcome only — "NobleWave manages your SEO strategy end to end," not
-  "powered by X." This applies to anything added later too, not just SEO.
+- **Brand name is "NobleWave"**, not "NobleWave Marketing" — dropped
+  deliberately in the Aug 2026 rebrand (og:site_name, JSON-LD `name` fields,
+  page titles, footer copyright all updated). The domain
+  (`noblewavemarketing.ca`) and the contact email
+  (`noblewavemarketing@gmail.com`) keep the word "marketing" and were
+  intentionally **not** changed — only the brand-facing text was.
+- **Positioning**: "AI Solutions & Consultancy" — "We help businesses
+  understand, adopt, and implement AI to automate work, improve operations,
+  strengthen marketing, and grow more efficiently." Marketing is now an
+  *application* of AI (one of five service categories), not what the company
+  is. If you catch homepage/meta copy leading with "AI SEO" or a marketing
+  frame again, that's a regression — rebalance it.
+- **Service area unchanged**: Greater Toronto Area, based in Mississauga, ON.
+- **Five core services** (see `/services`, and three have their own
+  dedicated pages): **AI Consultancy & Strategy** (`/ai-consultancy`) — AI
+  readiness assessments, strategy, opportunity ID, implementation roadmaps;
+  **AI Automation** (`/ai-automation`) — workflow/process/repetitive-task
+  automation, CRM & lead automation; **AI Agents** (`/ai-agents`) — customer
+  service, sales, lead-qualification, booking, and internal AI agents;
+  **AI-Powered Marketing** (`/services#ai-marketing`, no dedicated page) —
+  absorbs the old AI SEO / content / local SEO / video / social / lead-gen
+  services as facets of this one category now; **Custom AI Solutions**
+  (`/services#custom-ai-solutions`, no dedicated page) — absorbs the old
+  "Websites" and "Technical Infrastructure" services.
+- **AI Strategy Session is the flagship bookable product** — the primary
+  nav CTA ("Book an AI Consultation") and most CTAs site-wide now link
+  straight to `/ai-strategy-session`, not `/contact`. See its own section
+  below — unchanged by this rebrand, it already fit perfectly.
+- **No public pricing, anywhere** — unchanged rule from before, still in
+  force. Every service is "request a custom quote"; no dollar figures in
+  visible copy, `<title>`/meta, or `Offer.price` schema fields.
+- **Never name the underlying tooling/tech stack to customers** — unchanged
+  rule from before, still in force ("NobleWave manages this for you," not
+  "powered by X").
 - Contact: noblewavemarketing@gmail.com · 647-673-5748 · Mississauga, ON.
-- **No fake testimonials, client logos, reviews, or case-study stats** — the
-  brief this was built from explicitly forbids it. If the owner wants social
-  proof, it needs to be real.
+- **No fake testimonials, client logos, reviews, awards, certifications, or
+  case-study stats** — explicitly forbidden by the brief this rebrand was
+  built from. If the owner wants social proof, it needs to be real.
 
 See `src/pages/*.tsx` and `src/components/HomeSections.tsx` for the current
 on-site copy — that's the source of truth, not any external doc.
 
-## Site structure (multi-page, Aug 2026 rebuild)
+## Legacy pages — redirected, not deleted (Aug 2026)
+
+`/ai-seo`, `/websites`, `/lead-generation`, and `/mississauga` represented
+the pre-rebrand marketing-agency/lead-gen identity and actively contradicted
+the new AI-consultancy positioning. Rather than delete them, they're
+**301-redirected** (see `redirects` in `vercel.json`) to their closest
+new-identity equivalent — preserves any inbound links/SEO equity without
+ever showing contradictory content to a visitor or crawler:
+- `/ai-seo` → `/services#ai-marketing`
+- `/websites` → `/services#custom-ai-solutions`
+- `/lead-generation` → `/services#ai-marketing`
+- `/mississauga` → `/`
+
+The source files, page components, and their `vite.config.ts` build entries
+are all still intact and still build (content preserved per the owner's
+instruction to keep useful existing content where possible) — they're just
+not linked from anywhere live, not in `sitemap.xml`, and unreachable in
+production because the redirect fires first. **If you're asked to fully
+retire vs. fully revive one of these, that's an explicit decision for the
+owner — don't unilaterally delete the files or unilaterally remove a
+redirect.**
+
+## Site structure (multi-page, Aug 2026)
 
 This is a Vite **multi-page app** (MPA), not a single-page site and not a
 client router — each route is a real `.html` entry + its own React root,
 registered in `vite.config.ts` → `build.rollupOptions.input`. Vercel's
 `cleanUrls: true` (in `vercel.json`) maps `/foo` → `foo.html` automatically.
 
-Live pages: `/` (home, overview/hub), `/services` (all 8, one section each),
-`/ai-seo`, `/websites`, `/lead-generation`, `/about`, `/pricing` (3 tiers:
-AI SEO Growth, Website & Total Setup, Complete AI Growth System — plus the
-standalone $400/mo lead-gen callout), `/contact`, `/privacy`, `/mississauga`
-(city landing page — see below). Each has its own title/meta/canonical/schema.
+Live pages: `/` (home), `/services` (hub — 5 categories, one section each),
+`/ai-consultancy`, `/ai-automation`, `/ai-agents`, `/ai-strategy-session`,
+`/pricing`, `/about`, `/contact`, `/privacy`. Each has its own
+title/meta/canonical/schema. (`/ai-seo`, `/websites`, `/lead-generation`,
+`/mississauga` still build too, per the section above, but are redirected
+away in production.)
 
 **To add a new page**: create `<slug>.html` at the repo root (copy an
 existing one's `<head>` pattern), `src/main-<slug>.tsx` (mounts the page
@@ -86,13 +113,15 @@ component), `src/pages/<Slug>Page.tsx` (wrap content in `<PageShell>` +
 **Shared components**: `PageShell` (Header+Footer+Analytics chrome for every
 non-home page), `PageHeader` (lightweight inner-page hero band — no 3D globe,
 keeps inner pages fast), `Header`/`Hero` (`Hero.tsx` — Header takes an
-optional `withAnnouncement` prop, home-page only), `Footer`. The homepage
-(`App.tsx`) assembles its own chrome directly since the 3D-globe Hero needs
-scroll effects the shared shell doesn't provide.
+optional `withAnnouncement` prop, home-page only; nav links live in
+`navLinks` inside `Header`), `Footer`. The homepage (`App.tsx`) assembles
+its own chrome directly since the Hero needs scroll effects the shared shell
+doesn't provide.
 
 **City pages** (`/mississauga`, pattern in `CityIntro.tsx` + `src/pages/`):
-still a real thing, additive to the GTA-wide site, not a replacement for it.
-Give each city its own distinct paragraph — no find-replace duplicate content.
+currently redirected away (see Legacy pages above) — the city-page *pattern*
+is still there in the code if a future geo-specific push wants it, but
+nothing links to it right now.
 
 ## Stack
 
@@ -103,7 +132,7 @@ Give each city its own distinct paragraph — no find-replace duplicate content.
   of everything else). Removed Aug 2026. **Do not reintroduce three.js or
   any other heavy animation library for decorative/background visuals** —
   if a future ask wants something fancier here, push back and reach for
-  CSS/SVG first; this is a marketing site where load speed is the product.
+  CSS/SVG first; this is a site where load speed is the product.
 - **Contact form submits via Formspree** (`FORMSPREE_ENDPOINT` in
   `Contact.tsx`), not the `api/contact.js` Resend route — that route exists
   in the repo but the form was switched to Formspree upstream at some point.
@@ -128,20 +157,21 @@ the Vercel dashboard, Claude has no access there): whether the Formspree
 endpoint and the analytics IDs in `DEPLOY.md` are actually receiving/live on
 the production project.
 
-## AI Strategy Session (added Aug 2026)
+## AI Strategy Session (added Aug 2026, unaffected by the rebrand)
 
 A standalone, separately-purchasable product — a paid one-on-one AI
-consulting session, not part of the managed-service stack. Deliberately
-**not** folded into the `services` array in `ServicesPage.tsx` (that array
-is fully-managed monthly services; this is a one-time session) — it has its
-own distinct panel there instead, plus its own page, its own homepage
-spotlight, and its own footer link. If you're tempted to merge it into the
-services loop for "consistency," don't — that would misrepresent it exactly
-the way the brief this was built from explicitly said not to.
+consulting session, not part of the managed-service stack. It already fit
+the AI-consultancy identity perfectly, so the rebrand only changed how
+prominently it's linked (now the primary nav CTA and most site-wide CTAs go
+straight here) — not its own content. Deliberately **not** folded into the
+`services` array in `ServicesPage.tsx` (that array is fully-managed ongoing
+services; this is a one-time session) — it has its own distinct panel there
+instead, plus its own page, its own homepage spotlight, and its own footer
+link. Don't merge it into the services loop for "consistency."
 
 - **Page**: `/ai-strategy-session` (`src/pages/AiStrategySessionPage.tsx`).
   Session data (name/duration/tagline/`price: null`) lives at the top of
-  that file — `price` is intentionally unset; see the pricing note below.
+  that file — `price` is intentionally unset; see the pricing note above.
 - **Intake form**: `src/components/AiStrategyIntakeForm.tsx` — deliberately
   a separate component from `Contact.tsx`'s `ContactForm`, not a reuse,
   because the fields are genuinely different (challenge/outcome/AI
@@ -164,18 +194,18 @@ the way the brief this was built from explicitly said not to.
 `~/Downloads/NobleWave_AI_Receptionist_All_Industries_v2/` — a full flyer/PDF
 collateral set (Salons, Medical, Dental, Vet, Auto Repair, Law, Home
 Services, General) for an "AI Receptionist" product. Not currently
-represented on the site. The Aug 2026 rebuild covers AI SEO, websites,
-content, local SEO, AI video, social, and lead gen — a standalone AI
-receptionist/voice-agent product was explicitly *not* part of that brief.
-Confirm with the owner before adding it.
+represented on the site. Given the Aug 2026 AI-consultancy rebrand, this is
+now arguably closer to fitting (an AI Receptionist would naturally be an
+"AI Agent") than it was before — but it still wasn't part of any brief given
+so far. Confirm with the owner before adding it; don't assume the rebrand
+implicitly authorizes it.
 
 ## Working conventions
 
 - `git pull --ff-only` before starting each session — this repo may be
-  edited from more than one place (something pushed a 384-line Contact.tsx
-  change upstream mid-session once already).
+  edited from more than one place.
 - Run `npm run lint` (tsc typecheck) and `npm run build` after any change —
-  the build is an MPA with ~10 entries now; a typo in one page's imports
+  the build is an MPA with 13+ entries now; a typo in one page's imports
   breaks the whole build, not just that page.
 - Every `.html` entry needs its own unique `<title>`/meta description — don't
   copy one page's `<head>` into another without rewriting these.
@@ -206,3 +236,8 @@ Confirm with the owner before adding it.
   — are the one exception, left at their own `py-24`–`py-32` mix; the
   homepage's rhythm wasn't part of the reported problem, don't change it
   without a reason.)
+- **Nav uses `whitespace-nowrap` + a tighter `gap-5 xl:gap-7`** (not `gap-8`)
+  because "AI Consultancy" / "AI Automation" / "AI Agents" are two-word nav
+  items that were wrapping to two lines at `gap-8`. If more/longer nav items
+  get added later, re-check nav fit at 1440px and above before assuming it's
+  fine.

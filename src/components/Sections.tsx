@@ -83,7 +83,7 @@ export const Services = () => {
                 href={service.link} 
                 className="inline-flex items-center gap-3 text-noble-gold font-bold hover:gap-5 transition-all uppercase text-sm tracking-[0.2em] border-b border-noble-gold/30 pb-2 hover:border-noble-gold"
               >
-                Claim Your Spot <ArrowRight size={16} />
+                Learn More <ArrowRight size={16} />
               </a>
             </motion.div>
           ))}
@@ -102,20 +102,22 @@ export const About = () => {
           whileInView={{ opacity: 1, x: 0 }}
           className="relative"
         >
-          <div className="aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=800&h=1000"
-              alt="Home services professional at work"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-              loading="lazy"
-              decoding="async"
-              width="800"
-              height="1000"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="absolute -bottom-12 -right-12 bg-noble-gold p-12 rounded-[2.5rem] shadow-[0_20px_50px_rgba(212,175,55,0.3)] hidden md:block">
-            <p className="text-noble-black font-serif text-4xl italic font-black leading-tight">Booked <br />Jobs.</p>
+          <div className="p-12 md:p-16 bg-noble-dark border border-white/10 rounded-[3rem] shadow-2xl">
+            <p className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold mb-8">How We Work</p>
+            <ul className="space-y-8">
+              <li>
+                <h4 className="font-serif text-2xl text-white mb-2">Assess first</h4>
+                <p className="text-gray-500 font-light">No recommendation before we understand your business, your data, and your constraints.</p>
+              </li>
+              <li>
+                <h4 className="font-serif text-2xl text-white mb-2">Strategy, then build</h4>
+                <p className="text-gray-500 font-light">A roadmap you can act on — then the same team implements it, rather than handing you a report.</p>
+              </li>
+              <li>
+                <h4 className="font-serif text-2xl text-white mb-2">Honest about limits</h4>
+                <p className="text-gray-500 font-light">We'll tell you when AI isn't the right fit yet, not just what to buy.</p>
+              </li>
+            </ul>
           </div>
         </motion.div>
 
@@ -123,26 +125,26 @@ export const About = () => {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
         >
-          <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold">The NobleWave Advantage</span>
+          <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold">The NobleWave Approach</span>
           <h2 className="text-6xl md:text-7xl font-serif mt-8 mb-10 text-white leading-tight">
-            Built by a Contractor, <br />
-            <span className="italic text-noble-gold">Not an Agency.</span>
+            Practical AI. <br />
+            <span className="italic text-noble-gold">Not AI Hype.</span>
           </h2>
           <p className="text-gray-400 text-2xl mb-10 leading-relaxed font-light">
-            We run a home services company in the GTA ourselves. We know what it feels like to pay for "marketing" and get a report full of impressions while the phone stays quiet.
+            AI is easy to talk about and hard to actually use well. NobleWave exists to close that gap — helping businesses understand where AI genuinely helps, build a realistic plan, and implement the systems that make it work.
           </p>
           <p className="text-gray-400 text-xl mb-12 leading-relaxed font-light">
-            So we built the lead system we wished someone would sell us: paid campaigns targeted at real homeowners, qualification that filters tire-kickers before they waste your time, and instant, exclusive delivery straight to your phone.
+            We don't sell AI for its own sake. Every engagement starts with your actual business — your workflows, your goals, your constraints — and works backward to what AI can realistically do about them.
           </p>
 
           <div className="grid grid-cols-2 gap-12">
             <div>
-              <h4 className="font-serif text-3xl text-white mb-4">Exclusive</h4>
-              <p className="text-lg text-gray-500 font-light">One lead, one partner. We never sell the same homeowner to two companies.</p>
+              <h4 className="font-serif text-3xl text-white mb-4">Consultancy + Build</h4>
+              <p className="text-lg text-gray-500 font-light">Strategy and implementation from the same team — not a plan you're left to execute alone.</p>
             </div>
             <div>
-              <h4 className="font-serif text-3xl text-white mb-4">One Per City</h4>
-              <p className="text-lg text-gray-500 font-light">One company per trade, per city — so every partner gets real volume, no matter how many cities we're in.</p>
+              <h4 className="font-serif text-3xl text-white mb-4">Business-First</h4>
+              <p className="text-lg text-gray-500 font-light">We start with your operations and goals, not with a list of AI tools looking for a use case.</p>
             </div>
           </div>
         </motion.div>

@@ -47,7 +47,7 @@ export const CityIntro = ({ city, eyebrow, paragraph }: CityIntroProps) => {
               data-track="cta"
               className="bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)]"
             >
-              Claim Your Spot
+              Get in Touch
             </motion.a>
             <motion.a
               href="#pricing"

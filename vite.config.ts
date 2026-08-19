@@ -16,6 +16,9 @@ export default defineConfig(() => {
         input: {
           main: path.resolve(__dirname, 'index.html'),
           services: path.resolve(__dirname, 'services.html'),
+          aiConsultancy: path.resolve(__dirname, 'ai-consultancy.html'),
+          aiAutomation: path.resolve(__dirname, 'ai-automation.html'),
+          aiAgents: path.resolve(__dirname, 'ai-agents.html'),
           aiSeo: path.resolve(__dirname, 'ai-seo.html'),
           websites: path.resolve(__dirname, 'websites.html'),
           leadGeneration: path.resolve(__dirname, 'lead-generation.html'),

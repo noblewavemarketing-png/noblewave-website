@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import {
   Search, Compass, Hammer, LineChart, Cog, Bot, Cable,
-  HelpCircle, ListFilter, Workflow, Unplug, Gauge, Clock,
+  HelpCircle, ListFilter, Gauge,
   Target, Megaphone,
   ArrowRight, Check,
 } from "lucide-react";
@@ -13,33 +13,30 @@ import {
 const problems = [
   { icon: <HelpCircle size={28} />, title: "You know AI matters, but not where to start", description: "It's everywhere in the news and nowhere in a plan you can actually follow — so it's easier to do nothing." },
   { icon: <ListFilter size={28} />, title: "You can't tell which tools actually matter", description: "A new AI tool launches every week. Most are noise. Very few are actually right for your business." },
-  { icon: <Workflow size={28} />, title: "You're not sure what should be automated", description: "Some of what your team does by hand could run itself — but automating the wrong thing wastes time and trust." },
-  { icon: <Unplug size={28} />, title: "AI doesn't connect to how you actually work", description: "A tool that doesn't plug into your existing systems and workflows just becomes one more thing to manage." },
   { icon: <Gauge size={28} />, title: "There's no way to measure if it's working", description: "Without a clear before-and-after, \"we're using AI now\" is a claim, not a result." },
-  { icon: <Clock size={28} />, title: "Competitors are already moving", description: "The businesses that work this out first get the efficiency gain and the head start — waiting has a real cost." },
 ];
 
 export const Problems = () => (
-  <section className="py-28 md:py-32 bg-noble-black relative overflow-hidden">
+  <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-black relative overflow-hidden">
     <div className="max-w-7xl mx-auto px-6 relative z-10">
-      <div className="text-center mb-20">
+      <div className="text-center mb-10 md:mb-16">
         <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Sound Familiar?</span>
-        <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
+        <h2 className="text-4xl md:text-6xl font-serif mt-6 text-white leading-tight">
           AI Curiosity Alone <span className="italic text-noble-gold">Doesn't Move a Business.</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed">
-          We help businesses move from AI curiosity to AI strategy to AI implementation to measurable results.
+          We help businesses move from AI curiosity to strategy to implementation to measurable results.
         </p>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
         {problems.map((p, i) => (
           <motion.div
             key={p.title}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: (i % 3) * 0.1 }}
-            className="p-8 bg-noble-dark border border-white/5 rounded-[2rem]"
+            transition={{ delay: i * 0.1 }}
+            className="p-6 md:p-8 bg-noble-dark border border-white/5 rounded-[2rem]"
           >
             <div className="w-14 h-14 rounded-2xl bg-noble-gold/10 flex items-center justify-center text-noble-gold mb-6">
               {p.icon}
@@ -64,18 +61,18 @@ const overviewServices = [
 ];
 
 export const ServicesOverview = () => (
-  <section id="services-overview" className="py-28 md:py-32 bg-noble-dark relative overflow-hidden">
+  <section id="services-overview" className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-dark relative overflow-hidden scroll-mt-20">
     <div className="max-w-7xl mx-auto px-6 relative z-10">
-      <div className="text-center mb-20">
+      <div className="text-center mb-10 md:mb-16">
         <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What We Do</span>
-        <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
+        <h2 className="text-4xl md:text-6xl font-serif mt-6 text-white leading-tight">
           Six Ways We Put <span className="italic text-noble-gold">AI to Work.</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed">
           From first assessment to a fully built system — strategy, automation, agents, and implementation, managed for you.
         </p>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {overviewServices.map((s, i) => (
           <motion.a
             key={s.title}
@@ -85,7 +82,7 @@ export const ServicesOverview = () => (
             viewport={{ once: true }}
             transition={{ delay: (i % 3) * 0.1 }}
             whileHover={{ y: -6 }}
-            className="p-10 bg-noble-black border border-white/5 rounded-[2.5rem] hover:border-noble-gold/40 transition-all group flex flex-col"
+            className="p-8 md:p-10 bg-noble-black border border-white/5 rounded-[2.5rem] hover:border-noble-gold/40 transition-all group flex flex-col"
           >
             <div className="w-16 h-16 rounded-2xl bg-noble-gold/10 flex items-center justify-center text-noble-gold mb-8 group-hover:bg-noble-gold group-hover:text-noble-black transition-all">
               {s.icon}
@@ -111,15 +108,15 @@ const steps = [
 ];
 
 export const HowItWorks = () => (
-  <section className="py-28 md:py-32 bg-noble-black relative overflow-hidden">
+  <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-black relative overflow-hidden">
     <div className="max-w-7xl mx-auto px-6 relative z-10">
-      <div className="text-center mb-20">
+      <div className="text-center mb-10 md:mb-16">
         <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">How It Works</span>
-        <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
+        <h2 className="text-4xl md:text-6xl font-serif mt-6 text-white leading-tight">
           Four Steps. <span className="italic text-noble-gold">Fully Managed.</span>
         </h2>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {steps.map((s, i) => (
           <motion.div
             key={s.title}
@@ -284,20 +281,18 @@ export const AiStrategySessionSpotlight = () => (
 const reasons = [
   "Practical AI implementation, not hype or buzzwords",
   "A clear roadmap before any building starts",
-  "Systems connected to how you already work, not more logins",
   "Honest about where AI fits — and where it doesn't",
-  "Clear, plain-language reporting on what's actually working",
   "Local GTA support from a real person",
 ];
 
 export const WhyNobleWave = () => (
-  <section className="py-28 md:py-32 bg-noble-black relative overflow-hidden">
+  <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-black relative overflow-hidden">
     <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
       <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Why NobleWave</span>
-      <h2 className="text-5xl md:text-6xl font-serif mt-6 mb-16 text-white leading-tight">
+      <h2 className="text-4xl md:text-6xl font-serif mt-6 mb-10 md:mb-16 text-white leading-tight">
         No Confusing <span className="italic text-noble-gold">AI Hype.</span>
       </h2>
-      <div className="grid sm:grid-cols-2 gap-x-12 gap-y-8 text-left max-w-3xl mx-auto">
+      <div className="grid sm:grid-cols-2 gap-x-12 gap-y-6 text-left max-w-3xl mx-auto">
         {reasons.map((r) => (
           <div key={r} className="flex items-start gap-4">
             <Check className="text-noble-gold shrink-0 mt-1" size={20} />
@@ -311,9 +306,9 @@ export const WhyNobleWave = () => (
 
 /* 11. Final CTA */
 export const FinalCTA = () => (
-  <section className="py-28 noble-gradient relative overflow-hidden">
+  <section className="py-14 sm:py-20 md:py-24 noble-gradient relative overflow-hidden">
     <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-      <h2 className="text-5xl md:text-6xl font-serif mb-8 text-white leading-tight">
+      <h2 className="text-4xl md:text-6xl font-serif mb-8 text-white leading-tight">
         Ready to Put AI to Work <span className="italic text-noble-gold">in Your Business?</span>
       </h2>
       <p className="text-gray-300 text-xl mb-12 font-light leading-relaxed max-w-2xl mx-auto">

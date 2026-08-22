@@ -8,11 +8,6 @@ import {
   Problems,
   ServicesOverview,
   HowItWorks,
-  AiConsultancySpotlight,
-  AiAutomationSpotlight,
-  AiAgentsSpotlight,
-  AiMarketingSpotlight,
-  AiStrategySessionSpotlight,
   WhyNobleWave,
   FinalCTA,
 } from "./components/HomeSections";
@@ -50,11 +45,6 @@ export default function App() {
         <Problems />
         <ServicesOverview />
         <HowItWorks />
-        <AiConsultancySpotlight />
-        <AiAutomationSpotlight />
-        <AiAgentsSpotlight />
-        <AiMarketingSpotlight />
-        <AiStrategySessionSpotlight />
         <WhyNobleWave />
         <FinalCTA />
       </main>

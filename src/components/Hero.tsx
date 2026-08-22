@@ -1,7 +1,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import { AmbientGlow } from "./AmbientGlow";
 
 export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -139,19 +138,29 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
 
 export const Hero = () => {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+  const imageY = useTransform(scrollY, [0, 700], [0, 130]);
+  const imageScale = useTransform(scrollY, [0, 700], [1, 1.08]);
   const y2 = useTransform(scrollY, [0, 500], [0, -150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-noble-black pt-48 pb-20 md:pt-36">
-      <AmbientGlow />
-
-      {/* Background Elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] rounded-full bg-noble-gold/10 blur-[150px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-white/5 blur-[150px]" />
-      </div>
+      {/* Hero image — drifts and scales slightly on scroll (parallax).
+          Generated at full quality, 64KB as WebP: costs nothing on load. */}
+      <motion.div className="absolute inset-0 z-0" style={{ y: imageY, scale: imageScale }} aria-hidden="true">
+        <img
+          src="/images/hero-wave.webp"
+          alt=""
+          className="w-full h-full object-cover object-[85%_25%] md:object-center"
+          width={2752}
+          height={1536}
+          fetchPriority="high"
+          decoding="async"
+        />
+      </motion.div>
+      {/* Legibility scrim — darker under the text, image reads clearly on the right */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-r from-noble-black via-noble-black/75 to-noble-black/25" aria-hidden="true" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-noble-black via-transparent to-noble-black/50" aria-hidden="true" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <motion.div style={{ y: y2, opacity }}>

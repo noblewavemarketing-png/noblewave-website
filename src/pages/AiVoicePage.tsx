@@ -5,47 +5,47 @@ import { PageHeader } from "../components/PageHeader";
 
 const pillars = [
   {
-    title: "Traditional SEO",
-    description: "The fundamentals: keyword research, on-page optimization, and content built around what your customers actually search for.",
+    title: "24/7 AI Receptionist",
+    description: "Every call gets answered, day or night — no voicemail, no missed opportunity.",
   },
   {
-    title: "Local SEO",
-    description: "Google Business Profile management, local keyword targeting, and the signals that determine whether you show up in \"near me\" searches and the Maps pack.",
+    title: "Natural Voice Conversations",
+    description: "Callers talk normally; the agent understands context, not just keywords.",
   },
   {
-    title: "Technical SEO",
-    description: "Site speed, mobile-friendliness, crawlability, metadata, and schema markup — the behind-the-scenes work that lets search engines read your site correctly.",
+    title: "Lead Qualification",
+    description: "The agent asks the right questions and filters for the leads worth your time.",
   },
   {
-    title: "Content SEO",
-    description: "Blog posts, service pages, city pages, and FAQs, researched and written around real search intent, then kept current instead of going stale.",
+    title: "Appointment Booking",
+    description: "Callers get scheduled directly, synced to your calendar.",
   },
   {
-    title: "GEO — Generative Engine Optimization",
-    description: "Structuring your content so AI tools like ChatGPT and Gemini can find, understand, and cite it when someone asks them a question instead of searching.",
+    title: "Call Summaries",
+    description: "Every call is transcribed and summarized, so nothing gets lost in translation.",
   },
   {
-    title: "AEO — Answer Engine Optimization",
-    description: "Writing content in a clear question-and-answer structure, so it's positioned to be pulled directly into AI Overviews and answer boxes.",
+    title: "SMS & Email Follow-Up",
+    description: "Automatic follow-up keeps the conversation going after the call ends.",
   },
 ];
 
 const included = [
-  "Automated content publishing on a set schedule",
-  "Google Business Profile management",
-  "Internal linking between related pages",
-  "Backlink strategy",
-  "Monthly performance reporting",
-  "AI visibility tracking across ChatGPT, Gemini, Claude, Perplexity, and Google AI",
+  "Lead routing to the right person or team",
+  "CRM integration",
+  "Automated intake forms",
+  "Custom call scripts built around your business",
+  "Escalation to a real person when needed",
+  "Ongoing tuning as real calls reveal gaps",
 ];
 
-export default function AiSeoPage() {
+export default function AiVoicePage() {
   return (
     <PageShell>
       <PageHeader
-        eyebrow="AI SEO"
-        title={<>Search Engines. <span className="italic text-noble-gold">And AI Engines.</span></>}
-        subtitle="NobleWave manages your SEO strategy end to end — researching, creating, optimizing, publishing, and measuring the work continuously, so your search presence is never sitting idle between check-ins."
+        eyebrow="AI Voice"
+        title={<>Never Miss <span className="italic text-noble-gold">Another Call.</span></>}
+        subtitle="A 24/7 AI receptionist that has natural conversations, qualifies leads, and books appointments — so no opportunity depends on someone being near the phone."
         primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
         secondaryCta={{ label: "See All Solutions", href: "/" }}
       />
@@ -55,7 +55,7 @@ export default function AiSeoPage() {
           <div className="text-center mb-16">
             <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
             <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
-              Six Parts of Search. <span className="italic text-noble-gold">One Managed System.</span>
+              A Receptionist That <span className="italic text-noble-gold">Never Clocks Out.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -90,7 +90,9 @@ export default function AiSeoPage() {
             </ul>
             <div className="pt-8 border-t border-white/10">
               <p className="text-gray-500 text-sm font-light leading-relaxed">
-                SEO is a long-term growth strategy, not an overnight switch. Results vary based on your competition, your website's existing authority, your market, your budget, and how the strategy is implemented — we report on real movement every month rather than promising a specific ranking or timeline.
+                AI voice agents handle defined, repeatable conversations well, and are built with
+                clear handoff to a real person for anything outside their scope. Call volume and
+                outcomes depend on your business, your script, and how the agent is configured.
               </p>
             </div>
           </div>
@@ -100,10 +102,10 @@ export default function AiSeoPage() {
       <section className="py-24 md:py-28 noble-gradient">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
-            Ready to See Where You <span className="italic text-noble-gold">Actually Stand?</span>
+            Ready to Stop <span className="italic text-noble-gold">Missing Calls?</span>
           </h2>
           <p className="text-gray-300 text-lg mb-10 font-light leading-relaxed">
-            A strategy call starts with a real look at your site, your competitors, and where the opportunity actually is.
+            See exactly how an AI receptionist would handle your business's calls.
           </p>
           <a
             href="/ai-strategy-session"

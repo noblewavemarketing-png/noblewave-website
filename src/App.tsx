@@ -5,10 +5,11 @@
 
 import { Header, Hero } from "./components/Hero";
 import {
-  Problems,
-  ServicesOverview,
-  HowItWorks,
-  WhyNobleWave,
+  SystemFlow,
+  GetFound,
+  CaptureEveryLead,
+  StayVisible,
+  Process,
   FinalCTA,
 } from "./components/HomeSections";
 import { Footer } from "./components/Footer";
@@ -42,10 +43,11 @@ export default function App() {
       <Header withAnnouncement />
       <main id="main">
         <Hero />
-        <Problems />
-        <ServicesOverview />
-        <HowItWorks />
-        <WhyNobleWave />
+        <SystemFlow />
+        <GetFound />
+        <CaptureEveryLead />
+        <StayVisible />
+        <Process />
         <FinalCTA />
       </main>
       <Footer />

@@ -1,119 +1,294 @@
 import { motion } from "motion/react";
 import {
-  Search, Compass, Hammer, LineChart, Cog, Bot, Cable,
-  HelpCircle, ListFilter, Gauge,
-  Target, Megaphone,
-  ArrowRight, Check,
+  Search, Globe, PhoneCall, Workflow, PenTool,
+  ArrowRight, ArrowDown, Check, ExternalLink, CheckCircle2,
+  Compass, Hammer, Rocket, LineChart,
 } from "lucide-react";
 
 /* 1. Announcement bar — rendered inside Header (withAnnouncement) so it moves
    with the fixed nav instead of sitting behind it. See Hero.tsx. */
 
-/* 3. Business problems — why businesses struggle to actually get value from AI */
-const problems = [
-  { icon: <HelpCircle size={28} />, title: "You know AI matters, but not where to start", description: "It's everywhere in the news and nowhere in a plan you can actually follow — so it's easier to do nothing." },
-  { icon: <ListFilter size={28} />, title: "You can't tell which tools actually matter", description: "A new AI tool launches every week. Most are noise. Very few are actually right for your business." },
-  { icon: <Gauge size={28} />, title: "There's no way to measure if it's working", description: "Without a clear before-and-after, \"we're using AI now\" is a claim, not a result." },
+/* 2. The NobleWave System — doubles as the hero's companion visual (it's the
+   first thing after the hero) and the dedicated "one connected system"
+   section from the brief. Five nodes, connected, not five separate services. */
+const systemNodes = [
+  { icon: <Search size={24} />, title: "Search", description: "Customer discovers the business." },
+  { icon: <Globe size={24} />, title: "Website", description: "Customer understands the offer." },
+  { icon: <PhoneCall size={24} />, title: "AI Voice", description: "Every opportunity gets handled." },
+  { icon: <Workflow size={24} />, title: "Automation", description: "Leads are organized and followed up." },
+  { icon: <PenTool size={24} />, title: "Content", description: "Visibility keeps building, on its own." },
 ];
 
-export const Problems = () => (
-  <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-black relative overflow-hidden">
+export const SystemFlow = () => (
+  <section id="system" className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-black relative overflow-hidden scroll-mt-20">
     <div className="max-w-7xl mx-auto px-6 relative z-10">
       <div className="text-center mb-10 md:mb-16">
-        <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Sound Familiar?</span>
+        <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">The NobleWave System</span>
         <h2 className="text-4xl md:text-6xl font-serif mt-6 text-white leading-tight">
-          AI Curiosity Alone <span className="italic text-noble-gold">Doesn't Move a Business.</span>
+          One Connected <span className="italic text-noble-gold">Growth System.</span>
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed">
-          We help businesses move from AI curiosity to strategy to implementation to measurable results.
+          Instead of stitching together agencies, freelancers, and disconnected tools, NobleWave designs and implements the digital system around your business.
         </p>
       </div>
-      <div className="grid sm:grid-cols-3 gap-6 md:gap-8">
-        {problems.map((p, i) => (
-          <motion.div
-            key={p.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="p-6 md:p-8 bg-noble-dark border border-white/5 rounded-[2rem]"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-noble-gold/10 flex items-center justify-center text-noble-gold mb-6">
-              {p.icon}
-            </div>
-            <h3 className="text-xl font-serif text-white mb-3">{p.title}</h3>
-            <p className="text-gray-500 font-light leading-relaxed">{p.description}</p>
-          </motion.div>
+      <div className="flex flex-col lg:flex-row items-stretch gap-3 lg:gap-0">
+        {systemNodes.map((node, i) => (
+          <div key={node.title} className="flex flex-col lg:flex-row items-center flex-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="w-full p-6 bg-noble-dark border border-white/5 rounded-[1.75rem] text-center"
+            >
+              <div className="w-12 h-12 mx-auto rounded-xl bg-noble-gold/10 flex items-center justify-center text-noble-gold mb-4">
+                {node.icon}
+              </div>
+              <h3 className="text-base font-serif text-white mb-1">{node.title}</h3>
+              <p className="text-gray-500 text-xs font-light leading-snug">{node.description}</p>
+            </motion.div>
+            {i < systemNodes.length - 1 && (
+              <div className="text-noble-gold/40 shrink-0 py-2 lg:py-0 lg:px-2" aria-hidden="true">
+                <ArrowDown size={18} className="lg:hidden" />
+                <ArrowRight size={18} className="hidden lg:block" />
+              </div>
+            )}
+          </div>
         ))}
       </div>
     </div>
   </section>
 );
 
-/* 4. Services overview — the six core service categories */
-const overviewServices = [
-  { icon: <Compass size={32} />, title: "AI Consultancy", description: "Understand where AI realistically fits your business — readiness, opportunities, and a roadmap, not hype.", href: "/ai-consultancy" },
-  { icon: <Target size={32} />, title: "AI Strategy", description: "A practical, prioritized plan for AI adoption, built around your goals, budget, and constraints.", href: "/ai-strategy-session" },
-  { icon: <Cog size={32} />, title: "AI Automation", description: "Workflow and process automation that removes repetitive work, connected to the tools you already use.", href: "/ai-automation" },
-  { icon: <Bot size={32} />, title: "AI Agents", description: "Custom AI agents for customer service, sales, lead qualification, booking, and internal support.", href: "/ai-agents" },
-  { icon: <Megaphone size={32} />, title: "AI-Powered Marketing", description: "Content systems, marketing automation, and lead generation — AI applied to marketing, not the other way around.", href: "/services#ai-marketing" },
-  { icon: <Cable size={32} />, title: "Custom AI Solutions", description: "Custom workflows, integrations, and internal tools built around exactly what your business needs.", href: "/services#custom-ai-solutions" },
+/* 3. Outcome 1 — Get Found (Websites + AI Search), with a real portfolio
+   piece: an honest browser-mockup linking to the live SO HVAC site NobleWave
+   built. No fabricated screenshot — the CSP on that site blocks iframing,
+   so this links out to the real thing instead of faking a preview. */
+const getFoundPoints = [
+  "Premium business websites",
+  "AI SEO & technical SEO",
+  "Local SEO & Google Business alignment",
+  "Search architecture & schema",
+  "Analytics & Search Console",
+  "Conversion-focused design",
 ];
 
-export const ServicesOverview = () => (
-  <section id="services-overview" className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-dark relative overflow-hidden scroll-mt-20">
-    <div className="max-w-7xl mx-auto px-6 relative z-10">
-      <div className="text-center mb-10 md:mb-16">
-        <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What We Do</span>
-        <h2 className="text-4xl md:text-6xl font-serif mt-6 text-white leading-tight">
-          Six Ways We Put <span className="italic text-noble-gold">AI to Work.</span>
+export const GetFound = () => (
+  <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-dark relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+        <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Get Found</span>
+        <h2 className="text-4xl md:text-5xl font-serif mt-6 mb-6 text-white leading-tight">
+          Websites <span className="italic text-noble-gold">+ AI Search.</span>
         </h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed">
-          From first assessment to a fully built system — strategy, automation, agents, and implementation, managed for you.
+        <p className="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+          Build a digital presence designed to be discovered — and designed to convert when customers arrive.
         </p>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        {overviewServices.map((s, i) => (
-          <motion.a
-            key={s.title}
-            href={s.href}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: (i % 3) * 0.1 }}
-            whileHover={{ y: -6 }}
-            className="p-8 md:p-10 bg-noble-black border border-white/5 rounded-[2.5rem] hover:border-noble-gold/40 transition-all group flex flex-col"
+        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-10">
+          {getFoundPoints.map((point) => (
+            <li key={point} className="flex items-start gap-3 text-gray-300 text-sm">
+              <Check className="text-noble-gold shrink-0 mt-0.5" size={16} />
+              <span className="font-light">{point}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/websites" className="inline-flex items-center gap-2 text-noble-gold font-bold uppercase text-xs tracking-[0.2em] hover:gap-4 transition-all">
+          See What We Build <ArrowRight size={14} />
+        </a>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="rounded-[1.75rem] overflow-hidden border border-white/10 bg-noble-black shadow-2xl"
+      >
+        <div className="flex items-center gap-2 px-5 py-4 bg-white/[0.03] border-b border-white/5">
+          <span className="w-3 h-3 rounded-full bg-noble-gold/40" />
+          <span className="w-3 h-3 rounded-full bg-white/20" />
+          <span className="w-3 h-3 rounded-full bg-white/20" />
+          <span className="ml-4 text-gray-500 text-xs font-mono truncate">sohvac.ca</span>
+        </div>
+        <div className="p-8 md:p-10">
+          <span className="text-noble-gold uppercase tracking-[0.2em] text-[10px] font-bold">Live Project</span>
+          <h3 className="text-2xl font-serif text-white mt-3 mb-2">SO HVAC</h3>
+          <p className="text-gray-500 text-sm font-light leading-relaxed mb-6">
+            A conversion-focused HVAC services website for the Mississauga &amp; Oakville area — built mobile-first, with local SEO structured in from day one.
+          </p>
+          <a
+            href="https://www.sohvac.ca"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white font-bold text-sm hover:text-noble-gold transition-colors"
           >
-            <div className="w-16 h-16 rounded-2xl bg-noble-gold/10 flex items-center justify-center text-noble-gold mb-8 group-hover:bg-noble-gold group-hover:text-noble-black transition-all">
-              {s.icon}
-            </div>
-            <h3 className="text-2xl font-serif text-white mb-4">{s.title}</h3>
-            <p className="text-gray-400 font-light leading-relaxed mb-8 flex-grow">{s.description}</p>
-            <span className="inline-flex items-center gap-2 text-noble-gold font-bold uppercase text-xs tracking-[0.2em] group-hover:gap-4 transition-all">
-              Learn More <ArrowRight size={14} />
+            View Live Site <ExternalLink size={14} />
+          </a>
+        </div>
+      </motion.div>
+    </div>
+  </section>
+);
+
+/* 4. Outcome 2 — Capture Every Lead (AI Voice + automation), made tangible
+   with a simulated incoming-call transcript rather than an abstract graphic. */
+const captureLeadPoints = [
+  "24/7 AI receptionist",
+  "Natural voice conversations",
+  "Lead qualification",
+  "Appointment booking",
+  "Call summaries & follow-up",
+  "CRM integration",
+];
+
+export const CaptureEveryLead = () => (
+  <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-black relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="lg:order-2"
+      >
+        <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Capture Every Lead</span>
+        <h2 className="text-4xl md:text-5xl font-serif mt-6 mb-6 text-white leading-tight">
+          AI Voice <span className="italic text-noble-gold">+ Lead Automation.</span>
+        </h2>
+        <p className="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+          Your business shouldn't lose opportunities because nobody answered the phone.
+        </p>
+        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-10">
+          {captureLeadPoints.map((point) => (
+            <li key={point} className="flex items-start gap-3 text-gray-300 text-sm">
+              <Check className="text-noble-gold shrink-0 mt-0.5" size={16} />
+              <span className="font-light">{point}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/ai-voice" className="inline-flex items-center gap-2 text-noble-gold font-bold uppercase text-xs tracking-[0.2em] hover:gap-4 transition-all">
+          See How AI Voice Works <ArrowRight size={14} />
+        </a>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="lg:order-1 rounded-[1.75rem] overflow-hidden border border-white/10 bg-noble-dark shadow-2xl p-8 md:p-10"
+      >
+        <div className="flex items-center gap-3 mb-6">
+          <span className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-noble-gold opacity-60" />
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-noble-gold" />
+          </span>
+          <span className="text-white font-serif text-lg">Incoming Call</span>
+        </div>
+        <div className="bg-noble-black border border-white/5 rounded-2xl p-5 mb-6">
+          <p className="text-gray-300 text-sm font-light italic leading-relaxed">
+            &ldquo;Hi, I&apos;m looking for an estimate on a new furnace installation...&rdquo;
+          </p>
+        </div>
+        <div className="flex items-center gap-2 mb-5">
+          <div className="w-8 h-8 rounded-full bg-noble-gold/10 flex items-center justify-center text-noble-gold shrink-0">
+            <PhoneCall size={14} />
+          </div>
+          <span className="text-noble-gold text-xs font-bold uppercase tracking-widest">AI Agent</span>
+        </div>
+        <ul className="space-y-3">
+          {["Service identified", "Appointment requested", "Contact information captured", "Lead qualified"].map((item) => (
+            <li key={item} className="flex items-center gap-3 text-gray-300 text-sm">
+              <CheckCircle2 className="text-noble-gold shrink-0" size={16} />
+              <span className="font-light">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+    </div>
+  </section>
+);
+
+/* 5. Outcome 3 — Stay Visible (content automation), shown as one input
+   fanning out into everything a business's presence needs. */
+const stayVisiblePoints = [
+  "SEO articles",
+  "Social posts, scheduled and published",
+  "Short-form video",
+  "Google Business content",
+  "FAQs & website updates",
+  "Content repurposing",
+];
+
+const contentOutputs = ["Blog Article", "Social Post", "Short Video", "Google Business Post", "FAQ", "Website Update"];
+
+export const StayVisible = () => (
+  <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-dark relative overflow-hidden">
+    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+        <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Stay Visible</span>
+        <h2 className="text-4xl md:text-5xl font-serif mt-6 mb-6 text-white leading-tight">
+          One Idea. <span className="italic text-noble-gold">A Month of Content.</span>
+        </h2>
+        <p className="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+          Stay active online without spending every week creating content yourself.
+        </p>
+        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-10">
+          {stayVisiblePoints.map((point) => (
+            <li key={point} className="flex items-start gap-3 text-gray-300 text-sm">
+              <Check className="text-noble-gold shrink-0 mt-0.5" size={16} />
+              <span className="font-light">{point}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/content-automation" className="inline-flex items-center gap-2 text-noble-gold font-bold uppercase text-xs tracking-[0.2em] hover:gap-4 transition-all">
+          See How Content Automation Works <ArrowRight size={14} />
+        </a>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="rounded-[1.75rem] border border-white/10 bg-noble-black shadow-2xl p-8 md:p-10 text-center"
+      >
+        <div className="inline-block px-5 py-2.5 bg-noble-gold/10 border border-noble-gold/30 rounded-full text-noble-gold text-sm font-bold mb-4">
+          One Business Update
+        </div>
+        <ArrowDown className="mx-auto text-gray-600 mb-4" size={18} aria-hidden="true" />
+        <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 border border-white/10 rounded-full text-white text-sm font-bold mb-6">
+          <PenTool size={14} className="text-noble-gold" /> AI Content Engine
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+          {contentOutputs.map((output) => (
+            <span key={output} className="px-3 py-2.5 bg-noble-dark border border-white/5 rounded-xl text-gray-300 text-xs font-light">
+              {output}
             </span>
-          </motion.a>
-        ))}
-      </div>
+          ))}
+        </div>
+        <span className="inline-flex items-center gap-2 text-noble-gold text-xs font-bold uppercase tracking-widest">
+          <CheckCircle2 size={14} /> Scheduled &amp; Published
+        </span>
+      </motion.div>
     </div>
   </section>
 );
 
-/* 5. How it works — Discover, Strategize, Build, Optimize */
+/* 6. Process — from problem to working system. */
 const steps = [
-  { icon: <Search size={28} />, title: "Discover", description: "We get to know your business and identify where AI can realistically make a difference." },
-  { icon: <Compass size={28} />, title: "Strategize", description: "We develop a practical AI roadmap based on your goals, priorities, and constraints." },
-  { icon: <Hammer size={28} />, title: "Build", description: "We implement the automations, AI agents, integrations, and systems the roadmap calls for." },
-  { icon: <LineChart size={28} />, title: "Optimize", description: "We measure results and continuously improve the systems — reported to you in plain language." },
+  { icon: <Compass size={28} />, title: "Discover", description: "We identify where your business is losing visibility, leads, or time." },
+  { icon: <Rocket size={28} />, title: "Design", description: "We design the right website, search, and automation architecture." },
+  { icon: <Hammer size={28} />, title: "Build", description: "NobleWave implements and connects the system." },
+  { icon: <LineChart size={28} />, title: "Grow", description: "SEO, content, and automation continue improving the digital presence." },
 ];
 
-export const HowItWorks = () => (
+export const Process = () => (
   <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-black relative overflow-hidden">
     <div className="max-w-7xl mx-auto px-6 relative z-10">
       <div className="text-center mb-10 md:mb-16">
-        <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">How It Works</span>
+        <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Process</span>
         <h2 className="text-4xl md:text-6xl font-serif mt-6 text-white leading-tight">
-          Four Steps. <span className="italic text-noble-gold">Fully Managed.</span>
+          From Problem to <span className="italic text-noble-gold">Working System.</span>
         </h2>
       </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -126,7 +301,7 @@ export const HowItWorks = () => (
             transition={{ delay: i * 0.1 }}
             className="relative p-8 bg-noble-dark border border-white/5 rounded-[2rem]"
           >
-            <span className="absolute top-6 right-8 text-5xl font-serif text-white/5">{i + 1}</span>
+            <span className="absolute top-6 right-8 text-5xl font-serif text-white/5">{`0${i + 1}`}</span>
             <div className="w-14 h-14 rounded-2xl bg-noble-gold/10 flex items-center justify-center text-noble-gold mb-6 relative z-10">
               {s.icon}
             </div>
@@ -139,190 +314,33 @@ export const HowItWorks = () => (
   </section>
 );
 
-/* Shared spotlight shell — 6-9. */
-interface SpotlightProps {
-  eyebrow: string;
-  title: React.ReactNode;
-  description: string;
-  points: string[];
-  href: string;
-  cta: string;
-  reverse?: boolean;
-  dark?: boolean;
-}
-
-const Spotlight = ({ eyebrow, title, description, points, href, cta, reverse, dark }: SpotlightProps) => (
-  <section className={`py-24 relative overflow-hidden ${dark ? "bg-noble-dark" : "bg-noble-black"}`}>
-    <div className={`max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center ${reverse ? "lg:[&>*:first-child]:order-2" : ""}`}>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">{eyebrow}</span>
-        <h2 className="text-4xl md:text-5xl font-serif mt-6 mb-6 text-white leading-tight">{title}</h2>
-        <p className="text-gray-400 text-lg mb-8 font-light leading-relaxed">{description}</p>
-        <a href={href} className="inline-flex items-center gap-2 text-noble-gold font-bold uppercase text-xs tracking-[0.2em] hover:gap-4 transition-all">
-          {cta} <ArrowRight size={14} />
-        </a>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="p-10 bg-noble-black border border-white/5 rounded-[2.5rem]"
-      >
-        <ul className="space-y-5">
-          {points.map((point) => (
-            <li key={point} className="flex items-start gap-4 text-gray-300">
-              <Check className="text-noble-gold shrink-0 mt-1" size={20} />
-              <span className="font-light">{point}</span>
-            </li>
-          ))}
-        </ul>
-      </motion.div>
-    </div>
-  </section>
-);
-
-/* 6. AI Consultancy spotlight */
-export const AiConsultancySpotlight = () => (
-  <Spotlight
-    eyebrow="AI Consultancy"
-    title={<>The Strategy Is Ours. <span className="italic text-noble-gold">The Roadmap Is Yours to Act On.</span></>}
-    description="We help you understand where AI actually fits your business — realistic opportunities weighed against real tradeoffs — then hand you a practical roadmap for adopting it."
-    points={[
-      "AI readiness assessment",
-      "Opportunity identification, specific to your business",
-      "A practical implementation roadmap",
-      "Plain-language guidance on adoption, not jargon",
-    ]}
-    href="/ai-consultancy"
-    cta="See How AI Consultancy Works"
-  />
-);
-
-/* 7. AI Automation spotlight */
-export const AiAutomationSpotlight = () => (
-  <Spotlight
-    eyebrow="AI Automation"
-    title={<>Less Repetitive Work. <span className="italic text-noble-gold">More Time on What Matters.</span></>}
-    description="We identify the repetitive, manual work already happening in your business and build automated systems that handle it — connected to the tools you already use, not replacing them."
-    points={[
-      "Workflow and business process automation",
-      "Repetitive task automation",
-      "CRM and lead automation",
-      "Internal workflow optimization",
-    ]}
-    href="/ai-automation"
-    cta="See What We Automate"
-    reverse
-    dark
-  />
-);
-
-/* 8. AI Agents spotlight */
-export const AiAgentsSpotlight = () => (
-  <Spotlight
-    eyebrow="AI Agents"
-    title={<>An AI That <span className="italic text-noble-gold">Actually Handles the Work.</span></>}
-    description="Custom AI agents that answer questions, qualify leads, book appointments, and support your team — built around how your business actually operates, not a generic chatbot."
-    points={[
-      "AI customer-service agents",
-      "AI sales and lead-qualification agents",
-      "AI appointment and booking agents",
-      "Internal AI assistants",
-    ]}
-    href="/ai-agents"
-    cta="See What AI Agents Can Do"
-  />
-);
-
-/* 9. AI-Powered Marketing spotlight */
-export const AiMarketingSpotlight = () => (
-  <Spotlight
-    eyebrow="AI-Powered Marketing"
-    title={<>Marketing Is an <span className="italic text-noble-gold">Application of AI</span> — Not the Whole Company.</>}
-    description="Content systems, automation, and lead generation, built and managed with AI doing the heavy lifting — one connected system instead of six disconnected tools."
-    points={[
-      "AI content systems",
-      "Marketing automation",
-      "Lead-generation systems",
-      "AI-assisted campaign optimization",
-    ]}
-    href="/services#ai-marketing"
-    cta="See AI-Powered Marketing"
-    reverse
-    dark
-  />
-);
-
-/* 9b. AI Strategy Session spotlight — the flagship bookable product of the
-   AI Consultancy pillar: a standalone paid session, not part of the
-   managed-service stack above, so it's called out with its own framing. */
-export const AiStrategySessionSpotlight = () => (
-  <Spotlight
-    eyebrow="AI Strategy Session"
-    title={<>One Problem. <span className="italic text-noble-gold">One Clear Plan.</span></>}
-    description="The fastest way to start: a single, private consulting session where you bring one business problem or AI idea and leave with a structured decision and a written action plan."
-    points={[
-      "One private, one-on-one video consultation",
-      "Realistic AI opportunities weighed against real tradeoffs",
-      "Prioritized next steps, not just observations",
-      "A written action plan delivered after the call",
-    ]}
-    href="/ai-strategy-session"
-    cta="See Session Options & Book"
-  />
-);
-
-/* 10. Why NobleWave */
-const reasons = [
-  "Practical AI implementation, not hype or buzzwords",
-  "A clear roadmap before any building starts",
-  "Honest about where AI fits — and where it doesn't",
-  "Local GTA support from a real person",
-];
-
-export const WhyNobleWave = () => (
-  <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-black relative overflow-hidden">
-    <div className="max-w-5xl mx-auto px-6 relative z-10 text-center">
-      <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Why NobleWave</span>
-      <h2 className="text-4xl md:text-6xl font-serif mt-6 mb-10 md:mb-16 text-white leading-tight">
-        No Confusing <span className="italic text-noble-gold">AI Hype.</span>
-      </h2>
-      <div className="grid sm:grid-cols-2 gap-x-12 gap-y-6 text-left max-w-3xl mx-auto">
-        {reasons.map((r) => (
-          <div key={r} className="flex items-start gap-4">
-            <Check className="text-noble-gold shrink-0 mt-1" size={20} />
-            <span className="text-gray-300 text-lg font-light">{r}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-);
-
-/* 11. Final CTA */
+/* 7. Final CTA */
 export const FinalCTA = () => (
   <section className="py-14 sm:py-20 md:py-24 noble-gradient relative overflow-hidden">
     <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
       <h2 className="text-4xl md:text-6xl font-serif mb-8 text-white leading-tight">
-        Ready to Put AI to Work <span className="italic text-noble-gold">in Your Business?</span>
+        Your Business Shouldn&apos;t Have to <span className="italic text-noble-gold">Chase Technology.</span>
       </h2>
       <p className="text-gray-300 text-xl mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-        Tell us where your business is today. We'll identify where AI can make the biggest difference — and build the systems to make it happen.
+        NobleWave builds the digital systems so you can focus on running the business.
       </p>
-      <motion.a
-        href="/ai-strategy-session"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        data-track="cta"
-        className="inline-block bg-noble-gold text-noble-black px-12 py-6 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:bg-white transition-all"
-      >
-        Book an AI Consultation
-      </motion.a>
+      <div className="flex flex-col sm:flex-row gap-6 justify-center">
+        <motion.a
+          href="/ai-strategy-session"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          data-track="cta"
+          className="inline-block bg-noble-gold text-noble-black px-12 py-6 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:bg-white transition-all"
+        >
+          Book an AI Consultation
+        </motion.a>
+        <a
+          href="/contact"
+          className="inline-flex items-center justify-center border border-white/30 text-white px-12 py-6 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
+        >
+          Tell Us What You&apos;re Trying to Fix
+        </a>
+      </div>
     </div>
   </section>
 );

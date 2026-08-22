@@ -15,12 +15,11 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "AI Consultancy", href: "/ai-consultancy" },
-    { name: "AI Automation", href: "/ai-automation" },
-    { name: "AI Agents", href: "/ai-agents" },
+    { name: "Websites", href: "/websites" },
+    { name: "AI SEO", href: "/ai-seo" },
+    { name: "AI Voice", href: "/ai-voice" },
+    { name: "Content Automation", href: "/content-automation" },
     { name: "About", href: "/about" },
-    { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -32,7 +31,7 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
     >
       {withAnnouncement && (
         <div className="bg-noble-gold text-noble-black text-center text-[11px] md:text-sm font-bold tracking-wide py-2 px-6 -mt-4 md:-mt-6 mb-4 md:mb-6">
-          AI solutions, automation &amp; consultancy for modern businesses.
+          Get Found. Capture Every Lead. Stay Visible.
         </div>
       )}
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -72,7 +71,7 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
             <span className="text-2xl font-serif font-black tracking-tighter text-white">
               NOBLE<span className="text-noble-gold">WAVE</span>
             </span>
-            <span className="text-[9px] uppercase tracking-[0.4em] text-noble-gold font-black mt-1">AI Solutions &amp; Consultancy</span>
+            <span className="text-[9px] uppercase tracking-[0.4em] text-noble-gold font-black mt-1">AI Growth Systems</span>
           </div>
         </div>
 
@@ -94,7 +93,7 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
             data-track="cta"
             className="bg-noble-gold text-noble-black px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-white transition-all"
           >
-            Book an AI Consultation
+            Book a Consultation
           </motion.a>
         </nav>
 
@@ -130,7 +129,7 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
             </a>
           ))}
           <a href="/ai-strategy-session" data-track="cta" onClick={() => setIsOpen(false)} className="bg-noble-gold text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center">
-            Book an AI Consultation
+            Book a Consultation
           </a>
         </motion.nav>
       )}
@@ -157,17 +156,15 @@ export const Hero = () => {
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <motion.div style={{ y: y2, opacity }}>
           <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
-            AI Consultancy • Automation • Agents • Implementation
+            AI Systems for Modern Businesses
           </span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl text-white font-serif leading-[0.95] mb-8">
-            AI Solutions <br />
-            <span className="italic text-noble-gold">&amp; Consultancy.</span>
+            Get Found. <br />
+            Capture Every Lead. <br />
+            <span className="italic text-noble-gold">Stay Visible.</span>
           </h1>
-          <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-6 font-light leading-relaxed">
-            We help businesses discover where AI can make the biggest impact — then build and implement the systems to make it happen.
-          </p>
-          <p className="text-noble-gold text-sm md:text-base mb-12 font-bold uppercase tracking-wide">
-            Strategy, automation, and intelligent business systems — implemented for you.
+          <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 font-light leading-relaxed">
+            NobleWave builds high-performance websites, AI-powered SEO, intelligent voice agents, and automated content systems that help businesses attract and convert more customers.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <motion.a
@@ -180,12 +177,12 @@ export const Hero = () => {
               Book an AI Consultation
             </motion.a>
             <motion.a
-              href="#services-overview"
+              href="#system"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="border border-white/30 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition-all"
             >
-              Explore AI Solutions
+              See What We Build
             </motion.a>
           </div>
         </motion.div>

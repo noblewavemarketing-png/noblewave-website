@@ -14,11 +14,10 @@ import { trackEvent } from "../lib/analytics";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xojrlvga";
 
 const SERVICES = [
-  "AI Consultancy & Strategy",
-  "AI Automation",
-  "AI Agents",
-  "AI-Powered Marketing",
-  "Custom AI Solutions",
+  "Website Design",
+  "AI SEO",
+  "AI Voice / Receptionist",
+  "Content Automation",
   "AI Strategy Session (book a consultation)",
   "Not Sure — Recommend a Plan",
 ];

@@ -5,47 +5,47 @@ import { PageHeader } from "../components/PageHeader";
 
 const pillars = [
   {
-    title: "Traditional SEO",
-    description: "The fundamentals: keyword research, on-page optimization, and content built around what your customers actually search for.",
+    title: "SEO Articles",
+    description: "Long-form content built around real search intent, not just keyword stuffing.",
   },
   {
-    title: "Local SEO",
-    description: "Google Business Profile management, local keyword targeting, and the signals that determine whether you show up in \"near me\" searches and the Maps pack.",
+    title: "Social Posts",
+    description: "Captioned, branded posts ready for your platforms.",
   },
   {
-    title: "Technical SEO",
-    description: "Site speed, mobile-friendliness, crawlability, metadata, and schema markup — the behind-the-scenes work that lets search engines read your site correctly.",
+    title: "Short-Form Video",
+    description: "AI-assisted video content sized for social and Google Business.",
   },
   {
-    title: "Content SEO",
-    description: "Blog posts, service pages, city pages, and FAQs, researched and written around real search intent, then kept current instead of going stale.",
+    title: "Google Business Content",
+    description: "Regular posts that keep your local listing active and current.",
   },
   {
-    title: "GEO — Generative Engine Optimization",
-    description: "Structuring your content so AI tools like ChatGPT and Gemini can find, understand, and cite it when someone asks them a question instead of searching.",
+    title: "FAQs & Website Updates",
+    description: "New content added to your site as your business evolves.",
   },
   {
-    title: "AEO — Answer Engine Optimization",
-    description: "Writing content in a clear question-and-answer structure, so it's positioned to be pulled directly into AI Overviews and answer boxes.",
+    title: "Content Repurposing",
+    description: "One idea reshaped into every format your presence needs.",
   },
 ];
 
 const included = [
-  "Automated content publishing on a set schedule",
-  "Google Business Profile management",
-  "Internal linking between related pages",
-  "Backlink strategy",
-  "Monthly performance reporting",
-  "AI visibility tracking across ChatGPT, Gemini, Claude, Perplexity, and Google AI",
+  "A content calendar planned around your business",
+  "Brand-aligned tone and voice",
+  "Scheduled automatic publishing",
+  "Optional human approval before anything goes live",
+  "Multi-platform repurposing",
+  "Monthly content reporting",
 ];
 
-export default function AiSeoPage() {
+export default function ContentAutomationPage() {
   return (
     <PageShell>
       <PageHeader
-        eyebrow="AI SEO"
-        title={<>Search Engines. <span className="italic text-noble-gold">And AI Engines.</span></>}
-        subtitle="NobleWave manages your SEO strategy end to end — researching, creating, optimizing, publishing, and measuring the work continuously, so your search presence is never sitting idle between check-ins."
+        eyebrow="Content Automation"
+        title={<>One Idea. <span className="italic text-noble-gold">A Month of Content.</span></>}
+        subtitle="Give us one topic, promotion, or business update. NobleWave's system turns it into everything your online presence needs — written, scheduled, and published."
         primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
         secondaryCta={{ label: "See All Solutions", href: "/" }}
       />
@@ -55,7 +55,7 @@ export default function AiSeoPage() {
           <div className="text-center mb-16">
             <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
             <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
-              Six Parts of Search. <span className="italic text-noble-gold">One Managed System.</span>
+              Stay Active <span className="italic text-noble-gold">Without the Weekly Grind.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -90,7 +90,9 @@ export default function AiSeoPage() {
             </ul>
             <div className="pt-8 border-t border-white/10">
               <p className="text-gray-500 text-sm font-light leading-relaxed">
-                SEO is a long-term growth strategy, not an overnight switch. Results vary based on your competition, your website's existing authority, your market, your budget, and how the strategy is implemented — we report on real movement every month rather than promising a specific ranking or timeline.
+                Content automation handles the production and scheduling — results depend on your
+                market, your offer, and how consistently the system runs. We report on what's
+                actually published, not projected engagement.
               </p>
             </div>
           </div>
@@ -100,10 +102,10 @@ export default function AiSeoPage() {
       <section className="py-24 md:py-28 noble-gradient">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
-            Ready to See Where You <span className="italic text-noble-gold">Actually Stand?</span>
+            Ready to <span className="italic text-noble-gold">Stay Visible?</span>
           </h2>
           <p className="text-gray-300 text-lg mb-10 font-light leading-relaxed">
-            A strategy call starts with a real look at your site, your competitors, and where the opportunity actually is.
+            Bring one idea. See exactly what a month of content built from it looks like.
           </p>
           <a
             href="/ai-strategy-session"

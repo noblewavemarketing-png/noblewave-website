@@ -3,49 +3,57 @@ import { Check } from "lucide-react";
 import { PageShell } from "../components/PageShell";
 import { PageHeader } from "../components/PageHeader";
 
-const plans = [
+const websitePlans = [
   {
-    name: "AI Strategy Session",
-    tagline: "Start here — one session, one clear plan.",
+    name: "Launch",
+    tagline: "For businesses that need a professional foundation.",
     popular: false,
     features: [
-      "45, 60, or 90-minute private consulting session",
-      "AI readiness and opportunity assessment",
-      "A written action plan after the call",
-      "No ongoing commitment",
+      "Custom-designed website, up to 5 pages",
+      "Mobile-first, fast-loading build",
+      "Basic on-page SEO",
+      "Contact & lead-capture forms",
+      "Launch support",
     ],
-    cta: "See Session Options",
+    cta: "Request Pricing",
     href: "/ai-strategy-session",
   },
   {
-    name: "AI Automation & Agents",
-    tagline: "Ongoing implementation — automation and agents, built and managed.",
+    name: "Professional",
+    tagline: "The core NobleWave website package.",
     popular: true,
     badge: "Most Requested",
     features: [
-      "Workflow and business process automation",
-      "CRM and lead automation",
-      "Custom AI agents (service, sales, booking)",
-      "Integration with your existing tools",
-      "Ongoing monitoring and tuning",
+      "Everything in Launch",
+      "Expanded page architecture",
+      "Local SEO & Google Business alignment",
+      "Analytics & Search Console setup",
+      "Schema markup",
+      "Conversion-focused copywriting",
     ],
-    cta: "Request a Custom Quote",
-    href: "/contact",
-  },
-  {
-    name: "Complete AI Partner",
-    tagline: "Every service, connected, managed as one system.",
-    popular: false,
-    features: [
-      "Everything in AI Automation & Agents",
-      "Ongoing AI consultancy and strategy",
-      "AI-powered marketing",
-      "Custom AI solutions and integrations",
-      "One team managing all of it",
-    ],
-    cta: "Book an AI Consultation",
+    cta: "Request Pricing",
     href: "/ai-strategy-session",
   },
+  {
+    name: "Growth",
+    tagline: "For businesses that need deeper SEO, service architecture, and lead-generation infrastructure.",
+    popular: false,
+    features: [
+      "Everything in Professional",
+      "Service & location page architecture",
+      "Technical SEO audit",
+      "CRM & tool integrations",
+      "Priority build timeline",
+    ],
+    cta: "Request Pricing",
+    href: "/ai-strategy-session",
+  },
+];
+
+const systemPlans = [
+  { name: "AI SEO", description: "Ongoing search architecture, content, and reporting.", href: "/ai-seo" },
+  { name: "AI Voice", description: "A 24/7 AI receptionist, scoped to your call volume.", href: "/ai-voice" },
+  { name: "Content Automation", description: "A content system sized to how visible you need to be.", href: "/content-automation" },
 ];
 
 export default function PricingPage() {
@@ -53,15 +61,21 @@ export default function PricingPage() {
     <PageShell>
       <PageHeader
         eyebrow="Pricing"
-        title={<>One System. <span className="italic text-noble-gold">Quoted For You.</span></>}
-        subtitle="Every business is different — your systems, your goals, your starting point. So we don't publish a price list; we quote each engagement after a real conversation, usually starting with an AI Strategy Session."
+        title={<>Real Packages. <span className="italic text-noble-gold">Scoped to You.</span></>}
+        subtitle="Website packages start from a clear foundation. Ongoing AI systems are scoped to your business — every price is quoted after a real conversation, usually starting with an AI Strategy Session."
         primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
       />
 
       <section className="py-24 md:py-28 bg-noble-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Websites</span>
+            <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
+              Three Ways to <span className="italic text-noble-gold">Get Started.</span>
+            </h2>
+          </div>
           <div className="grid lg:grid-cols-3 gap-8 items-stretch">
-            {plans.map((plan, index) => (
+            {websitePlans.map((plan, index) => (
               <motion.div
                 key={plan.name}
                 initial={{ opacity: 0, y: 30 }}
@@ -103,14 +117,45 @@ export default function PricingPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="max-w-3xl mx-auto mt-16 p-8 bg-noble-dark border border-white/5 rounded-[2rem] text-center">
-            <h3 className="text-2xl font-serif text-white mb-3">Not Sure Which Fits?</h3>
-            <p className="text-gray-400 font-light mb-6">
-              Explore all five service areas — AI consultancy, automation, agents, marketing, and custom builds.
+      <section className="py-24 md:py-28 bg-noble-dark relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Ongoing AI Systems</span>
+            <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
+              Scoped to Your <span className="italic text-noble-gold">Business.</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed">
+              These run monthly, sized to your call volume, market, and content needs — not a flat rate that fits everyone.
             </p>
-            <a href="/services" className="text-noble-gold font-bold uppercase text-sm tracking-[0.15em] hover:underline">
-              See All Services →
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {systemPlans.map((plan, index) => (
+              <motion.a
+                key={plan.name}
+                href={plan.href}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="p-8 bg-noble-black border border-white/5 rounded-[2rem] hover:border-noble-gold/40 transition-all block"
+              >
+                <h3 className="text-xl font-serif text-white mb-3">{plan.name}</h3>
+                <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">{plan.description}</p>
+                <span className="text-noble-gold text-xs font-bold uppercase tracking-widest">Request Pricing →</span>
+              </motion.a>
+            ))}
+          </div>
+
+          <div className="max-w-3xl mx-auto mt-16 p-8 bg-noble-black border border-white/5 rounded-[2rem] text-center">
+            <h3 className="text-2xl font-serif text-white mb-3">Want All of It, Connected?</h3>
+            <p className="text-gray-400 font-light mb-6">
+              A website, AI SEO, voice, and content — built and managed as one system.
+            </p>
+            <a href="/" className="text-noble-gold font-bold uppercase text-sm tracking-[0.15em] hover:underline">
+              See the Full System →
             </a>
           </div>
 

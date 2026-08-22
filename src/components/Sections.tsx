@@ -106,16 +106,16 @@ export const About = () => {
             <p className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold mb-8">How We Work</p>
             <ul className="space-y-8">
               <li>
-                <h4 className="font-serif text-2xl text-white mb-2">Assess first</h4>
-                <p className="text-gray-500 font-light">No recommendation before we understand your business, your data, and your constraints.</p>
+                <h4 className="font-serif text-2xl text-white mb-2">Discover first</h4>
+                <p className="text-gray-500 font-light">No build starts before we understand where you're losing visibility, leads, or time.</p>
               </li>
               <li>
-                <h4 className="font-serif text-2xl text-white mb-2">Strategy, then build</h4>
-                <p className="text-gray-500 font-light">A roadmap you can act on — then the same team implements it, rather than handing you a report.</p>
+                <h4 className="font-serif text-2xl text-white mb-2">Design, then build</h4>
+                <p className="text-gray-500 font-light">A system you can see before it's built — then the same team implements it.</p>
               </li>
               <li>
-                <h4 className="font-serif text-2xl text-white mb-2">Honest about limits</h4>
-                <p className="text-gray-500 font-light">We'll tell you when AI isn't the right fit yet, not just what to buy.</p>
+                <h4 className="font-serif text-2xl text-white mb-2">Connected, not scattered</h4>
+                <p className="text-gray-500 font-light">Website, search, voice, and content work as one system, not six separate vendors.</p>
               </li>
             </ul>
           </div>
@@ -127,24 +127,24 @@ export const About = () => {
         >
           <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold">The NobleWave Approach</span>
           <h2 className="text-6xl md:text-7xl font-serif mt-8 mb-10 text-white leading-tight">
-            Practical AI. <br />
-            <span className="italic text-noble-gold">Not AI Hype.</span>
+            Built to Work Together. <br />
+            <span className="italic text-noble-gold">Not Sold Separately.</span>
           </h2>
           <p className="text-gray-400 text-2xl mb-10 leading-relaxed font-light">
-            AI is easy to talk about and hard to actually use well. NobleWave exists to close that gap — helping businesses understand where AI genuinely helps, build a realistic plan, and implement the systems that make it work.
+            Most businesses end up with a website from one place, SEO from another, and content from whoever's available that month — none of it talking to each other. NobleWave designs the system first, then builds every piece to fit it.
           </p>
           <p className="text-gray-400 text-xl mb-12 leading-relaxed font-light">
-            We don't sell AI for its own sake. Every engagement starts with your actual business — your workflows, your goals, your constraints — and works backward to what AI can realistically do about them.
+            The result is a business that's easier to find, easier to reach, and easier to keep visible — without you managing five different relationships to get there.
           </p>
 
           <div className="grid grid-cols-2 gap-12">
             <div>
-              <h4 className="font-serif text-3xl text-white mb-4">Consultancy + Build</h4>
-              <p className="text-lg text-gray-500 font-light">Strategy and implementation from the same team — not a plan you're left to execute alone.</p>
+              <h4 className="font-serif text-3xl text-white mb-4">System, Not Services</h4>
+              <p className="text-lg text-gray-500 font-light">Websites, search, voice, and content — built to work as one connected system.</p>
             </div>
             <div>
-              <h4 className="font-serif text-3xl text-white mb-4">Business-First</h4>
-              <p className="text-lg text-gray-500 font-light">We start with your operations and goals, not with a list of AI tools looking for a use case.</p>
+              <h4 className="font-serif text-3xl text-white mb-4">Strategy + Build</h4>
+              <p className="text-lg text-gray-500 font-light">The same team designs it and implements it — not a plan you're left to execute alone.</p>
             </div>
           </div>
         </motion.div>
@@ -221,7 +221,7 @@ export const Websites = () => {
 
         <div className="text-center mt-16">
           <motion.a
-            href="/contact"
+            href="/ai-strategy-session"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             data-track="cta"

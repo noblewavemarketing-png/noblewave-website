@@ -4,10 +4,9 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/ai-seo", "destination": "/services#ai-marketing", "permanent": true },
-    { "source": "/websites", "destination": "/services#custom-ai-solutions", "permanent": true },
     { "source": "/lead-generation", "destination": "/services#ai-marketing", "permanent": true },
-    { "source": "/mississauga", "destination": "/", "permanent": true }
+    { "source": "/mississauga", "destination": "/", "permanent": true },
+    { "source": "/ai-agents", "destination": "/ai-voice", "permanent": true }
   ],
   "headers": [
     {

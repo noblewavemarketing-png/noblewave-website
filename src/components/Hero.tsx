@@ -36,25 +36,72 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-4 group cursor-pointer">
           <div className="relative w-14 h-14">
-            {/* Creative Abstract Wave Logo — renders fully drawn immediately;
-                this used to draw itself in over 1.5s+, which replayed in
-                full on every page navigation (this is a multi-page site,
-                not an SPA — every nav is a fresh mount). */}
+            {/* Creative Abstract Wave Logo — ambient, always-looping motion
+                (not a one-time "draw in"). A one-time reveal used to replay
+                in full on every page navigation, which read as broken on
+                this multi-page site (every nav is a fresh mount). A
+                continuous loop has no such "incomplete" phase — it looks
+                correct the instant it mounts, on every page. Two effects:
+                1) the wave strokes gently undulate (a slow path morph)
+                2) a soft gold shimmer sweeps across them on a loop. */}
             <svg viewBox="0 0 100 100" className="w-full h-full">
-              <path
-                d="M20 50 Q35 20 50 50 T80 50"
+              <defs>
+                <linearGradient id="wave-shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#D4AF37" stopOpacity="0" />
+                  <stop offset="50%" stopColor="#FFF3C4" stopOpacity="0.9" />
+                  <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
+                  <animateTransform
+                    attributeName="gradientTransform"
+                    type="translate"
+                    values="-1 0; 1 0; -1 0"
+                    dur="3.6s"
+                    repeatCount="indefinite"
+                  />
+                </linearGradient>
+              </defs>
+              <motion.path
                 fill="none"
                 stroke="#D4AF37"
                 strokeWidth="8"
                 strokeLinecap="round"
+                animate={{
+                  d: [
+                    "M20 50 Q35 20 50 50 T80 50",
+                    "M20 50 Q35 32 50 50 T80 50",
+                    "M20 50 Q35 20 50 50 T80 50",
+                  ],
+                }}
+                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
               />
-              <path
-                d="M20 65 Q35 35 50 65 T80 65"
+              {/* Shimmer overlay — same motion, gradient stroke on top */}
+              <motion.path
+                fill="none"
+                stroke="url(#wave-shimmer)"
+                strokeWidth="8"
+                strokeLinecap="round"
+                animate={{
+                  d: [
+                    "M20 50 Q35 20 50 50 T80 50",
+                    "M20 50 Q35 32 50 50 T80 50",
+                    "M20 50 Q35 20 50 50 T80 50",
+                  ],
+                }}
+                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <motion.path
                 fill="none"
                 stroke="#D4AF37"
                 strokeWidth="4"
                 strokeLinecap="round"
                 opacity="0.4"
+                animate={{
+                  d: [
+                    "M20 65 Q35 35 50 65 T80 65",
+                    "M20 65 Q35 47 50 65 T80 65",
+                    "M20 65 Q35 35 50 65 T80 65",
+                  ],
+                }}
+                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
               />
               <path
                 d="M35 35 L50 65 L65 35"

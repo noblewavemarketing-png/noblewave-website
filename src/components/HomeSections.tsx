@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import {
   Search, Globe, PhoneCall, Workflow, PenTool,
-  ArrowRight, ArrowDown, Check, ExternalLink, CheckCircle2,
+  ArrowRight, ArrowDown, Check, CheckCircle2,
   Compass, Hammer, Rocket, LineChart,
 } from "lucide-react";
 
@@ -60,10 +60,7 @@ export const SystemFlow = () => (
   </section>
 );
 
-/* 3. Outcome 1 — Get Found (Websites + AI Search), with a real portfolio
-   piece: an honest browser-mockup linking to the live SO HVAC site NobleWave
-   built. No fabricated screenshot — the CSP on that site blocks iframing,
-   so this links out to the real thing instead of faking a preview. */
+/* 3. Outcome 1 — Get Found (Websites + AI Search). */
 const getFoundPoints = [
   "Premium business websites",
   "AI SEO & technical SEO",
@@ -75,16 +72,16 @@ const getFoundPoints = [
 
 export const GetFound = () => (
   <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-dark relative overflow-hidden">
-    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div className="max-w-4xl mx-auto px-6 text-center">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
         <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Get Found</span>
         <h2 className="text-4xl md:text-5xl font-serif mt-6 mb-6 text-white leading-tight">
           Websites <span className="italic text-noble-gold">+ AI Search.</span>
         </h2>
-        <p className="text-gray-400 text-lg mb-8 font-light leading-relaxed">
+        <p className="text-gray-400 text-lg mb-10 font-light leading-relaxed max-w-2xl mx-auto">
           Build a digital presence designed to be discovered — and designed to convert when customers arrive.
         </p>
-        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-10">
+        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-10 text-left max-w-xl mx-auto">
           {getFoundPoints.map((point) => (
             <li key={point} className="flex items-start gap-3 text-gray-300 text-sm">
               <Check className="text-noble-gold shrink-0 mt-0.5" size={16} />
@@ -95,36 +92,6 @@ export const GetFound = () => (
         <a href="/websites" className="inline-flex items-center gap-2 text-noble-gold font-bold uppercase text-xs tracking-[0.2em] hover:gap-4 transition-all">
           See What We Build <ArrowRight size={14} />
         </a>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="rounded-[1.75rem] overflow-hidden border border-white/10 bg-noble-black shadow-2xl"
-      >
-        <div className="flex items-center gap-2 px-5 py-4 bg-white/[0.03] border-b border-white/5">
-          <span className="w-3 h-3 rounded-full bg-noble-gold/40" />
-          <span className="w-3 h-3 rounded-full bg-white/20" />
-          <span className="w-3 h-3 rounded-full bg-white/20" />
-          <span className="ml-4 text-gray-500 text-xs font-mono truncate">sohvac.ca</span>
-        </div>
-        <div className="p-8 md:p-10">
-          <span className="text-noble-gold uppercase tracking-[0.2em] text-[10px] font-bold">Live Project</span>
-          <h3 className="text-2xl font-serif text-white mt-3 mb-2">SO HVAC</h3>
-          <p className="text-gray-500 text-sm font-light leading-relaxed mb-6">
-            A conversion-focused HVAC services website for the Mississauga &amp; Oakville area — built mobile-first, with local SEO structured in from day one.
-          </p>
-          <a
-            href="https://www.sohvac.ca"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-white font-bold text-sm hover:text-noble-gold transition-colors"
-          >
-            View Live Site <ExternalLink size={14} />
-          </a>
-        </div>
       </motion.div>
     </div>
   </section>

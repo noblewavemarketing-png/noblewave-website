@@ -192,10 +192,14 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-noble-black pt-48 pb-20 md:pt-36">
-      {/* Hero image — drifts and scales slightly on scroll (parallax).
+      {/* Hero image — two layers of motion, so it never sits still.
+          Outer div: scroll-linked parallax (drifts/scales as you scroll).
+          Inner img: a slow, continuous ambient drift/zoom loop (18s) that
+          plays regardless of scroll -- this is what reads as "alive" /
+          video-like on first load, before anyone scrolls at all.
           Generated at full quality, 64KB as WebP: costs nothing on load. */}
       <motion.div className="absolute inset-0 z-0" style={{ y: imageY, scale: imageScale }} aria-hidden="true">
-        <img
+        <motion.img
           src="/images/hero-wave.webp"
           alt=""
           className="w-full h-full object-cover object-[85%_25%] md:object-center"
@@ -203,6 +207,8 @@ export const Hero = () => {
           height={1536}
           fetchPriority="high"
           decoding="async"
+          animate={{ scale: [1, 1.08, 1], x: [0, -18, 0], y: [0, 12, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
         />
       </motion.div>
       {/* Legibility scrim — darker under the text, image reads clearly on the right */}

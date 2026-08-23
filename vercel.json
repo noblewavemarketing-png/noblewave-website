@@ -4,9 +4,12 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "redirects": [
-    { "source": "/lead-generation", "destination": "/services#ai-marketing", "permanent": true },
+    { "source": "/lead-generation", "destination": "/", "permanent": true },
     { "source": "/mississauga", "destination": "/", "permanent": true },
-    { "source": "/ai-agents", "destination": "/ai-voice", "permanent": true }
+    { "source": "/ai-agents", "destination": "/ai-voice", "permanent": true },
+    { "source": "/services", "destination": "/", "permanent": true },
+    { "source": "/ai-consultancy", "destination": "/ai-strategy-session", "permanent": true },
+    { "source": "/ai-automation", "destination": "/", "permanent": true }
   ],
   "headers": [
     {

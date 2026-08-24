@@ -20,26 +20,12 @@ export const SESSION_LABELS = [
   "AI Decision Workshop — 90 minutes",
 ] as const;
 
-const AI_EXPERIENCE_LEVELS = [
-  "Prefer not to say",
-  "None yet",
-  "A little — tried a tool or two",
-  "Fairly comfortable",
-  "Advanced / technical background",
-];
-
 type FormData = {
   name: string;
   email: string;
-  company: string;
-  role: string;
-  website: string;
+  phone: string;
   session: string;
   challenge: string;
-  outcome: string;
-  currentTools: string;
-  aiExperience: string;
-  links: string;
   consent: boolean;
   hp: string; // honeypot
 };
@@ -47,15 +33,9 @@ type FormData = {
 const EMPTY: FormData = {
   name: "",
   email: "",
-  company: "",
-  role: "",
-  website: "",
+  phone: "",
   session: SESSION_LABELS[1],
   challenge: "",
-  outcome: "",
-  currentTools: "",
-  aiExperience: AI_EXPERIENCE_LEVELS[0],
-  links: "",
   consent: false,
   hp: "",
 };
@@ -78,18 +58,6 @@ function validateClient(data: FormData) {
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(data.email.trim())) {
     errors.email = "Please enter a valid email address.";
-  }
-
-  if (data.company.trim().length < 2) {
-    errors.company = "Please enter your company or project name.";
-  }
-
-  if (data.challenge.trim().length < 10) {
-    errors.challenge = "Please describe the problem or decision in a sentence or two.";
-  }
-
-  if (data.outcome.trim().length < 5) {
-    errors.outcome = "Please add a short line on what a good outcome looks like.";
   }
 
   if (!data.consent) {
@@ -161,15 +129,9 @@ export const AiStrategyIntakeForm = ({ defaultSession }: AiStrategyIntakeFormPro
           session: data.session,
           name: data.name,
           email: data.email,
-          company: data.company,
-          role: data.role,
-          website: data.website,
+          phone: data.phone,
           challenge: data.challenge,
-          desired_outcome: data.outcome,
-          current_tools: data.currentTools,
-          ai_experience: data.aiExperience,
-          links: data.links,
-          _subject: `AI Strategy Session request: ${data.company || data.name}`,
+          _subject: `AI Strategy Session request: ${data.name}`,
         }),
       });
 
@@ -328,157 +290,35 @@ export const AiStrategyIntakeForm = ({ defaultSession }: AiStrategyIntakeFormPro
 
       <div className="grid md:grid-cols-2 gap-8">
         <div className="space-y-3">
-          <label htmlFor="ai-session-company" className={labelCls}>
-            Company or Project Name
+          <label htmlFor="ai-session-phone" className={labelCls}>
+            Phone <span className={optionalCls}>(optional)</span>
           </label>
           <input
-            id="ai-session-company"
-            name="company"
-            type="text"
-            required
-            autoComplete="organization"
-            placeholder="Your Company, or project name"
+            id="ai-session-phone"
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            placeholder="(647) 555-0123"
             className={inputCls}
-            value={data.company}
-            onChange={set("company")}
-            aria-invalid={!!errors.company}
-            aria-describedby={errors.company ? "err-company" : undefined}
+            value={data.phone}
+            onChange={set("phone")}
           />
-          {errors.company && (
-            <p id="err-company" className={errCls}>
-              {errors.company}
-            </p>
-          )}
         </div>
 
         <div className="space-y-3">
-          <label htmlFor="ai-session-role" className={labelCls}>
-            Role <span className={optionalCls}>(optional)</span>
+          <label htmlFor="ai-session-challenge" className={labelCls}>
+            What do you want help with? <span className={optionalCls}>(optional)</span>
           </label>
           <input
-            id="ai-session-role"
-            name="role"
+            id="ai-session-challenge"
+            name="challenge"
             type="text"
-            autoComplete="organization-title"
-            placeholder="Founder, Operations Lead, etc."
+            placeholder="One line is enough"
             className={inputCls}
-            value={data.role}
-            onChange={set("role")}
+            value={data.challenge}
+            onChange={set("challenge")}
           />
         </div>
-      </div>
-
-      <div className="space-y-3">
-        <label htmlFor="ai-session-website" className={labelCls}>
-          Website <span className={optionalCls}>(optional)</span>
-        </label>
-        <input
-          id="ai-session-website"
-          name="companyWebsite"
-          type="text"
-          autoComplete="url"
-          placeholder="yourcompany.com"
-          className={inputCls}
-          value={data.website}
-          onChange={set("website")}
-        />
-      </div>
-
-      <div className="space-y-3">
-        <label htmlFor="ai-session-challenge" className={labelCls}>
-          The Problem or Decision You Want to Bring
-        </label>
-        <textarea
-          id="ai-session-challenge"
-          name="challenge"
-          rows={4}
-          required
-          placeholder="What's the one problem, decision, workflow, or AI idea you want to work through?"
-          className={inputCls}
-          value={data.challenge}
-          onChange={set("challenge")}
-          aria-invalid={!!errors.challenge}
-          aria-describedby={errors.challenge ? "err-challenge" : undefined}
-        />
-        {errors.challenge && (
-          <p id="err-challenge" className={errCls}>
-            {errors.challenge}
-          </p>
-        )}
-      </div>
-
-      <div className="space-y-3">
-        <label htmlFor="ai-session-outcome" className={labelCls}>
-          What Would a Good Outcome Look Like?
-        </label>
-        <textarea
-          id="ai-session-outcome"
-          name="outcome"
-          rows={3}
-          required
-          placeholder="What do you want to walk away with?"
-          className={inputCls}
-          value={data.outcome}
-          onChange={set("outcome")}
-          aria-invalid={!!errors.outcome}
-          aria-describedby={errors.outcome ? "err-outcome" : undefined}
-        />
-        {errors.outcome && (
-          <p id="err-outcome" className={errCls}>
-            {errors.outcome}
-          </p>
-        )}
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="space-y-3">
-          <label htmlFor="ai-session-tools" className={labelCls}>
-            Current Tools or Workflow <span className={optionalCls}>(optional)</span>
-          </label>
-          <textarea
-            id="ai-session-tools"
-            name="currentTools"
-            rows={3}
-            placeholder="What are you using today, if anything?"
-            className={inputCls}
-            value={data.currentTools}
-            onChange={set("currentTools")}
-          />
-        </div>
-
-        <div className="space-y-3">
-          <label htmlFor="ai-session-experience" className={labelCls}>
-            Previous Experience with AI
-          </label>
-          <select
-            id="ai-session-experience"
-            name="aiExperience"
-            className={`${inputCls} appearance-none`}
-            value={data.aiExperience}
-            onChange={set("aiExperience")}
-          >
-            {AI_EXPERIENCE_LEVELS.map((level) => (
-              <option key={level} value={level}>
-                {level}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-
-      <div className="space-y-3">
-        <label htmlFor="ai-session-links" className={labelCls}>
-          Relevant Links <span className={optionalCls}>(optional — links only, please)</span>
-        </label>
-        <input
-          id="ai-session-links"
-          name="links"
-          type="text"
-          placeholder="A doc, deck, or tool link that helps us prepare"
-          className={inputCls}
-          value={data.links}
-          onChange={set("links")}
-        />
       </div>
 
       <div className="flex items-start gap-3">

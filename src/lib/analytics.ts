@@ -7,13 +7,16 @@
  *   VITE_GTM_ID         e.g. GTM-XXXXXXX   (Google Tag Manager)
  *   VITE_GA4_ID         e.g. G-XXXXXXXXXX  (GA4 direct — SKIPPED automatically if GTM is set,
  *                                           to avoid double-counting; put GA4 inside GTM instead)
- *   VITE_META_PIXEL_ID  e.g. 1234567890    (Meta Pixel)
+ *   VITE_META_PIXEL_ID  e.g. 1234567890    (Meta Pixel — defaults to the live pixel below
+ *                                           if unset, so it's active without a Vercel step)
  *   VITE_CLARITY_ID     e.g. abcdefghij    (Microsoft Clarity)
  *
  * Events tracked (fired to GTM dataLayer, GA4 gtag, and Meta Pixel when present):
  *   contact_form_submit      — successful general-contact form submission (Contact.tsx)
+ *                               → Meta: standard "Lead" event
  *   ai_strategy_intake_submit — successful AI Strategy Session booking request
  *                               (AiStrategyIntakeForm.tsx), includes which session length
+ *                               → Meta: standard "Lead" event
  *   phone_click              — any tel: link
  *   email_click              — any mailto: link
  *   cta_click                — elements with data-track="cta" (booking/session CTAs)
@@ -31,7 +34,10 @@ declare global {
 
 const GTM_ID = import.meta.env.VITE_GTM_ID as string | undefined;
 const GA4_ID = import.meta.env.VITE_GA4_ID as string | undefined;
-const PIXEL_ID = import.meta.env.VITE_META_PIXEL_ID as string | undefined;
+// Meta Pixel: defaults to the live pixel ID so it's active without a Vercel
+// env var step; VITE_META_PIXEL_ID still overrides it if the pixel is ever
+// rotated.
+const PIXEL_ID = (import.meta.env.VITE_META_PIXEL_ID as string | undefined) || "1680531334072466";
 const CLARITY_ID = import.meta.env.VITE_CLARITY_ID as string | undefined;
 
 function addScript(src: string, id: string) {
@@ -89,7 +95,7 @@ export function trackEvent(name: string, params: Record<string, string> = {}) {
     if (window.dataLayer) window.dataLayer.push({ event: name, ...params });
     if (window.gtag) window.gtag("event", name, params);
     if (window.fbq) {
-      if (name === "contact_form_submit") {
+      if (name === "contact_form_submit" || name === "ai_strategy_intake_submit") {
         window.fbq("track", "Lead", params); // standard Meta conversion event
       } else {
         window.fbq("trackCustom", name, params);

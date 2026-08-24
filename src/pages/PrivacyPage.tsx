@@ -63,8 +63,9 @@ export default function PrivacyPage() {
               </li>
               <li>
                 <strong className="text-white font-medium">Meta Pixel</strong> (Facebook/Instagram) — conversion tracking and
-                remarketing on Meta platforms, where enabled. Meta may combine this data with
-                other information it has about you, subject to Meta's own privacy policy.
+                remarketing on Meta platforms, including when you submit a form on this site.
+                Meta may combine this data with other information it has about you, subject to
+                Meta's own privacy policy.
               </li>
               <li>
                 <strong className="text-white font-medium">Microsoft Clarity</strong> — session-behavior analytics (e.g.

@@ -43,7 +43,7 @@ const EMPTY: FormData = {
 };
 
 const inputCls =
-  "w-full bg-noble-black border border-white/10 rounded-2xl py-4 px-6 text-white focus:outline-none focus:border-noble-gold transition-all";
+  "w-full bg-noble-black border border-white/10 rounded-2xl py-4 px-6 text-white focus:outline-none focus:border-noble-blue transition-all";
 
 const labelCls =
   "text-xs uppercase tracking-widest font-bold text-gray-400";
@@ -177,14 +177,14 @@ const ContactForm = () => {
         aria-live="polite"
       >
         <CheckCircle2
-          className="mx-auto text-noble-gold mb-8"
+          className="mx-auto text-noble-blue mb-8"
           size={64}
           aria-hidden="true"
         />
 
         <h3 className="font-serif text-4xl text-white mb-6">
           Request{" "}
-          <span className="italic text-noble-gold">Received.</span>
+          <span className="italic text-noble-blue">Received.</span>
         </h3>
 
         <p className="text-gray-400 text-lg font-light max-w-sm mx-auto mb-10">
@@ -192,7 +192,7 @@ const ContactForm = () => {
           If it&apos;s urgent, call us at{" "}
           <a
             href="tel:6476735748"
-            className="text-noble-gold hover:text-white transition-colors"
+            className="text-noble-blue hover:text-white transition-colors"
           >
             647-673-5748
           </a>
@@ -407,7 +407,7 @@ const ContactForm = () => {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full bg-noble-gold text-noble-black py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-white transition-all shadow-xl text-lg disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full bg-noble-blue text-noble-black py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-white transition-all shadow-xl text-lg disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "sending" ? (
           <>
@@ -443,13 +443,13 @@ export const Contact = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">
               Get in Touch
             </span>
 
             <h2 className="text-5xl md:text-6xl font-serif mt-6 mb-10 text-white">
               Tell Us About <br />
-              <span className="italic text-noble-gold">
+              <span className="italic text-noble-blue">
                 Your Business.
               </span>
             </h2>
@@ -463,7 +463,7 @@ export const Contact = () => {
 
             <div className="space-y-10">
               <div className="flex items-start gap-6">
-                <div className="w-14 h-14 rounded-2xl bg-noble-gold/10 flex items-center justify-center text-noble-gold">
+                <div className="w-14 h-14 rounded-2xl bg-noble-blue/10 flex items-center justify-center text-noble-blue">
                   <Mail size={28} />
                 </div>
 
@@ -475,7 +475,7 @@ export const Contact = () => {
                   <p className="text-gray-500 text-lg">
                     <a
                       href="mailto:noblewavemarketing@gmail.com"
-                      className="hover:text-noble-gold transition-colors"
+                      className="hover:text-noble-blue transition-colors"
                     >
                       noblewavemarketing@gmail.com
                     </a>
@@ -484,7 +484,7 @@ export const Contact = () => {
               </div>
 
               <div className="flex items-start gap-6">
-                <div className="w-14 h-14 rounded-2xl bg-noble-gold/10 flex items-center justify-center text-noble-gold">
+                <div className="w-14 h-14 rounded-2xl bg-noble-blue/10 flex items-center justify-center text-noble-blue">
                   <Phone size={28} />
                 </div>
 
@@ -496,7 +496,7 @@ export const Contact = () => {
                   <p className="text-gray-500 text-lg">
                     <a
                       href="tel:6476735748"
-                      className="hover:text-noble-gold transition-colors"
+                      className="hover:text-noble-blue transition-colors"
                     >
                       647-673-5748
                     </a>
@@ -505,7 +505,7 @@ export const Contact = () => {
               </div>
 
               <div className="flex items-start gap-6">
-                <div className="w-14 h-14 rounded-2xl bg-noble-gold/10 flex items-center justify-center text-noble-gold">
+                <div className="w-14 h-14 rounded-2xl bg-noble-blue/10 flex items-center justify-center text-noble-blue">
                   <MapPin size={28} />
                 </div>
 
@@ -539,13 +539,13 @@ export const CTA = () => {
   return (
     <section className="py-24 md:py-28 noble-gradient relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-noble-gold)_0%,_transparent_70%)]" />
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-noble-blue)_0%,_transparent_70%)]" />
       </div>
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <h2 className="text-4xl md:text-6xl font-serif text-white mb-8 leading-tight">
           Ready to put AI to work <br />
-          <span className="italic text-noble-gold">
+          <span className="italic text-noble-blue">
             in your business?
           </span>
         </h2>
@@ -554,7 +554,7 @@ export const CTA = () => {
           <a
             href="/ai-strategy-session"
             data-track="cta"
-            className="bg-noble-gold text-noble-black px-10 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-white transition-all"
+            className="bg-noble-blue text-noble-black px-10 py-4 rounded-full font-bold text-lg shadow-2xl hover:bg-white transition-all"
           >
             Book an AI Consultation
           </a>

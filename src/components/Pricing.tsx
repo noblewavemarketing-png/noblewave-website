@@ -44,7 +44,7 @@ export const Pricing = () => {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold"
+            className="text-noble-blue uppercase tracking-[0.4em] text-xs font-bold"
           >
             Pricing
           </motion.span>
@@ -54,7 +54,7 @@ export const Pricing = () => {
             className="text-6xl md:text-7xl font-serif mt-8 text-white leading-tight"
           >
             No Guesswork. <br />
-            <span className="italic text-noble-gold">A Number Built For You.</span>
+            <span className="italic text-noble-blue">A Number Built For You.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -75,12 +75,12 @@ export const Pricing = () => {
               whileHover={{ y: -10 }}
               className={`p-12 rounded-[3rem] border flex flex-col ${
                 plan.popular
-                  ? "border-noble-gold bg-noble-dark shadow-[0_0_60px_rgba(212,175,55,0.15)]"
+                  ? "border-noble-blue bg-noble-dark shadow-[0_0_60px_rgba(62,123,250,0.15)]"
                   : "border-white/10 bg-noble-dark"
               }`}
             >
               <span className={`text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-8 self-start ${
-                plan.popular ? "bg-noble-gold text-noble-black" : "border border-white/20 text-gray-400"
+                plan.popular ? "bg-noble-blue text-noble-black" : "border border-white/20 text-gray-400"
               }`}>
                 {plan.badge}
               </span>
@@ -89,7 +89,7 @@ export const Pricing = () => {
               <ul className="space-y-4 mb-10 flex-grow">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-4 text-gray-300">
-                    <Check className="text-noble-gold shrink-0 mt-1" size={18} />
+                    <Check className="text-noble-blue shrink-0 mt-1" size={18} />
                     <span className="text-base font-light">{feature}</span>
                   </li>
                 ))}
@@ -99,7 +99,7 @@ export const Pricing = () => {
                 data-track="cta"
                 className={`w-full py-5 rounded-2xl font-bold text-lg text-center transition-all ${
                   plan.popular
-                    ? "bg-noble-gold text-noble-black hover:bg-white"
+                    ? "bg-noble-blue text-noble-black hover:bg-white"
                     : "border border-white/20 text-white hover:bg-white/5"
                 }`}
               >

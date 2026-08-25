@@ -61,7 +61,7 @@ export default function PricingPage() {
     <PageShell>
       <PageHeader
         eyebrow="Pricing"
-        title={<>Real Packages. <span className="italic text-noble-gold">Scoped to You.</span></>}
+        title={<>Real Packages. <span className="italic text-noble-blue">Scoped to You.</span></>}
         subtitle="Website packages start from a clear foundation. Ongoing AI systems are scoped to your business — every price is quoted after a real conversation, usually starting with an AI Strategy Session."
         primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
       />
@@ -69,9 +69,9 @@ export default function PricingPage() {
       <section className="py-24 md:py-28 bg-noble-black relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Websites</span>
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">Websites</span>
             <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
-              Three Ways to <span className="italic text-noble-gold">Get Started.</span>
+              Three Ways to <span className="italic text-noble-blue">Get Started.</span>
             </h2>
           </div>
           <div className="grid lg:grid-cols-3 gap-8 items-stretch">
@@ -84,12 +84,12 @@ export default function PricingPage() {
                 transition={{ delay: index * 0.1 }}
                 className={`p-10 rounded-[2.5rem] border flex flex-col ${
                   plan.popular
-                    ? "border-noble-gold bg-noble-dark shadow-[0_0_60px_rgba(212,175,55,0.15)]"
+                    ? "border-noble-blue bg-noble-dark shadow-[0_0_60px_rgba(62,123,250,0.15)]"
                     : "border-white/10 bg-noble-dark"
                 }`}
               >
                 {plan.badge && (
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-6 self-start bg-noble-gold text-noble-black">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-6 self-start bg-noble-blue text-noble-black">
                     {plan.badge}
                   </span>
                 )}
@@ -98,7 +98,7 @@ export default function PricingPage() {
                 <ul className="space-y-3 mb-8 flex-grow">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3 text-gray-300">
-                      <Check className="text-noble-gold shrink-0 mt-1" size={16} />
+                      <Check className="text-noble-blue shrink-0 mt-1" size={16} />
                       <span className="text-sm font-light">{feature}</span>
                     </li>
                   ))}
@@ -108,7 +108,7 @@ export default function PricingPage() {
                   data-track="cta"
                   className={`w-full py-4 rounded-2xl font-bold text-center transition-all ${
                     plan.popular
-                      ? "bg-noble-gold text-noble-black hover:bg-white"
+                      ? "bg-noble-blue text-noble-black hover:bg-white"
                       : "border border-white/20 text-white hover:bg-white/5"
                   }`}
                 >
@@ -123,9 +123,9 @@ export default function PricingPage() {
       <section className="py-24 md:py-28 bg-noble-dark relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Ongoing AI Systems</span>
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">Ongoing AI Systems</span>
             <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
-              Scoped to Your <span className="italic text-noble-gold">Business.</span>
+              Scoped to Your <span className="italic text-noble-blue">Business.</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed">
               These run monthly, sized to your call volume, market, and content needs — not a flat rate that fits everyone.
@@ -140,11 +140,11 @@ export default function PricingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="p-8 bg-noble-black border border-white/5 rounded-[2rem] hover:border-noble-gold/40 transition-all block"
+                className="p-8 bg-noble-black border border-white/5 rounded-[2rem] hover:border-noble-blue/40 transition-all block"
               >
                 <h3 className="text-xl font-serif text-white mb-3">{plan.name}</h3>
                 <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">{plan.description}</p>
-                <span className="text-noble-gold text-xs font-bold uppercase tracking-widest">Request Pricing →</span>
+                <span className="text-noble-blue text-xs font-bold uppercase tracking-widest">Request Pricing →</span>
               </motion.a>
             ))}
           </div>
@@ -154,7 +154,7 @@ export default function PricingPage() {
             <p className="text-gray-400 font-light mb-6">
               A website, AI SEO, voice, and content — built and managed as one system.
             </p>
-            <a href="/" className="text-noble-gold font-bold uppercase text-sm tracking-[0.15em] hover:underline">
+            <a href="/" className="text-noble-blue font-bold uppercase text-sm tracking-[0.15em] hover:underline">
               See the Full System →
             </a>
           </div>

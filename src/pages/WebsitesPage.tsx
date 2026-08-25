@@ -7,7 +7,7 @@ export default function WebsitesPage() {
     <PageShell>
       <PageHeader
         eyebrow="Websites"
-        title={<>Your Website Should Look <span className="italic text-noble-gold">As Good As Your Business.</span></>}
+        title={<>Your Website Should Look <span className="italic text-noble-blue">As Good As Your Business.</span></>}
         subtitle="Fully built, SEO-optimized, and connected to everything else NobleWave manages for you — delivered fast."
         primaryCta={{ label: "Get Your Website Built", href: "/ai-strategy-session" }}
         secondaryCta={{ label: "See All Solutions", href: "/" }}

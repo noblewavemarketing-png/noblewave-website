@@ -20,9 +20,9 @@ export const Fit = () => {
     <section className="py-24 md:py-28 bg-noble-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Who This Is For</span>
+          <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">Who This Is For</span>
           <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white">
-            We're Selective. <span className="italic text-noble-gold">On Purpose.</span>
+            We're Selective. <span className="italic text-noble-blue">On Purpose.</span>
           </h2>
           <p className="text-gray-400 text-xl max-w-2xl mx-auto mt-8 font-light leading-relaxed">
             Lead generation only works when the company behind it can actually handle the jobs. So we don't take everyone.
@@ -32,13 +32,13 @@ export const Fit = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="p-12 bg-noble-dark border border-noble-gold/40 rounded-[2.5rem]"
+            className="p-12 bg-noble-dark border border-noble-blue/40 rounded-[2.5rem]"
           >
-            <h3 className="font-serif text-3xl text-noble-gold mb-8">A Fit</h3>
+            <h3 className="font-serif text-3xl text-noble-blue mb-8">A Fit</h3>
             <ul className="space-y-5">
               {fits.map((item) => (
                 <li key={item} className="flex items-start gap-4 text-gray-300">
-                  <Check className="text-noble-gold shrink-0 mt-1" size={20} />
+                  <Check className="text-noble-blue shrink-0 mt-1" size={20} />
                   <span className="text-lg font-light">{item}</span>
                 </li>
               ))}

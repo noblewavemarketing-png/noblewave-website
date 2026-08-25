@@ -44,7 +44,7 @@ export default function AiVoicePage() {
     <PageShell>
       <PageHeader
         eyebrow="AI Voice"
-        title={<>Never Miss <span className="italic text-noble-gold">Another Call.</span></>}
+        title={<>Never Miss <span className="italic text-noble-blue">Another Call.</span></>}
         subtitle="A 24/7 AI receptionist that has natural conversations, qualifies leads, and books appointments — so no opportunity depends on someone being near the phone."
         primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
         secondaryCta={{ label: "See All Solutions", href: "/" }}
@@ -53,9 +53,9 @@ export default function AiVoicePage() {
       <section className="py-24 md:py-28 bg-noble-black">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
             <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
-              A Receptionist That <span className="italic text-noble-gold">Never Clocks Out.</span>
+              A Receptionist That <span className="italic text-noble-blue">Never Clocks Out.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -68,7 +68,7 @@ export default function AiVoicePage() {
                 transition={{ delay: (i % 3) * 0.1 }}
                 className="p-8 bg-noble-dark border border-white/5 rounded-[2rem]"
               >
-                <h3 className="text-xl font-serif text-noble-gold mb-3">{p.title}</h3>
+                <h3 className="text-xl font-serif text-noble-blue mb-3">{p.title}</h3>
                 <p className="text-gray-400 font-light leading-relaxed">{p.description}</p>
               </motion.div>
             ))}
@@ -83,7 +83,7 @@ export default function AiVoicePage() {
             <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-10">
               {included.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-300">
-                  <Check className="text-noble-gold shrink-0 mt-1" size={18} />
+                  <Check className="text-noble-blue shrink-0 mt-1" size={18} />
                   <span className="font-light">{item}</span>
                 </li>
               ))}
@@ -102,7 +102,7 @@ export default function AiVoicePage() {
       <section className="py-24 md:py-28 noble-gradient">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
-            Ready to Stop <span className="italic text-noble-gold">Missing Calls?</span>
+            Ready to Stop <span className="italic text-noble-blue">Missing Calls?</span>
           </h2>
           <p className="text-gray-300 text-lg mb-10 font-light leading-relaxed">
             See exactly how an AI receptionist would handle your business's calls.
@@ -110,7 +110,7 @@ export default function AiVoicePage() {
           <a
             href="/ai-strategy-session"
             data-track="cta"
-            className="inline-flex items-center gap-2 bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg hover:bg-white transition-all"
+            className="inline-flex items-center gap-2 bg-noble-blue text-noble-black px-10 py-5 rounded-full font-bold text-lg hover:bg-white transition-all"
           >
             Book an AI Consultation <ArrowRight size={18} />
           </a>

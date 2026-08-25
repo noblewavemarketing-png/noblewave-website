@@ -47,7 +47,7 @@ export default function PrivacyPage() {
               We use the following third-party services, each of which may set its own cookies or
               similar identifiers in your browser:
             </p>
-            <ul className="list-disc pl-5 space-y-2 marker:text-noble-gold">
+            <ul className="list-disc pl-5 space-y-2 marker:text-noble-blue">
               <li>
                 <strong className="text-white font-medium">Vercel Analytics &amp; Speed Insights</strong> — privacy-focused,
                 cookieless traffic and performance measurement, always on.
@@ -79,7 +79,7 @@ export default function PrivacyPage() {
                 href="https://adssettings.google.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-noble-gold hover:underline"
+                className="text-noble-blue hover:underline"
               >
                 Google Ads Settings
               </a>
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
                 href="https://www.facebook.com/adpreferences/ad_settings"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-noble-gold hover:underline"
+                className="text-noble-blue hover:underline"
               >
                 Meta Ad Preferences
               </a>
@@ -97,7 +97,7 @@ export default function PrivacyPage() {
                 href="https://optout.aboutads.info"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-noble-gold hover:underline"
+                className="text-noble-blue hover:underline"
               >
                 Digital Advertising Alliance
               </a>
@@ -123,7 +123,7 @@ export default function PrivacyPage() {
                 href="https://formspree.io/legal/privacy-policy/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-noble-gold hover:underline"
+                className="text-noble-blue hover:underline"
               >
                 Formspree
               </a>
@@ -132,7 +132,7 @@ export default function PrivacyPage() {
                 href="https://vercel.com/legal/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-noble-gold hover:underline"
+                className="text-noble-blue hover:underline"
               >
                 Vercel
               </a>
@@ -156,7 +156,7 @@ export default function PrivacyPage() {
               Under Canadian privacy law (PIPEDA), you can request access to, correction of, or
               deletion of the personal information we hold about you, and you can withdraw consent
               to be contacted at any time. To make a request, email{" "}
-              <a href="mailto:noblewavemarketing@gmail.com" className="text-noble-gold hover:underline">
+              <a href="mailto:noblewavemarketing@gmail.com" className="text-noble-blue hover:underline">
                 noblewavemarketing@gmail.com
               </a>
               . We'll respond within a reasonable time.
@@ -180,11 +180,11 @@ export default function PrivacyPage() {
           <Section title="Contact">
             <p>
               Questions about this policy or a privacy request:{" "}
-              <a href="mailto:noblewavemarketing@gmail.com" className="text-noble-gold hover:underline">
+              <a href="mailto:noblewavemarketing@gmail.com" className="text-noble-blue hover:underline">
                 noblewavemarketing@gmail.com
               </a>{" "}
               or{" "}
-              <a href="tel:6476735748" className="text-noble-gold hover:underline">
+              <a href="tel:6476735748" className="text-noble-blue hover:underline">
                 647-673-5748
               </a>
               .

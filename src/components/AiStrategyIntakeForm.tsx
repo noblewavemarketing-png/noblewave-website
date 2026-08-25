@@ -61,7 +61,7 @@ const EMPTY: FormData = {
 };
 
 const inputCls =
-  "w-full bg-noble-black border border-white/10 rounded-2xl py-4 px-6 text-white focus:outline-none focus:border-noble-gold transition-all";
+  "w-full bg-noble-black border border-white/10 rounded-2xl py-4 px-6 text-white focus:outline-none focus:border-noble-blue transition-all";
 
 const labelCls = "text-xs uppercase tracking-widest font-bold text-gray-400";
 
@@ -206,16 +206,16 @@ export const AiStrategyIntakeForm = ({ defaultSession }: AiStrategyIntakeFormPro
   if (status === "success") {
     return (
       <div className="text-center py-16" role="status" aria-live="polite">
-        <CheckCircle2 className="mx-auto text-noble-gold mb-8" size={64} aria-hidden="true" />
+        <CheckCircle2 className="mx-auto text-noble-blue mb-8" size={64} aria-hidden="true" />
 
         <h3 className="font-serif text-4xl text-white mb-6">
-          Request <span className="italic text-noble-gold">Received.</span>
+          Request <span className="italic text-noble-blue">Received.</span>
         </h3>
 
         <p className="text-gray-400 text-lg font-light max-w-md mx-auto mb-10">
           Thanks — we&apos;ll confirm your session time and next steps by email within one
           business day. If it&apos;s urgent, call{" "}
-          <a href="tel:6476735748" className="text-noble-gold hover:text-white transition-colors">
+          <a href="tel:6476735748" className="text-noble-blue hover:text-white transition-colors">
             647-673-5748
           </a>
           .
@@ -247,8 +247,8 @@ export const AiStrategyIntakeForm = ({ defaultSession }: AiStrategyIntakeFormPro
         />
       </div>
 
-      <div className="flex items-start gap-3 bg-noble-gold/5 border border-noble-gold/20 rounded-2xl p-5">
-        <ShieldAlert className="text-noble-gold shrink-0 mt-0.5" size={20} aria-hidden="true" />
+      <div className="flex items-start gap-3 bg-noble-blue/5 border border-noble-blue/20 rounded-2xl p-5">
+        <ShieldAlert className="text-noble-blue shrink-0 mt-0.5" size={20} aria-hidden="true" />
         <p className="text-gray-400 text-sm font-light leading-relaxed">
           General descriptions are enough for us to help — please don&apos;t include passwords,
           private credentials, regulated personal data, or confidential information you&apos;re
@@ -487,7 +487,7 @@ export const AiStrategyIntakeForm = ({ defaultSession }: AiStrategyIntakeFormPro
           name="consent"
           type="checkbox"
           required
-          className="mt-1.5 w-5 h-5 shrink-0 rounded border-white/20 bg-noble-black text-noble-gold focus:outline-none focus:ring-2 focus:ring-noble-gold accent-[#D4AF37]"
+          className="mt-1.5 w-5 h-5 shrink-0 rounded border-white/20 bg-noble-black text-noble-blue focus:outline-none focus:ring-2 focus:ring-noble-blue accent-[#3E7BFA]"
           checked={data.consent}
           onChange={set("consent")}
           aria-invalid={!!errors.consent}
@@ -495,7 +495,7 @@ export const AiStrategyIntakeForm = ({ defaultSession }: AiStrategyIntakeFormPro
         />
         <label htmlFor="ai-session-consent" className="text-gray-400 text-sm font-light leading-relaxed">
           I&apos;ve read and agree to NobleWave&apos;s{" "}
-          <a href="/privacy" className="text-noble-gold hover:text-white transition-colors underline">
+          <a href="/privacy" className="text-noble-blue hover:text-white transition-colors underline">
             Privacy Policy
           </a>
           .
@@ -521,7 +521,7 @@ export const AiStrategyIntakeForm = ({ defaultSession }: AiStrategyIntakeFormPro
         type="submit"
         disabled={status === "sending"}
         data-track="cta"
-        className="w-full bg-noble-gold text-noble-black py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-white transition-all shadow-xl text-lg disabled:opacity-60 disabled:cursor-not-allowed"
+        className="w-full bg-noble-blue text-noble-black py-5 rounded-2xl font-bold flex items-center justify-center gap-3 hover:bg-white transition-all shadow-xl text-lg disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "sending" ? (
           <>

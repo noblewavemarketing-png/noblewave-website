@@ -6,7 +6,9 @@
 
   --color-noble-black: #050505;
   --color-noble-dark: #121212;
-  --color-noble-gold: #D4AF37;
+  --color-noble-blue: #3E7BFA;
+  --color-noble-cyan: #63B4F6;
+  --color-noble-indigo: #5B4FE0;
   --color-noble-white: #FFFFFF;
   --color-noble-gray: #888888;
 }
@@ -24,16 +26,16 @@
   background: linear-gradient(180deg, var(--color-noble-black) 0%, var(--color-noble-dark) 100%);
 }
 
-.gold-text {
-  @apply text-noble-gold;
+.blue-text {
+  @apply text-noble-blue;
 }
 
 .glass-card {
   @apply bg-white/5 backdrop-blur-lg border border-white/10;
 }
 
-.border-gold {
-  @apply border-noble-gold/30;
+.border-blue {
+  @apply border-noble-blue/30;
 }
 
 /* Accessibility & performance */
@@ -42,7 +44,7 @@
   left: -9999px;
   top: 0;
   z-index: 100;
-  background: var(--color-noble-gold);
+  background: var(--color-noble-blue);
   color: var(--color-noble-black);
   padding: 12px 24px;
   border-radius: 0 0 12px 0;
@@ -57,7 +59,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid var(--color-noble-gold);
+  outline: 2px solid var(--color-noble-blue);
   outline-offset: 3px;
 }
 

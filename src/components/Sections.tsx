@@ -27,7 +27,7 @@ export const Services = () => {
     <section id="services" className="py-24 md:py-28 bg-noble-dark relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-noble-gold/10 blur-[120px] rounded-full" />
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-noble-blue/10 blur-[120px] rounded-full" />
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-white/5 blur-[120px] rounded-full" />
       </div>
 
@@ -36,7 +36,7 @@ export const Services = () => {
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold"
+            className="text-noble-blue uppercase tracking-[0.4em] text-xs font-bold"
           >
             How It Works
           </motion.span>
@@ -46,7 +46,7 @@ export const Services = () => {
             className="text-6xl md:text-7xl font-serif mt-8 text-white leading-tight"
           >
             Three Steps. <br />
-            <span className="italic text-noble-gold">Zero Marketing Homework.</span>
+            <span className="italic text-noble-blue">Zero Marketing Homework.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -68,20 +68,20 @@ export const Services = () => {
                 scale: 1.02, 
                 rotateY: 5, 
                 rotateX: -5,
-                boxShadow: "0 20px 40px rgba(212,175,55,0.1)"
+                boxShadow: "0 20px 40px rgba(62,123,250,0.1)"
               }}
-              className="p-14 bg-noble-black border border-white/5 rounded-[3rem] hover:border-noble-gold/40 transition-all group flex flex-col items-center text-center perspective-1000"
+              className="p-14 bg-noble-black border border-white/5 rounded-[3rem] hover:border-noble-blue/40 transition-all group flex flex-col items-center text-center perspective-1000"
             >
-              <div className="w-24 h-24 rounded-[2rem] bg-noble-gold/10 flex items-center justify-center text-noble-gold mb-12 group-hover:bg-noble-gold group-hover:text-noble-black transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 shadow-xl">
+              <div className="w-24 h-24 rounded-[2rem] bg-noble-blue/10 flex items-center justify-center text-noble-blue mb-12 group-hover:bg-noble-blue group-hover:text-noble-black transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6 shadow-xl">
                 {service.icon}
               </div>
-              <h3 className="text-4xl font-serif mb-8 text-white group-hover:text-noble-gold transition-colors">{service.title}</h3>
+              <h3 className="text-4xl font-serif mb-8 text-white group-hover:text-noble-blue transition-colors">{service.title}</h3>
               <p className="text-gray-400 leading-relaxed mb-12 text-xl font-light">
                 {service.description}
               </p>
               <a 
                 href={service.link} 
-                className="inline-flex items-center gap-3 text-noble-gold font-bold hover:gap-5 transition-all uppercase text-sm tracking-[0.2em] border-b border-noble-gold/30 pb-2 hover:border-noble-gold"
+                className="inline-flex items-center gap-3 text-noble-blue font-bold hover:gap-5 transition-all uppercase text-sm tracking-[0.2em] border-b border-noble-blue/30 pb-2 hover:border-noble-blue"
               >
                 Learn More <ArrowRight size={16} />
               </a>
@@ -103,7 +103,7 @@ export const About = () => {
           className="relative"
         >
           <div className="p-12 md:p-16 bg-noble-dark border border-white/10 rounded-[3rem] shadow-2xl">
-            <p className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold mb-8">How We Work</p>
+            <p className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold mb-8">How We Work</p>
             <ul className="space-y-8">
               <li>
                 <h4 className="font-serif text-2xl text-white mb-2">Discover first</h4>
@@ -125,10 +125,10 @@ export const About = () => {
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
         >
-          <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold">The NobleWave Approach</span>
+          <span className="text-noble-blue uppercase tracking-[0.4em] text-xs font-bold">The NobleWave Approach</span>
           <h2 className="text-6xl md:text-7xl font-serif mt-8 mb-10 text-white leading-tight">
             Built to Work Together. <br />
-            <span className="italic text-noble-gold">Not Sold Separately.</span>
+            <span className="italic text-noble-blue">Not Sold Separately.</span>
           </h2>
           <p className="text-gray-400 text-2xl mb-10 leading-relaxed font-light">
             Most businesses end up with a website from one place, SEO from another, and content from whoever's available that month — none of it talking to each other. NobleWave designs the system first, then builds every piece to fit it.
@@ -176,14 +176,14 @@ export const Websites = () => {
   return (
     <section id="websites" className="py-24 md:py-28 bg-noble-black relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-        <div className="absolute top-1/3 -right-20 w-96 h-96 bg-noble-gold/10 blur-[120px] rounded-full" />
+        <div className="absolute top-1/3 -right-20 w-96 h-96 bg-noble-blue/10 blur-[120px] rounded-full" />
       </div>
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-24">
           <motion.span
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold"
+            className="text-noble-blue uppercase tracking-[0.4em] text-xs font-bold"
           >
             Website Creation
           </motion.span>
@@ -193,7 +193,7 @@ export const Websites = () => {
             className="text-6xl md:text-7xl font-serif mt-8 text-white leading-tight"
           >
             A Website That <br />
-            <span className="italic text-noble-gold">Closes For You.</span>
+            <span className="italic text-noble-blue">Closes For You.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -211,9 +211,9 @@ export const Websites = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="p-12 bg-noble-dark border border-white/5 rounded-[2.5rem] hover:border-noble-gold/40 transition-all group"
+              className="p-12 bg-noble-dark border border-white/5 rounded-[2.5rem] hover:border-noble-blue/40 transition-all group"
             >
-              <h3 className="text-3xl font-serif mb-6 text-white group-hover:text-noble-gold transition-colors">{feature.title}</h3>
+              <h3 className="text-3xl font-serif mb-6 text-white group-hover:text-noble-blue transition-colors">{feature.title}</h3>
               <p className="text-gray-400 leading-relaxed text-lg font-light">{feature.description}</p>
             </motion.div>
           ))}
@@ -225,7 +225,7 @@ export const Websites = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             data-track="cta"
-            className="inline-block bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+            className="inline-block bg-noble-blue text-noble-black px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(62,123,250,0.3)]"
           >
             Get Your Website Built
           </motion.a>

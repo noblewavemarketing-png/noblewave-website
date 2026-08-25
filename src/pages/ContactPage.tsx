@@ -7,7 +7,7 @@ export default function ContactPage() {
     <PageShell>
       <PageHeader
         eyebrow="Get in Touch"
-        title={<>Tell Us About <span className="italic text-noble-gold">Your Business.</span></>}
+        title={<>Tell Us About <span className="italic text-noble-blue">Your Business.</span></>}
         subtitle="Fill this out and we'll get back to you within one business day with a clear read on where the opportunity is — no obligation, no generic sales pitch."
       />
       <Contact />

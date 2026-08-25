@@ -8,7 +8,7 @@ export default function AboutPage() {
     <PageShell>
       <PageHeader
         eyebrow="About NobleWave"
-        title={<>We Build the Systems <span className="italic text-noble-gold">Businesses Grow On.</span></>}
+        title={<>We Build the Systems <span className="italic text-noble-blue">Businesses Grow On.</span></>}
         subtitle="NobleWave designs and implements the digital infrastructure around a business — websites, AI search, voice agents, and content automation, connected as one system instead of a pile of disconnected tools."
       />
       <About />

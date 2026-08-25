@@ -29,27 +29,35 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
       }`}
     >
       {withAnnouncement && (
-        <div className="bg-noble-gold text-noble-black text-center text-[11px] md:text-sm font-bold tracking-wide py-2 px-6 -mt-4 md:-mt-6 mb-4 md:mb-6">
+        <div className="bg-noble-blue text-noble-black text-center text-[11px] md:text-sm font-bold tracking-wide py-2 px-6 -mt-4 md:-mt-6 mb-4 md:mb-6">
           Get Found. Capture Every Lead. Stay Visible.
         </div>
       )}
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-4 group cursor-pointer">
           <div className="relative w-14 h-14">
-            {/* Creative Abstract Wave Logo — ambient, always-looping motion
-                (not a one-time "draw in"). A one-time reveal used to replay
-                in full on every page navigation, which read as broken on
-                this multi-page site (every nav is a fresh mount). A
-                continuous loop has no such "incomplete" phase — it looks
-                correct the instant it mounts, on every page. Two effects:
-                1) the wave strokes gently undulate (a slow path morph)
-                2) a soft gold shimmer sweeps across them on a loop. */}
+            {/* Final brand mark (blue/indigo ribbon wave) — ambient,
+                always-looping motion, not a one-time "draw in". A one-time
+                reveal used to replay in full on every page navigation,
+                which read as broken on this multi-page site (every nav is
+                a fresh mount). A continuous loop has no such "incomplete"
+                phase — it looks correct the instant it mounts, on every
+                page. Two ribbons (indigo underlayer, blue/cyan top layer)
+                gently undulate, plus a soft white shimmer sweep. */}
             <svg viewBox="0 0 100 100" className="w-full h-full">
               <defs>
+                <linearGradient id="wave-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#63B4F6" />
+                  <stop offset="100%" stopColor="#5B4FE0" />
+                </linearGradient>
+                <linearGradient id="wave-blue" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#5B4FE0" />
+                  <stop offset="100%" stopColor="#63B4F6" />
+                </linearGradient>
                 <linearGradient id="wave-shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#D4AF37" stopOpacity="0" />
-                  <stop offset="50%" stopColor="#FFF3C4" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="#D4AF37" stopOpacity="0" />
+                  <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0" />
+                  <stop offset="50%" stopColor="#FFFFFF" stopOpacity="0.85" />
+                  <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0" />
                   <animateTransform
                     attributeName="gradientTransform"
                     type="translate"
@@ -59,65 +67,62 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
                   />
                 </linearGradient>
               </defs>
+              {/* Underlayer ribbon — indigo */}
               <motion.path
                 fill="none"
-                stroke="#D4AF37"
-                strokeWidth="8"
+                stroke="url(#wave-indigo)"
+                strokeWidth="13"
                 strokeLinecap="round"
                 animate={{
                   d: [
-                    "M20 50 Q35 20 50 50 T80 50",
-                    "M20 50 Q35 32 50 50 T80 50",
-                    "M20 50 Q35 20 50 50 T80 50",
+                    "M18 68 Q35 72 45 55 Q55 38 82 30",
+                    "M18 68 Q35 60 45 55 Q55 50 82 30",
+                    "M18 68 Q35 72 45 55 Q55 38 82 30",
                   ],
                 }}
-                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
               />
-              {/* Shimmer overlay — same motion, gradient stroke on top */}
+              {/* Top ribbon — blue/cyan, offset above */}
+              <motion.path
+                fill="none"
+                stroke="url(#wave-blue)"
+                strokeWidth="10"
+                strokeLinecap="round"
+                animate={{
+                  d: [
+                    "M20 48 Q38 30 52 42 Q66 54 84 38",
+                    "M20 48 Q38 38 52 42 Q66 46 84 38",
+                    "M20 48 Q38 30 52 42 Q66 54 84 38",
+                  ],
+                }}
+                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+              />
+              {/* Shimmer overlay, riding the top ribbon */}
               <motion.path
                 fill="none"
                 stroke="url(#wave-shimmer)"
-                strokeWidth="8"
+                strokeWidth="10"
                 strokeLinecap="round"
                 animate={{
                   d: [
-                    "M20 50 Q35 20 50 50 T80 50",
-                    "M20 50 Q35 32 50 50 T80 50",
-                    "M20 50 Q35 20 50 50 T80 50",
+                    "M20 48 Q38 30 52 42 Q66 54 84 38",
+                    "M20 48 Q38 38 52 42 Q66 46 84 38",
+                    "M20 48 Q38 30 52 42 Q66 54 84 38",
                   ],
                 }}
-                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
               />
-              <motion.path
-                fill="none"
-                stroke="#D4AF37"
-                strokeWidth="4"
-                strokeLinecap="round"
-                opacity="0.4"
-                animate={{
-                  d: [
-                    "M20 65 Q35 35 50 65 T80 65",
-                    "M20 65 Q35 47 50 65 T80 65",
-                    "M20 65 Q35 35 50 65 T80 65",
-                  ],
-                }}
-                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
-              />
-              <path
-                d="M35 35 L50 65 L65 35"
-                fill="none"
-                stroke="white"
-                strokeWidth="3"
-                strokeLinecap="round"
-              />
-              <circle cx="50" cy="50" r="45" fill="none" stroke="#D4AF37" strokeWidth="1" strokeDasharray="4 4" opacity="0.2" />
             </svg>
           </div>
           <div className="flex flex-col leading-none">
-            <span className="text-2xl font-serif font-black tracking-tighter text-white">
-              NOBLE<span className="text-noble-gold">WAVE</span>
+            <span className="text-2xl font-sans font-black tracking-tight text-white">
+              NOBLE<span className="text-noble-blue">WAVE</span>
             </span>
-            <span className="text-[9px] uppercase tracking-[0.4em] text-noble-gold font-black mt-1">AI Growth Systems</span>
+            <span className="flex items-center gap-2 mt-1.5">
+              <span className="w-2.5 h-px bg-noble-blue/60" aria-hidden="true" />
+              <span className="text-[9px] uppercase tracking-[0.3em] text-noble-blue font-black">AI Growth Systems</span>
+              <span className="w-2.5 h-px bg-noble-blue/60" aria-hidden="true" />
+            </span>
           </div>
         </div>
 
@@ -127,7 +132,7 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium tracking-wide text-gray-400 hover:text-noble-gold transition-colors"
+              className="text-sm font-medium tracking-wide text-gray-400 hover:text-noble-blue transition-colors"
             >
               {link.name}
             </a>
@@ -137,7 +142,7 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             data-track="cta"
-            className="bg-noble-gold text-noble-black px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-white transition-all"
+            className="bg-noble-blue text-noble-black px-6 py-2 rounded-full text-sm font-bold shadow-lg hover:bg-white transition-all"
           >
             Book a Consultation
           </motion.a>
@@ -145,7 +150,7 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
 
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden text-noble-gold"
+          className="lg:hidden text-noble-blue"
           onClick={() => setIsOpen(!isOpen)}
           aria-expanded={isOpen}
           aria-controls="mobile-nav"
@@ -169,12 +174,12 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-gray-300 text-lg font-medium hover:text-noble-gold"
+              className="text-gray-300 text-lg font-medium hover:text-noble-blue"
             >
               {link.name}
             </a>
           ))}
-          <a href="/ai-strategy-session" data-track="cta" onClick={() => setIsOpen(false)} className="bg-noble-gold text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center">
+          <a href="/ai-strategy-session" data-track="cta" onClick={() => setIsOpen(false)} className="bg-noble-blue text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center">
             Book a Consultation
           </a>
         </motion.nav>
@@ -199,10 +204,14 @@ export const Hero = () => {
           video-like on first load, before anyone scrolls at all.
           Generated at full quality, 64KB as WebP: costs nothing on load. */}
       <motion.div className="absolute inset-0 z-0" style={{ y: imageY, scale: imageScale }} aria-hidden="true">
+        {/* hue-rotate shifts the original gold wave image toward the new
+            blue/indigo brand palette at zero cost -- an interim fix, not a
+            replacement for a proper blue-toned AI-generated hero image. */}
         <motion.img
           src="/images/hero-wave.webp"
           alt=""
           className="w-full h-full object-cover object-[85%_25%] md:object-center"
+          style={{ filter: "hue-rotate(175deg) saturate(1.15)" }}
           width={2752}
           height={1536}
           fetchPriority="high"
@@ -217,13 +226,16 @@ export const Hero = () => {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <motion.div style={{ y: y2, opacity }}>
-          <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
+          <span className="text-noble-blue uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
             AI Systems for Modern Businesses
           </span>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl text-white font-serif leading-[0.95] mb-8">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl text-white font-sans font-black uppercase leading-[0.95] mb-8 tracking-tight">
             Get Found. <br />
-            Capture Every Lead. <br />
-            <span className="italic text-noble-gold">Stay Visible.</span>
+            <span className="bg-gradient-to-r from-noble-cyan to-noble-blue bg-clip-text text-transparent">
+              Capture Every Lead.
+            </span>{" "}
+            <br />
+            Stay Visible.
           </h1>
           <p className="text-gray-400 text-lg md:text-2xl max-w-3xl mx-auto mb-12 font-light leading-relaxed">
             NobleWave builds high-performance websites, AI-powered SEO, intelligent voice agents, and automated content systems that help businesses attract and convert more customers.
@@ -234,7 +246,7 @@ export const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               data-track="cta"
-              className="bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)]"
+              className="bg-noble-blue text-noble-black px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(62,123,250,0.3)]"
             >
               Book an AI Consultation
             </motion.a>
@@ -254,7 +266,7 @@ export const Hero = () => {
       <motion.div 
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-noble-gold opacity-50"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-noble-blue opacity-50"
         aria-hidden="true"
       >
         <ChevronRight className="rotate-90" size={32} />

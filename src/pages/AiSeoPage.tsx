@@ -44,7 +44,7 @@ export default function AiSeoPage() {
     <PageShell>
       <PageHeader
         eyebrow="AI SEO"
-        title={<>Search Engines. <span className="italic text-noble-gold">And AI Engines.</span></>}
+        title={<>Search Engines. <span className="italic text-noble-blue">And AI Engines.</span></>}
         subtitle="NobleWave manages your SEO strategy end to end — researching, creating, optimizing, publishing, and measuring the work continuously, so your search presence is never sitting idle between check-ins."
         primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
         secondaryCta={{ label: "See All Solutions", href: "/" }}
@@ -53,9 +53,9 @@ export default function AiSeoPage() {
       <section className="py-24 md:py-28 bg-noble-black">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
             <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
-              Six Parts of Search. <span className="italic text-noble-gold">One Managed System.</span>
+              Six Parts of Search. <span className="italic text-noble-blue">One Managed System.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -68,7 +68,7 @@ export default function AiSeoPage() {
                 transition={{ delay: (i % 3) * 0.1 }}
                 className="p-8 bg-noble-dark border border-white/5 rounded-[2rem]"
               >
-                <h3 className="text-xl font-serif text-noble-gold mb-3">{p.title}</h3>
+                <h3 className="text-xl font-serif text-noble-blue mb-3">{p.title}</h3>
                 <p className="text-gray-400 font-light leading-relaxed">{p.description}</p>
               </motion.div>
             ))}
@@ -83,7 +83,7 @@ export default function AiSeoPage() {
             <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-10">
               {included.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-300">
-                  <Check className="text-noble-gold shrink-0 mt-1" size={18} />
+                  <Check className="text-noble-blue shrink-0 mt-1" size={18} />
                   <span className="font-light">{item}</span>
                 </li>
               ))}
@@ -100,7 +100,7 @@ export default function AiSeoPage() {
       <section className="py-24 md:py-28 noble-gradient">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
-            Ready to See Where You <span className="italic text-noble-gold">Actually Stand?</span>
+            Ready to See Where You <span className="italic text-noble-blue">Actually Stand?</span>
           </h2>
           <p className="text-gray-300 text-lg mb-10 font-light leading-relaxed">
             A strategy call starts with a real look at your site, your competitors, and where the opportunity actually is.
@@ -108,7 +108,7 @@ export default function AiSeoPage() {
           <a
             href="/ai-strategy-session"
             data-track="cta"
-            className="inline-flex items-center gap-2 bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg hover:bg-white transition-all"
+            className="inline-flex items-center gap-2 bg-noble-blue text-noble-black px-10 py-5 rounded-full font-bold text-lg hover:bg-white transition-all"
           >
             Book an AI Consultation <ArrowRight size={18} />
           </a>

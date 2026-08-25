@@ -114,17 +114,17 @@ const SessionCard = ({
     viewport={{ once: true }}
     className={`p-10 rounded-[2.5rem] border flex flex-col text-left transition-all ${
       option.featured || selected
-        ? "border-noble-gold bg-noble-dark shadow-[0_0_60px_rgba(212,175,55,0.15)]"
+        ? "border-noble-blue bg-noble-dark shadow-[0_0_60px_rgba(62,123,250,0.15)]"
         : "border-white/10 bg-noble-dark"
     }`}
   >
     {option.featured && (
-      <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-6 self-start bg-noble-gold text-noble-black">
+      <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-6 self-start bg-noble-blue text-noble-black">
         Most Booked
       </span>
     )}
     <h3 className="text-2xl font-serif text-white mb-1">{option.name}</h3>
-    <p className="text-noble-gold text-sm font-bold uppercase tracking-widest mb-6">{option.duration}</p>
+    <p className="text-noble-blue text-sm font-bold uppercase tracking-widest mb-6">{option.duration}</p>
     <p className="text-gray-400 mb-4 font-light">{option.tagline}</p>
     <p className="text-gray-500 text-sm font-light mb-8 flex-grow">Best for: {option.bestFor}</p>
     <p className="text-gray-500 text-sm font-light mb-6">
@@ -136,7 +136,7 @@ const SessionCard = ({
       data-track="cta"
       className={`w-full py-4 rounded-2xl font-bold text-center transition-all ${
         option.featured || selected
-          ? "bg-noble-gold text-noble-black hover:bg-white"
+          ? "bg-noble-blue text-noble-black hover:bg-white"
           : "border border-white/20 text-white hover:bg-white/5"
       }`}
     >
@@ -157,7 +157,7 @@ export default function AiStrategySessionPage() {
     <PageShell>
       <PageHeader
         eyebrow="AI Strategy Session"
-        title={<>Bring One Problem. <span className="italic text-noble-gold">Leave With a Plan.</span></>}
+        title={<>Bring One Problem. <span className="italic text-noble-blue">Leave With a Plan.</span></>}
         subtitle="Bring us a complicated business problem or AI idea. Leave with clarity, a structured decision, and an actionable plan — in a private, one-on-one session, not a generic workshop."
         primaryCta={{ label: "Book a Session", href: "#book" }}
         secondaryCta={{ label: "See Session Options", href: "#sessions" }}
@@ -167,9 +167,9 @@ export default function AiStrategySessionPage() {
       <section id="sessions" className="py-24 md:py-28 bg-noble-black scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Choose a Session</span>
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">Choose a Session</span>
             <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
-              Structured Time, <span className="italic text-noble-gold">Sized to the Decision.</span>
+              Structured Time, <span className="italic text-noble-blue">Sized to the Decision.</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-6 font-light leading-relaxed">
               This is human-led decision support — the AI helps structure the problem, it doesn't decide for you.
@@ -193,9 +193,9 @@ export default function AiStrategySessionPage() {
         <div className="max-w-5xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">The Outcome</span>
+              <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">The Outcome</span>
               <h2 className="text-4xl md:text-5xl font-serif mt-6 mb-8 text-white leading-tight">
-                What You&apos;ll <span className="italic text-noble-gold">Leave With.</span>
+                What You&apos;ll <span className="italic text-noble-blue">Leave With.</span>
               </h2>
               <p className="text-gray-400 text-lg font-light leading-relaxed">
                 Not a lecture on what AI can do in general — a structured answer to the one problem you brought in.
@@ -204,7 +204,7 @@ export default function AiStrategySessionPage() {
             <ul className="space-y-5">
               {outcomes.map((item) => (
                 <li key={item} className="flex items-start gap-4 text-gray-300">
-                  <Check className="text-noble-gold shrink-0 mt-1" size={20} />
+                  <Check className="text-noble-blue shrink-0 mt-1" size={20} />
                   <span className="font-light">{item}</span>
                 </li>
               ))}
@@ -217,9 +217,9 @@ export default function AiStrategySessionPage() {
       <section className="py-24 md:py-28 bg-noble-black">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">How It Works</span>
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">How It Works</span>
             <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
-              Four Steps. <span className="italic text-noble-gold">Nothing Wasted.</span>
+              Four Steps. <span className="italic text-noble-blue">Nothing Wasted.</span>
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -232,8 +232,8 @@ export default function AiStrategySessionPage() {
                 transition={{ delay: i * 0.1 }}
                 className="p-8 bg-noble-dark border border-white/5 rounded-[2rem]"
               >
-                <span className="text-noble-gold font-serif text-3xl italic">{i + 1}</span>
-                <div className="text-noble-gold mt-4 mb-4">{step.icon}</div>
+                <span className="text-noble-blue font-serif text-3xl italic">{i + 1}</span>
+                <div className="text-noble-blue mt-4 mb-4">{step.icon}</div>
                 <h3 className="text-xl font-serif text-white mb-3">{step.title}</h3>
                 <p className="text-gray-400 text-sm font-light leading-relaxed">{step.description}</p>
               </motion.div>
@@ -246,9 +246,9 @@ export default function AiStrategySessionPage() {
       <section className="py-24 md:py-28 bg-noble-dark">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Bring Something Like This</span>
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">Bring Something Like This</span>
             <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
-              Real Questions. <span className="italic text-noble-gold">One at a Time.</span>
+              Real Questions. <span className="italic text-noble-blue">One at a Time.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -265,16 +265,16 @@ export default function AiStrategySessionPage() {
       <section className="py-24 md:py-28 bg-noble-black">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
-            <Users className="mx-auto text-noble-gold mb-6" size={40} />
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Who It&apos;s For</span>
+            <Users className="mx-auto text-noble-blue mb-6" size={40} />
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">Who It&apos;s For</span>
             <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
-              Built for People Making <span className="italic text-noble-gold">a Real Decision.</span>
+              Built for People Making <span className="italic text-noble-blue">a Real Decision.</span>
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
             {whoItsFor.map((item) => (
               <div key={item} className="flex items-start gap-4 p-6 bg-noble-dark border border-white/5 rounded-2xl">
-                <Target className="text-noble-gold shrink-0 mt-1" size={20} />
+                <Target className="text-noble-blue shrink-0 mt-1" size={20} />
                 <span className="text-gray-300 font-light">{item}</span>
               </div>
             ))}
@@ -286,21 +286,21 @@ export default function AiStrategySessionPage() {
       <section id="faq" className="py-24 md:py-28 bg-noble-dark scroll-mt-24">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">FAQ</span>
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">FAQ</span>
             <h2 className="text-5xl md:text-6xl font-serif mt-6 text-white leading-tight">
-              Questions, <span className="italic text-noble-gold">Answered.</span>
+              Questions, <span className="italic text-noble-blue">Answered.</span>
             </h2>
           </div>
           <div className="space-y-4">
             {faqs.map((item) => (
               <details
                 key={item.q}
-                className="group bg-noble-black border border-white/5 rounded-2xl p-6 open:border-noble-gold/40"
+                className="group bg-noble-black border border-white/5 rounded-2xl p-6 open:border-noble-blue/40"
               >
                 <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-serif text-lg text-white">
                   {item.q}
                   <ChevronDown
-                    className="text-noble-gold shrink-0 transition-transform group-open:rotate-180"
+                    className="text-noble-blue shrink-0 transition-transform group-open:rotate-180"
                     size={20}
                     aria-hidden="true"
                   />
@@ -316,7 +316,7 @@ export default function AiStrategySessionPage() {
       <section className="py-16 bg-noble-black">
         <div className="max-w-4xl mx-auto px-6">
           <div className="p-8 md:p-10 bg-noble-dark border border-white/5 rounded-[2rem] flex flex-col md:flex-row gap-6">
-            <ShieldCheck className="text-noble-gold shrink-0" size={28} aria-hidden="true" />
+            <ShieldCheck className="text-noble-blue shrink-0" size={28} aria-hidden="true" />
             <div>
               <h3 className="text-white font-serif text-xl mb-4">What This Session Is — and Isn&apos;t</h3>
               <ul className="space-y-3 text-gray-500 text-sm font-light leading-relaxed">
@@ -339,7 +339,7 @@ export default function AiStrategySessionPage() {
                 <li className="flex items-start gap-3">
                   <Scale className="text-gray-600 shrink-0 mt-0.5" size={16} />
                   Your information is handled under NobleWave&apos;s{" "}
-                  <a href="/privacy" className="text-noble-gold hover:underline">Privacy Policy</a>.
+                  <a href="/privacy" className="text-noble-blue hover:underline">Privacy Policy</a>.
                 </li>
               </ul>
             </div>
@@ -352,10 +352,10 @@ export default function AiStrategySessionPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-20">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">Book a Session</span>
+              <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">Book a Session</span>
               <h2 className="text-5xl md:text-6xl font-serif mt-6 mb-10 text-white">
                 Tell Us the <br />
-                <span className="italic text-noble-gold">Problem First.</span>
+                <span className="italic text-noble-blue">Problem First.</span>
               </h2>
               <p className="text-gray-400 text-xl mb-12 leading-relaxed font-light">
                 Submit the intake form below and we&apos;ll confirm your session time and next
@@ -364,8 +364,8 @@ export default function AiStrategySessionPage() {
               </p>
               <div className="space-y-6 text-gray-500 text-sm font-light">
                 <p>
-                  Call <a href="tel:6476735748" className="text-noble-gold hover:text-white transition-colors">647-673-5748</a> or
-                  email <a href="mailto:noblewavemarketing@gmail.com" className="text-noble-gold hover:text-white transition-colors">noblewavemarketing@gmail.com</a> if
+                  Call <a href="tel:6476735748" className="text-noble-blue hover:text-white transition-colors">647-673-5748</a> or
+                  email <a href="mailto:noblewavemarketing@gmail.com" className="text-noble-blue hover:text-white transition-colors">noblewavemarketing@gmail.com</a> if
                   you&apos;d rather set this up directly.
                 </p>
               </div>

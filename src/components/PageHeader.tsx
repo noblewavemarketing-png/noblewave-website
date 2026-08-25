@@ -11,16 +11,16 @@ interface PageHeaderProps {
 /**
  * Lightweight inner-page hero band — no 3D globe, so pages other than the
  * homepage stay light and fast. Consistent brand treatment: eyebrow, serif
- * H1 with a gold italic accent line, one paragraph, optional CTAs.
+ * H1 with a blue italic accent line, one paragraph, optional CTAs.
  */
 export const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta }: PageHeaderProps) => {
   return (
     <section className="relative pt-44 pb-4 md:pt-52 md:pb-8 bg-noble-black overflow-hidden">
       <div className="absolute inset-0 opacity-30" aria-hidden="true">
-        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-noble-gold/10 blur-[150px]" />
+        <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-noble-blue/10 blur-[150px]" />
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        <span className="text-noble-gold uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
+        <span className="text-noble-blue uppercase tracking-[0.4em] text-xs font-bold mb-6 block">
           {eyebrow}
         </span>
         <h1 className="text-5xl md:text-7xl font-serif leading-[1.05] mb-8 text-white">
@@ -35,7 +35,7 @@ export const PageHeader = ({ eyebrow, title, subtitle, primaryCta, secondaryCta 
               <a
                 href={primaryCta.href}
                 data-track="cta"
-                className="bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:bg-white transition-all"
+                className="bg-noble-blue text-noble-black px-10 py-5 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(62,123,250,0.3)] hover:bg-white transition-all"
               >
                 {primaryCta.label}
               </a>

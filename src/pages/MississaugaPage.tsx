@@ -27,7 +27,7 @@ export default function MississaugaPage() {
     <div className="relative">
       <a href="#main" className="skip-link">Skip to content</a>
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-noble-gold z-[60] origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-noble-blue z-[60] origin-left"
         style={{ scaleX }}
       />
 

@@ -116,7 +116,7 @@ const ServiceBlock = ({ service, index }: { service: Service; index: number }) =
         viewport={{ once: true }}
       >
         <div className="flex items-center gap-5 mb-8">
-          <div className="w-16 h-16 rounded-2xl bg-noble-gold/10 flex items-center justify-center text-noble-gold shrink-0">
+          <div className="w-16 h-16 rounded-2xl bg-noble-blue/10 flex items-center justify-center text-noble-blue shrink-0">
             {service.icon}
           </div>
           <h2 className="text-3xl md:text-4xl font-serif text-white">{service.title}</h2>
@@ -124,11 +124,11 @@ const ServiceBlock = ({ service, index }: { service: Service; index: number }) =
 
         <div className="grid md:grid-cols-2 gap-10 mb-10">
           <div>
-            <h3 className="text-noble-gold uppercase tracking-[0.2em] text-xs font-bold mb-3">The Problem</h3>
+            <h3 className="text-noble-blue uppercase tracking-[0.2em] text-xs font-bold mb-3">The Problem</h3>
             <p className="text-gray-400 font-light leading-relaxed">{service.problem}</p>
           </div>
           <div>
-            <h3 className="text-noble-gold uppercase tracking-[0.2em] text-xs font-bold mb-3">What NobleWave Provides</h3>
+            <h3 className="text-noble-blue uppercase tracking-[0.2em] text-xs font-bold mb-3">What NobleWave Provides</h3>
             <p className="text-gray-400 font-light leading-relaxed">{service.provides}</p>
           </div>
         </div>
@@ -138,19 +138,19 @@ const ServiceBlock = ({ service, index }: { service: Service; index: number }) =
           <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
             {service.included.map((item) => (
               <li key={item} className="flex items-start gap-3 text-gray-300 text-sm">
-                <Check className="text-noble-gold shrink-0 mt-0.5" size={16} />
+                <Check className="text-noble-blue shrink-0 mt-0.5" size={16} />
                 <span className="font-light">{item}</span>
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 p-6 bg-noble-gold/5 border border-noble-gold/20 rounded-2xl">
-          <p className="text-gray-300 font-light"><span className="text-noble-gold font-bold">The benefit: </span>{service.benefit}</p>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 p-6 bg-noble-blue/5 border border-noble-blue/20 rounded-2xl">
+          <p className="text-gray-300 font-light"><span className="text-noble-blue font-bold">The benefit: </span>{service.benefit}</p>
           <a
             href={service.ctaHref}
             data-track="cta"
-            className="inline-flex items-center gap-2 shrink-0 bg-noble-gold text-noble-black px-6 py-3 rounded-full font-bold text-sm hover:bg-white transition-all"
+            className="inline-flex items-center gap-2 shrink-0 bg-noble-blue text-noble-black px-6 py-3 rounded-full font-bold text-sm hover:bg-white transition-all"
           >
             {service.ctaLabel} <ArrowRight size={16} />
           </a>
@@ -165,7 +165,7 @@ export default function ServicesPage() {
     <PageShell>
       <PageHeader
         eyebrow="Services"
-        title={<>Five Ways We Help You Put <span className="italic text-noble-gold">AI to Work.</span></>}
+        title={<>Five Ways We Help You Put <span className="italic text-noble-blue">AI to Work.</span></>}
         subtitle="Consultancy, automation, agents, marketing, and custom builds — plus a standalone AI Strategy Session if what you need is one clear decision, not an ongoing engagement."
         primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
       />
@@ -179,13 +179,13 @@ export default function ServicesPage() {
           above. Full detail lives at /ai-strategy-session. */}
       <section className="py-24 md:py-28 bg-noble-black">
         <div className="max-w-5xl mx-auto px-6">
-          <div className="p-10 md:p-16 bg-noble-dark border border-noble-gold/30 rounded-[3rem] shadow-[0_0_80px_rgba(212,175,55,0.1)]">
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-8 inline-block bg-noble-gold text-noble-black">
+          <div className="p-10 md:p-16 bg-noble-dark border border-noble-blue/30 rounded-[3rem] shadow-[0_0_80px_rgba(62,123,250,0.1)]">
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-8 inline-block bg-noble-blue text-noble-black">
               One-Time Session — Not a Subscription
             </span>
             <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
               Need One Decision, Not a Retainer? <br />
-              <span className="italic text-noble-gold">Book an AI Strategy Session.</span>
+              <span className="italic text-noble-blue">Book an AI Strategy Session.</span>
             </h2>
             <p className="text-gray-400 text-lg font-light leading-relaxed mb-10 max-w-2xl">
               Bring one business problem or AI idea to a private, one-on-one consulting session.
@@ -196,7 +196,7 @@ export default function ServicesPage() {
               <a
                 href="/ai-strategy-session"
                 data-track="cta"
-                className="inline-flex items-center justify-center gap-2 bg-noble-gold text-noble-black px-8 py-4 rounded-full font-bold hover:bg-white transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-noble-blue text-noble-black px-8 py-4 rounded-full font-bold hover:bg-white transition-all"
               >
                 See Session Details &amp; Book
                 <ArrowRight size={18} aria-hidden="true" />

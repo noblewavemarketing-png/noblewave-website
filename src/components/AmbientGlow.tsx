@@ -7,6 +7,6 @@
 export const AmbientGlow = () => (
   <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none" aria-hidden="true">
     <div className="ambient-stars absolute inset-0" />
-    <div className="ambient-orb absolute top-1/2 left-1/2 w-[560px] h-[560px] rounded-full bg-noble-gold/30 blur-[110px]" />
+    <div className="ambient-orb absolute top-1/2 left-1/2 w-[560px] h-[560px] rounded-full bg-noble-blue/30 blur-[110px]" />
   </div>
 );

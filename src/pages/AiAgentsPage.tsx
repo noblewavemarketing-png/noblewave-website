@@ -44,7 +44,7 @@ export default function AiAgentsPage() {
     <PageShell>
       <PageHeader
         eyebrow="AI Agents"
-        title={<>An AI That <span className="italic text-noble-gold">Handles the Work.</span></>}
+        title={<>An AI That <span className="italic text-noble-blue">Handles the Work.</span></>}
         subtitle="Custom AI agents built around your actual processes — answering, qualifying, booking, and supporting your team, consistently and around the clock."
         primaryCta={{ label: "Book an AI Consultation", href: "/ai-strategy-session" }}
         secondaryCta={{ label: "See All Services", href: "/services" }}
@@ -53,9 +53,9 @@ export default function AiAgentsPage() {
       <section className="py-24 md:py-28 bg-noble-black">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-noble-gold uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
+            <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">What's Covered</span>
             <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
-              Six Kinds of <span className="italic text-noble-gold">AI Agents.</span>
+              Six Kinds of <span className="italic text-noble-blue">AI Agents.</span>
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -68,7 +68,7 @@ export default function AiAgentsPage() {
                 transition={{ delay: (i % 3) * 0.1 }}
                 className="p-8 bg-noble-dark border border-white/5 rounded-[2rem]"
               >
-                <h3 className="text-xl font-serif text-noble-gold mb-3">{p.title}</h3>
+                <h3 className="text-xl font-serif text-noble-blue mb-3">{p.title}</h3>
                 <p className="text-gray-400 font-light leading-relaxed">{p.description}</p>
               </motion.div>
             ))}
@@ -83,7 +83,7 @@ export default function AiAgentsPage() {
             <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-4 mb-10">
               {included.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-gray-300">
-                  <Check className="text-noble-gold shrink-0 mt-1" size={18} />
+                  <Check className="text-noble-blue shrink-0 mt-1" size={18} />
                   <span className="font-light">{item}</span>
                 </li>
               ))}
@@ -102,7 +102,7 @@ export default function AiAgentsPage() {
       <section className="py-24 md:py-28 noble-gradient">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-4xl md:text-5xl font-serif mb-6 text-white leading-tight">
-            Ready to See What an <span className="italic text-noble-gold">AI Agent Could Handle?</span>
+            Ready to See What an <span className="italic text-noble-blue">AI Agent Could Handle?</span>
           </h2>
           <p className="text-gray-300 text-lg mb-10 font-light leading-relaxed">
             A consultation starts with a real look at the conversations and tasks eating your team's time.
@@ -110,7 +110,7 @@ export default function AiAgentsPage() {
           <a
             href="/ai-strategy-session"
             data-track="cta"
-            className="inline-flex items-center gap-2 bg-noble-gold text-noble-black px-10 py-5 rounded-full font-bold text-lg hover:bg-white transition-all"
+            className="inline-flex items-center gap-2 bg-noble-blue text-noble-black px-10 py-5 rounded-full font-bold text-lg hover:bg-white transition-all"
           >
             Book an AI Consultation <ArrowRight size={18} />
           </a>

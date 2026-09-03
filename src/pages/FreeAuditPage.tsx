@@ -6,7 +6,8 @@ import {
   FileSearch,
   Smartphone,
   Star,
-  ClipboardCheck,
+  Megaphone,
+  Share2,
   Sparkles,
   ChevronDown,
 } from "lucide-react";
@@ -18,10 +19,11 @@ const checks = [
   { icon: <MapPin size={22} />, label: "Google Business Profile" },
   { icon: <Search size={22} />, label: "Local Search Visibility" },
   { icon: <Sparkles size={22} />, label: "AI Search Visibility" },
-  { icon: <FileSearch size={22} />, label: "On-Page & AI SEO" },
+  { icon: <FileSearch size={22} />, label: "Website & Technical SEO" },
   { icon: <Smartphone size={22} />, label: "Mobile & Speed" },
+  { icon: <Megaphone size={22} />, label: "Meta & Google Ads" },
+  { icon: <Share2 size={22} />, label: "Content & Posting" },
   { icon: <Star size={22} />, label: "Reviews & Trust" },
-  { icon: <ClipboardCheck size={22} />, label: "Listing Consistency" },
 ];
 
 const faqs = [
@@ -31,22 +33,24 @@ const faqs = [
   },
   {
     q: "What happens after I submit the form?",
-    a: "We check your Google Business Profile and website (if you gave us one) and send written findings within 2 business days. No call needed unless you want one.",
+    a: "We review your website, Google Business Profile, AI search visibility, and (if you're running them) your Meta or Google ads, then send written findings within 2 business days. No call needed unless you want one.",
   },
   {
     q: "Do I need to give you a login or anything private?",
-    a: "No. Everything we check is publicly visible — your Google Business listing, your live website, and public directories.",
+    a: "No. Everything we check is publicly visible — your website, Google Business listing, and public ad libraries.",
   },
 ];
 
 // A quick, honest cross-section of what actually gets checked — cycled to
-// reinforce that this is a real (AI-assisted) analysis, not a static claim.
+// reinforce that this is a real analysis across the whole system, not one
+// channel.
 const scanSteps = [
   "Scanning Google Business Profile…",
   "Checking local search rankings…",
   "Testing AI search visibility…",
-  "Reviewing on-page & schema SEO…",
-  "Checking mobile experience…",
+  "Reviewing website & technical SEO…",
+  "Checking Meta & Google ad setup…",
+  "Reviewing content & posting activity…",
 ];
 
 function ScanTicker() {
@@ -93,16 +97,17 @@ export default function FreeAuditPage() {
               className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-noble-blue/30 bg-noble-blue/5 text-noble-blue uppercase tracking-[0.25em] text-[11px] font-bold"
             >
               <Sparkles size={13} aria-hidden="true" />
-              Free AI-Powered Local SEO Audit
+              Free Digital Visibility Audit
             </motion.span>
             <h1 className="text-4xl md:text-6xl font-serif leading-[1.1] mb-8 text-white">
               Is Your Business Showing Up —{" "}
-              <span className="italic text-noble-blue">Even to AI?</span>
+              <span className="italic text-noble-blue">Everywhere That Matters?</span>
             </h1>
             <p className="text-gray-400 text-lg md:text-xl max-w-xl font-light leading-relaxed mb-6">
-              A free, no-obligation, AI-assisted review of your Google Business Profile,
-              website, and visibility in AI search tools like ChatGPT and Gemini — built
-              for GTA home service businesses. Written findings in 2 business days.
+              A free, no-obligation review of your website, technical SEO, Google Business
+              Profile, AI search visibility, and — if you're running them — your Meta and
+              Google ads. Built for GTA home service businesses. Written findings in 2
+              business days.
             </p>
             <div className="mb-10">
               <ScanTicker />
@@ -123,19 +128,31 @@ export default function FreeAuditPage() {
             </div>
           </motion.div>
 
+          {/* Premium form card — gradient-bordered, glow-shadowed */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="relative bg-noble-dark p-8 md:p-10 rounded-[2.5rem] border border-white/5 shadow-2xl"
+            className="relative rounded-[2.6rem] p-[1px] bg-gradient-to-br from-noble-blue/60 via-white/10 to-transparent shadow-[0_30px_100px_-25px_rgba(62,123,250,0.45)]"
           >
-            <span className="absolute -top-3 right-8 flex items-center gap-1.5 px-3 py-1 rounded-full bg-noble-blue text-noble-black text-[11px] font-bold uppercase tracking-wide">
-              <Sparkles size={12} aria-hidden="true" />
-              AI-Reviewed
-            </span>
-            <h2 className="text-2xl font-serif text-white mb-2">Get My Free Audit</h2>
-            <p className="text-gray-500 text-sm font-light mb-8">Takes under a minute.</p>
-            <FreeAuditForm />
+            <div className="relative bg-noble-dark p-8 md:p-10 rounded-[2.5rem] overflow-hidden">
+              <div
+                className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-noble-blue/10 blur-[80px]"
+                aria-hidden="true"
+              />
+              <span className="absolute top-8 right-8 flex items-center gap-1.5 px-3 py-1 rounded-full bg-noble-blue text-noble-black text-[11px] font-bold uppercase tracking-wide">
+                <Sparkles size={12} aria-hidden="true" />
+                AI-Reviewed
+              </span>
+              <span className="text-noble-blue uppercase tracking-[0.3em] text-[11px] font-bold mb-3 block">
+                Complimentary
+              </span>
+              <h2 className="text-3xl font-serif text-white mb-2">Get My Free Audit</h2>
+              <p className="text-gray-500 text-sm font-light mb-8">
+                Takes under a minute. No login, no card, no obligation.
+              </p>
+              <FreeAuditForm />
+            </div>
           </motion.div>
         </div>
       </section>

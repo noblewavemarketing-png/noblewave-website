@@ -29,6 +29,7 @@ export default defineConfig(() => {
           contact: path.resolve(__dirname, 'contact.html'),
           privacy: path.resolve(__dirname, 'privacy.html'),
           mississauga: path.resolve(__dirname, 'mississauga.html'),
+          freeAudit: path.resolve(__dirname, 'free-audit.html'),
         },
         output: {
           manualChunks: {

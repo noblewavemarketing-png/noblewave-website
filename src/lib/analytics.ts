@@ -10,6 +10,8 @@
  *   VITE_META_PIXEL_ID  e.g. 1234567890    (Meta Pixel — defaults to the live pixel below
  *                                           if unset, so it's active without a Vercel step)
  *   VITE_CLARITY_ID     e.g. abcdefghij    (Microsoft Clarity)
+ *   VITE_HUBSPOT_ID     e.g. 12345678      (HubSpot tracking code — defaults to the live
+ *                                           portal ID below, same pattern as the Meta Pixel)
  *
  * Events tracked (fired to GTM dataLayer, GA4 gtag, and Meta Pixel when present):
  *   contact_form_submit      — successful general-contact form submission (Contact.tsx)
@@ -41,6 +43,9 @@ const GA4_ID = import.meta.env.VITE_GA4_ID as string | undefined;
 // rotated.
 const PIXEL_ID = (import.meta.env.VITE_META_PIXEL_ID as string | undefined) || "1680531334072466";
 const CLARITY_ID = import.meta.env.VITE_CLARITY_ID as string | undefined;
+// HubSpot: defaults to the live portal ID so it's active without a Vercel
+// env var step; VITE_HUBSPOT_ID still overrides it if the portal ever changes.
+const HUBSPOT_ID = (import.meta.env.VITE_HUBSPOT_ID as string | undefined) || "343614538";
 
 function addScript(src: string, id: string) {
   if (document.getElementById(id)) return;
@@ -91,6 +96,10 @@ function loadClarity(id: string) {
   addScript(`https://www.clarity.ms/tag/${id}`, "nw-clarity");
 }
 
+function loadHubSpot(id: string) {
+  addScript(`https://js-na3.hs-scripts.com/${id}.js`, "hs-script-loader");
+}
+
 /** Fire a named event to every configured tracker. */
 export function trackEvent(name: string, params: Record<string, string> = {}) {
   try {
@@ -124,6 +133,7 @@ export function initAnalytics() {
   }
   if (PIXEL_ID) loadMetaPixel(PIXEL_ID);
   if (CLARITY_ID) loadClarity(CLARITY_ID);
+  if (HUBSPOT_ID) loadHubSpot(HUBSPOT_ID);
 
   // One delegated listener — impossible to double-fire per click.
   document.addEventListener(

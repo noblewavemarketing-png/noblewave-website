@@ -160,30 +160,47 @@ export const Header = ({ withAnnouncement = false }: { withAnnouncement?: boolea
         </button>
       </div>
 
-      {/* Mobile Nav */}
-      {isOpen && (
-        <motion.nav
-          id="mobile-nav"
-          aria-label="Mobile navigation"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="lg:hidden absolute top-full left-0 w-full bg-noble-black p-6 flex flex-col gap-4 shadow-2xl border-b border-white/10"
-        >
+      {/* Mobile Nav — always rendered (not conditionally mounted) so its
+          links exist in the prerendered HTML for crawlers/scanners that
+          don't simulate a click (HubSpot's site importer reported "no
+          navigation menus found" against the old {isOpen && (...)} version,
+          since it never appeared in the static markup at all). Open/close
+          is now purely visual via height + opacity; aria-hidden and
+          tabIndex keep it correctly out of the accessibility tree and tab
+          order while closed. */}
+      <motion.nav
+        id="mobile-nav"
+        aria-label="Mobile navigation"
+        aria-hidden={!isOpen}
+        initial={false}
+        animate={isOpen ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
+        transition={{ duration: 0.25, ease: "easeInOut" }}
+        className="lg:hidden absolute top-full left-0 w-full bg-noble-black shadow-2xl border-b border-white/10 overflow-hidden"
+        style={{ pointerEvents: isOpen ? "auto" : "none" }}
+      >
+        <div className="p-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
+              tabIndex={isOpen ? 0 : -1}
               className="text-gray-300 text-lg font-medium hover:text-noble-blue"
             >
               {link.name}
             </a>
           ))}
-          <a href="/ai-strategy-session" data-track="cta" onClick={() => setIsOpen(false)} className="bg-noble-blue text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center">
+          <a
+            href="/ai-strategy-session"
+            data-track="cta"
+            onClick={() => setIsOpen(false)}
+            tabIndex={isOpen ? 0 : -1}
+            className="bg-noble-blue text-noble-black px-6 py-3 rounded-full font-bold mt-4 text-center"
+          >
             Book a Consultation
           </a>
-        </motion.nav>
-      )}
+        </div>
+      </motion.nav>
     </header>
   );
 };

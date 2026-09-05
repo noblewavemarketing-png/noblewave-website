@@ -9,7 +9,10 @@ import {
   GetFound,
   CaptureEveryLead,
   StayVisible,
+  PaidMedia,
+  Proof,
   Process,
+  HomeFAQ,
   FinalCTA,
 } from "./components/HomeSections";
 import { Footer } from "./components/Footer";
@@ -47,7 +50,10 @@ export default function App() {
         <GetFound />
         <CaptureEveryLead />
         <StayVisible />
+        <PaidMedia />
+        <Proof />
         <Process />
+        <HomeFAQ />
         <FinalCTA />
       </main>
       <Footer />

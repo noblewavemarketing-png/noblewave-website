@@ -3,6 +3,7 @@ import {
   Search, Globe, PhoneCall, Workflow, PenTool,
   ArrowRight, ArrowDown, Check, CheckCircle2,
   Compass, Hammer, Rocket, LineChart,
+  Megaphone, ExternalLink, ChevronDown,
 } from "lucide-react";
 
 /* 1. Announcement bar — rendered inside Header (withAnnouncement) so it moves
@@ -241,6 +242,77 @@ export const StayVisible = () => (
   </section>
 );
 
+/* 5b. Outcome 4 — Paid Media (Meta & Google Ads). SEO and content take
+   months to compound; this is the outcome for businesses that need
+   qualified traffic while that foundation is being built. */
+const paidMediaPoints = [
+  "Google Search & Local Services Ads",
+  "Meta (Facebook & Instagram) lead campaigns",
+  "Conversion tracking set up correctly from day one",
+  "Budgets targeted at your actual service area",
+  "Plain-language weekly reporting, not a black box",
+  "Paused the moment it stops paying for itself",
+];
+
+export const PaidMedia = () => (
+  <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-black relative overflow-hidden">
+    <div className="max-w-4xl mx-auto px-6 text-center">
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+        <Megaphone className="mx-auto text-noble-blue mb-6" size={36} aria-hidden="true" />
+        <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">Show Up Now</span>
+        <h2 className="text-4xl md:text-5xl font-serif mt-6 mb-6 text-white leading-tight">
+          Meta &amp; Google Ads <span className="italic text-noble-blue">While SEO Catches Up.</span>
+        </h2>
+        <p className="text-gray-400 text-lg mb-10 font-light leading-relaxed max-w-2xl mx-auto">
+          SEO and content compound over months. Paid media puts you in front of buyers this
+          week — run properly, measured honestly, and never left on autopilot.
+        </p>
+        <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-3 mb-10 text-left max-w-xl mx-auto">
+          {paidMediaPoints.map((point) => (
+            <li key={point} className="flex items-start gap-3 text-gray-300 text-sm">
+              <Check className="text-noble-blue shrink-0 mt-0.5" size={16} />
+              <span className="font-light">{point}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="/free-audit" className="inline-flex items-center gap-2 text-noble-blue font-bold uppercase text-xs tracking-[0.2em] hover:gap-4 transition-all">
+          Get Your Free Ads &amp; SEO Audit <ArrowRight size={14} />
+        </a>
+      </motion.div>
+    </div>
+  </section>
+);
+
+/* 5c. Proof — a real, verifiable build instead of manufactured stats. Links
+   out to the actual live site so it's independently checkable, not just a
+   claim. */
+export const Proof = () => (
+  <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-dark relative overflow-hidden">
+    <div className="max-w-4xl mx-auto px-6 text-center">
+      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+        <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">Proof, Not Promises</span>
+        <h2 className="text-4xl md:text-5xl font-serif mt-6 mb-6 text-white leading-tight">
+          Built For a <span className="italic text-noble-blue">Real GTA Business.</span>
+        </h2>
+        <p className="text-gray-400 text-lg mb-8 font-light leading-relaxed max-w-2xl mx-auto">
+          This is the same system described above, already running for a real HVAC company
+          in the GTA — full technical SEO foundation (schema markup, sitemap, breadcrumbs),
+          a live blog with real published articles, an active Google Business Profile, and
+          analytics wired in from day one. Not a mockup — you can visit it right now.
+        </p>
+        <a
+          href="https://sohvac.ca"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-noble-blue font-bold uppercase text-xs tracking-[0.2em] hover:gap-4 transition-all"
+        >
+          See the Live Site <ExternalLink size={14} />
+        </a>
+      </motion.div>
+    </div>
+  </section>
+);
+
 /* 6. Process — from problem to working system. */
 const steps = [
   { icon: <Compass size={28} />, title: "Discover", description: "We identify where your business is losing visibility, leads, or time." },
@@ -275,6 +347,74 @@ export const Process = () => (
             <h3 className="text-2xl font-serif text-white mb-3 relative z-10">{s.title}</h3>
             <p className="text-gray-500 font-light leading-relaxed relative z-10">{s.description}</p>
           </motion.div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+/* 6b. FAQ — answers the objections that stall a "book a call" click, and
+   doubles as FAQPage structured data (kept in sync with index.html). */
+const homeFaqs = [
+  {
+    q: "What does NobleWave actually do?",
+    a: "One connected system for getting found and staying visible online: a real website, technical and AI-aware SEO, an AI voice agent that answers every call, ongoing content and social publishing, and — when it makes sense — Meta and Google ads on top.",
+  },
+  {
+    q: "What kind of businesses do you work with?",
+    a: "Local and home-service businesses across the GTA — HVAC, plumbing, electrical, and similar trades — where showing up in local search and answering the phone directly drives revenue.",
+  },
+  {
+    q: "Do you do paid ads, or just SEO?",
+    a: "Both. SEO and content build compounding, long-term visibility. Meta and Google ads get you in front of buyers immediately while that foundation is being built.",
+  },
+  {
+    q: "How much does this cost?",
+    a: "It depends on what your business actually needs, so we don't publish a number here. Start with a free audit and we'll tell you plainly what we'd recommend and what it costs.",
+  },
+  {
+    q: "Can you take over my existing website, ads, or Google Business Profile?",
+    a: "Yes. We start with an audit of what's already there — no need to rebuild from zero unless that's genuinely the right call.",
+  },
+  {
+    q: "Do you guarantee rankings or results?",
+    a: "No one honestly can — anyone who guarantees a #1 Google ranking is guessing. What we do commit to: the work gets done, reported monthly, and prioritized around what's actually moving the needle.",
+  },
+  {
+    q: "How long before I see results?",
+    a: "Paid ads can bring in leads within days. SEO and content typically take a few months to compound — which is exactly why we usually recommend running both together.",
+  },
+  {
+    q: "Where is NobleWave based?",
+    a: "Mississauga, Ontario, serving businesses across the Greater Toronto Area.",
+  },
+];
+
+export const HomeFAQ = () => (
+  <section id="faq" className="py-14 sm:py-20 md:py-24 lg:py-28 bg-noble-dark scroll-mt-20">
+    <div className="max-w-3xl mx-auto px-6">
+      <div className="text-center mb-10 md:mb-16">
+        <span className="text-noble-blue uppercase tracking-[0.3em] text-xs font-bold">FAQ</span>
+        <h2 className="text-4xl md:text-5xl font-serif mt-6 text-white leading-tight">
+          Questions, <span className="italic text-noble-blue">Answered.</span>
+        </h2>
+      </div>
+      <div className="space-y-4">
+        {homeFaqs.map((item) => (
+          <details
+            key={item.q}
+            className="group bg-noble-black border border-white/5 rounded-2xl p-6 open:border-noble-blue/40"
+          >
+            <summary className="flex items-center justify-between gap-4 cursor-pointer list-none font-serif text-lg text-white">
+              {item.q}
+              <ChevronDown
+                className="text-noble-blue shrink-0 transition-transform group-open:rotate-180"
+                size={20}
+                aria-hidden="true"
+              />
+            </summary>
+            <p className="text-gray-400 font-light leading-relaxed mt-4">{item.a}</p>
+          </details>
         ))}
       </div>
     </div>

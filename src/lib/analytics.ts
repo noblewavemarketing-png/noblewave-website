@@ -17,6 +17,8 @@
  *   ai_strategy_intake_submit — successful AI Strategy Session booking request
  *                               (AiStrategyIntakeForm.tsx), includes which session length
  *                               → Meta: standard "Lead" event
+ *   free_audit_form_submit    — successful Free Audit request (FreeAuditForm.tsx),
+ *                               includes trade → Meta: standard "Lead" event
  *   phone_click              — any tel: link
  *   email_click              — any mailto: link
  *   cta_click                — elements with data-track="cta" (booking/session CTAs)
@@ -95,7 +97,11 @@ export function trackEvent(name: string, params: Record<string, string> = {}) {
     if (window.dataLayer) window.dataLayer.push({ event: name, ...params });
     if (window.gtag) window.gtag("event", name, params);
     if (window.fbq) {
-      if (name === "contact_form_submit" || name === "ai_strategy_intake_submit") {
+      if (
+        name === "contact_form_submit" ||
+        name === "ai_strategy_intake_submit" ||
+        name === "free_audit_form_submit"
+      ) {
         window.fbq("track", "Lead", params); // standard Meta conversion event
       } else {
         window.fbq("trackCustom", name, params);

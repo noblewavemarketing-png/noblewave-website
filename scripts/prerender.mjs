@@ -47,6 +47,7 @@ const pages = [
   ["contact.html", "src/pages/ContactPage.tsx"],
   ["privacy.html", "src/pages/PrivacyPage.tsx"],
   ["mississauga.html", "src/pages/MississaugaPage.tsx"],
+  ["free-audit.html", "src/pages/FreeAuditPage.tsx"],
 ];
 
 async function main() {
